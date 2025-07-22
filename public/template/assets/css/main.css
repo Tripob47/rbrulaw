@@ -1881,9 +1881,11 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.navmenu1 {
+    border-bottom: 2px solid #222121; /* เส้นยาวใต้เมนู */
+    padding-bottom: 5px; /* เว้นระยะห่างระหว่างเมนูกับเส้น */
 }
+
+
+
+

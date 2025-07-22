@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('pages.about');
 });
+Route::get('/our', function () {
+    return view('pages.our');
+});
 use App\Http\Controllers\LanguageController;
 
 Route::get('lang/{locale}', [\App\Http\Controllers\LanguageController::class, 'switchLang'])->name('lang.switch');

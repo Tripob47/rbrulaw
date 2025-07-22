@@ -10,8 +10,8 @@
         <!-- เมนูหลัก -->
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="/">{{ __('index.about') }}</a></li>
-                <li><a href="/about">{{ __('index.curriculum') }}</a></li>
+                <li><a href="/about" target="_blank">{{ __('index.about') }}</a></li>
+                <li><a href="/our" target="_blank"> {{ __('index.curriculum') }}</a></li>
                 <li><a href="#">{{ __('index.qa') }}</a></li>
                 <li><a href="#">{{ __('index.research') }}</a></li>
                 <li><a href="#">{{ __('index.academic') }}</a></li>

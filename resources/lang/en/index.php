@@ -10,6 +10,10 @@ return [
     'dean' => "Dean's Direct Line",
     'ad' => 'for Admin',
     'faculty_name' => 'Faculty of Law',
+    'news_activities' => 'News & Activity Photos',
+    'news_seminar' => 'Training / Seminar News',
+    'news_job' => 'Job Announcements',
+    'news_procurement' => 'Procurement News',
 
 ];
 

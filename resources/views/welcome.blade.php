@@ -5,39 +5,42 @@
 @section('content')
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-    <!-- สไลด์รูปภาพพื้นหลัง -->
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="d-block w-100" style="height:600px; object-fit:cover;" alt="Slide 1">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('template/assets/img/events-item-1.jpg') }}" class="d-block w-100" style="height:600px; object-fit:cover;" alt="Slide 2">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('template/assets/img/events-item-2.jpg') }}" class="d-block w-100" style="height:600px; object-fit:cover;" alt="Slide 3">
+        <!-- สไลด์รูปภาพพื้นหลัง -->
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="d-block w-100"
+                        style="height:600px; object-fit:cover;" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('template/assets/img/events-item-1.jpg') }}" class="d-block w-100"
+                        style="height:600px; object-fit:cover;" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('template/assets/img/events-item-2.jpg') }}" class="d-block w-100"
+                        style="height:600px; object-fit:cover;" alt="Slide 3">
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- ข้อความและปุ่ม -->
-    <div class="container position-absolute top-50 start-50 translate-middle text-center text-white">
-        <h2 data-aos="fade-up" data-aos-delay="100">Learning Today,<br>Leading Tomorrow</h2>
-        <p data-aos="fade-up" data-aos-delay="200">
-            We are team of talented designers making websites with Bootstrap
-        </p>
-        <div class="d-flex justify-content-center mt-4" data-aos="fade-up" data-aos-delay="300">
-            <a href="courses.html" class="btn btn-primary">Get Started</a>
+        <!-- ข้อความและปุ่ม -->
+        <div class="container position-absolute top-50 start-50 translate-middle text-center text-white">
+            <h2 data-aos="fade-up" data-aos-delay="100">Learning Today,<br>Leading Tomorrow</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+                We are team of talented designers making websites with Bootstrap
+            </p>
+            <div class="d-flex justify-content-center mt-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="courses.html" class="btn btn-primary">Get Started</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="counts" class="section counts light-background">
 
         <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row gy-4">
-                <h1>{{ __('index.law') }}</h1>
+                <h1>{{ __('index.faculty_name') }}</h1>
 
             </div>
 
@@ -45,10 +48,21 @@
 
     </section>
     <section id="courses" class="courses section">
+        <nav id="navmenu1" class="navmenu">
+            <ul>
+                <li><a href="#">{{ __('index.news_activities') }}</a></li>
+                <li><a href="#">{{ __('index.news_seminar') }}</a></li>
+                <li><a href="#">{{ __('index.news_job') }}</a></li>
+                <li><a href="#">{{ __('index.news_procurement') }}</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+
+
 
         <!-- Section Title -->
         <div class="container section-title aos-init aos-animate" data-aos="fade-up">
-            <h2>Courses</h2>
             <p>Popular Courses</p>
         </div><!-- End Section Title -->
 
@@ -109,9 +123,5 @@
         </div>
 
     </section><!-- /Trainers Index Section -->
-    <section>
-        <h1>{{ __('index.welcome') }}</h1>
-        <p>{{ __('index.contact') }}</p>
-    </section>
 
 @endsection
