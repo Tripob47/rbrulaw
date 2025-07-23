@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,7 +11,22 @@ Route::get('/about', function () {
 Route::get('/our', function () {
     return view('pages.our');
 });
+Route::get('/news', function () {
+    return view('news.news');
+});
 use App\Http\Controllers\LanguageController;
 
 Route::get('lang/{locale}', [\App\Http\Controllers\LanguageController::class, 'switchLang'])->name('lang.switch');
+
+use Illuminate\Support\Facades\Http;
+
+Route::get('/api/news-proxy', function () {
+    $response = Http::get('https://news.rbru.ac.th/newsrb_json');
+
+    if ($response->successful()) {
+        return response()->json($response->json());
+    }
+
+    return response()->json(['error' => 'Unable to fetch news'], 500);
+});
 
