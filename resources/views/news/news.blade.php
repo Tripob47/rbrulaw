@@ -26,66 +26,6 @@
 </section>
 @endsection
 
-{{-- สไตล์พื้นหลังเมนู --}}
-@push('styles')
-<style>
-    .navmenu {
-        background-color: #eafaf1; /* สีเขียวอ่อน */
-        padding: 12px 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .navmenu ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .navmenu li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        transition: color 0.2s;
-    }
-
-    .navmenu li a:hover {
-        color: #007bff;
-    }
-
-    .course-item {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: transform 0.2s ease-in-out;
-        background-color: #fff;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .course-item:hover {
-        transform: scale(1.01);
-    }
-
-    .course-content {
-        padding: 15px;
-    }
-
-    .course-content h3 {
-        font-size: 18px;
-        font-weight: bold;
-        color: #2c3e50;
-    }
-
-    .course-content p {
-        font-size: 14px;
-        color: #555;
-    }
-</style>
-@endpush
-
 {{-- ดึงข้อมูลข่าวผ่าน API --}}
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
