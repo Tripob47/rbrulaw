@@ -8,6 +8,11 @@
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 
     <!-- Other Vendor CSS -->
     <link href="{{ asset('template/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -40,36 +45,7 @@
         <div class="row">
             <!-- Carousel -->
             <div class="col-12 col-md-3 d-none d-md-block">
-                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0"
-                            class="active"></button>
-                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ asset('template/assets/img/hero-bg.jpg') }}" class="d-block w-100"
-                                alt="Slide 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('template/assets/img/events-item-1.jpg') }}" class="d-block w-100"
-                                alt="Slide 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('template/assets/img/events-item-2.jpg') }}" class="d-block w-100"
-                                alt="Slide 3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-                </div>
+                
             </div>
 
             <!-- Websites -->
@@ -98,12 +74,14 @@
             </div>
 
             <!-- Map -->
-                <div class="col-12 col-md-3">
-                    <h5>แผนที่</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3892.742855704637!2d102.10150901481882!3d12.664857991057625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310482f7e183187f%3A0xdcafb204e364bb28!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lij4Liy4LiK4Lig4Lix4LiP4Lij4Liz4LmE4Lie4Lie4Lij4Lij4LiT4Li1!5e0!3m2!1sth!2sth!4v1551853012498" width="260" height="160" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                </div>
+            <div class="col-12 col-md-3">
+                <h5>แผนที่</h5>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3892.742855704637!2d102.10150901481882!3d12.664857991057625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310482f7e183187f%3A0xdcafb204e364bb28!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lij4Liy4LiK4Lig4Lix4LiP4Lij4Liz4LmE4Lie4Lie4Lij4Lij4LiT4Li1!5e0!3m2!1sth!2sth!4v1551853012498"
+                    width="260" height="160" frameborder="0" style="border:0" allowfullscreen=""></iframe>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Footer -->

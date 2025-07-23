@@ -1886,6 +1886,30 @@ section,
     padding-bottom: 5px; /* เว้นระยะห่างระหว่างเมนูกับเส้น */
 }
 
+    #navmenu1 ul {
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #navmenu1 ul li a {
+        font-size: 1.2rem; /* ขยายขนาดตัวอักษร */
+        padding: 12px 20px; /* เพิ่มพื้นที่รอบข้อความ */
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        background-color: #ffffff;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    #navmenu1 ul li a:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+
 
 
 

@@ -14,6 +14,9 @@ return [
     'news_seminar' => 'Training / Seminar News',
     'news_job' => 'Job Announcements',
     'news_procurement' => 'Procurement News',
+    'news' => 'News',
+    'activities' => 'Activity pictures',
+    'more' => 'more',
 
 ];
 
