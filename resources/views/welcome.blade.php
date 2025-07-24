@@ -5,9 +5,18 @@
 @section('content')
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background position-relative">
-        <!-- Carousel -->
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <!-- Slide Carousel Full Width -->
+    <div class="position-relative">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Slides -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="d-block w-100"
@@ -22,17 +31,20 @@
                         style="height:600px; object-fit:cover;" alt="Slide 3">
                 </div>
             </div>
-        </div>
 
-        <!-- Text & Button -->
-        <div class="container position-absolute top-50 start-50 translate-middle text-center text-white">
-            <h2 data-aos="fade-up">Learning Today,<br>Leading Tomorrow</h2>
-            <p data-aos="fade-up" data-aos-delay="100">We are team of talented designers making websites with Bootstrap</p>
-            <div class="mt-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="courses.html" class="btn btn-primary">Get Started</a>
-            </div>
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </section>
+    </div>
+
+
 
     <!-- Main Content + Sidebar Layout -->
     <div class="container my-5">
@@ -119,10 +131,12 @@
             <section id="courses" class="courses section">
                 <nav id="navmenu1" class="navmenu mb-4">
                     <ul class="nav fs-5 gap-3"> <!-- fs-5 = font-size ใหญ่ขึ้น -->
-                        <li class="nav-item"><a class="nav-link" href="#">{{ __('index.news_activities') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">{{ __('index.news_activities') }}</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#">{{ __('index.news_seminar') }}</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">{{ __('index.news_job') }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">{{ __('index.news_procurement') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">{{ __('index.news_procurement') }}</a>
+                        </li>
                     </ul>
                 </nav>
 
@@ -137,7 +151,8 @@
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
                             data-aos-delay="100">
                             <div class="course-item">
-                                <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="img-fluid"
+                                    alt="">
                                 <div class="course-content">
                                     <h3><a href="course-details.html">Website Design</a></h3>
                                     <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
@@ -194,34 +209,41 @@
 
                         <!-- ปุ่มอยู่ด้านล่าง carousel -->
                         <div class="text-center mt-3">
-                            <button type="button" class="btn btn-primary btn-lg">{{ __('index.more') }}</button>
+                            <button type="button" class="btn btn-warning btn-lg">{{ __('index.more') }}</button>
                         </div>
                     </div>
 
 
                     <!-- เนื้อหาส่วนที่ 2 ด้านขวา -->
-                    <div class="col-lg-6 col-md-12 d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                    <!-- HTML -->
+                    <div class="col-lg-6 col-md-12 d-flex flex-column" data-aos="fade-up" data-aos-delay="300">
                         <div>
                             <h1>ความร่วมมือ/MOU</h1>
-                            <ul>
-                                <a href="#">
-                                    <li>สํานักงานศาลปกครอง ทําบันทึกข้อตกลง (MOU) ร่วมกับมหาวิทยาลัยราชภัฏรําไพพรรณี
-                                        โดยมีคณะนิติศาสตร์ เป็นศูนย์กลาง</li>
-                                </a>
-                                <br>
-                                <a href="#">
-                                    <li>สํานักงานศาลรัฐธรรมนูญ ทําบันทึกข้อตกลง (MOU)
-                                        ร่วมกับมหาวิทยาลัยราชภัฏรําไพพรรณี โดยมีคณะนิติศาสตร์ เป็นศูนย์กลาง</li>
-                                </a>
-                                <br>
-                                <a href="#">
-                                    <li>สำนักงานคณะกรรมการคุ้มครองผู้บริโภค สำนักนายกรัฐมนตรี ทําบันทึกข้อตกลง (MOU)
-                                        ร่วมกับมหาวิทยาลัยราชภัฏรําไพพรรณี โดยมีคณะนิติศาสตร์ เป็นศูนย์กลาง</li>
-                                </a>
-                                <br>
+                            <ul class="list-unstyled mou-list">
+                                <li>
+                                    <a href="https://www.law.rbru.ac.th/sar63/mou02.pdf" target="_blank">
+                                        สํานักงานศาลปกครอง ทําบันทึกข้อตกลง (MOU)ร่วมกับมหาวิทยาลัยราชภัฏรําไพพรรณี
+                                        โดยมีคณะนิติศาสตร์ เป็นศูนย์กลาง
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.law.rbru.ac.th/sar63/mou01.pdf" target="_blank">
+                                        สํานักงานศาลรัฐธรรมนูญ ทําบันทึกข้อตกลง (MOU)
+                                        ร่วมกับมหาวิทยาลัยราชภัฏรําไพพรรณี
+                                        โดยมีคณะนิติศาสตร์ เป็นศูนย์กลาง
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.law.rbru.ac.th/sar66/mou1_66.pdf" target="_blank">
+                                        สำนักงานคณะกรรมการคุ้มครองผู้บริโภค สำนักนายกรัฐมนตรี ทําบันทึกข้อตกลง (MOU)
+                                        ร่วมกับมหาวิทยาลัยราชภัฏรําไพพรรณี
+                                        โดยมีคณะนิติศาสตร์ เป็นศูนย์กลาง
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </section>
 
