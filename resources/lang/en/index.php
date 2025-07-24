@@ -17,6 +17,7 @@ return [
     'news' => 'News',
     'activities' => 'Activity pictures',
     'more' => 'more',
+    'Cooperate' => 'Cooperate/Mou',
 
 ];
 

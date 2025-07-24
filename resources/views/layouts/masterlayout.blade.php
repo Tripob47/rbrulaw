@@ -37,15 +37,16 @@
     @include('components.navbar')
 
     <!-- Main Content -->
-    <main class="my-4">
+    <main class="">
         @yield('content')
     </main>
 
     <!-- Footer Section -->
-    <div class="container-fluid bg-light py-4">
+    <div class="container-fluid py-4" style="background-color: #DDDAD0;">
+
         <div class="row">
             <!-- Carousel -->
-            <div class="col-12 col-md-3 d-none d-md-block">
+            <div class="col-12 d-none d-md-block">
                 
             </div>
 
@@ -83,10 +84,9 @@
             </div>
         </div>
     </div>
-    </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3 mt-4">
+    <footer class="bg-dark text-white text-center py-3">
         &copy; {{ date('Y') }} คณะนิติศาสตร์. สงวนลิขสิทธิ์
     </footer>
 

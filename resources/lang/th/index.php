@@ -16,5 +16,6 @@ return [
     'news_procurement' => 'ข่าวจัดซื้อจัดจ้าง',
     'news' => 'ข่าวสาร',
     'activities' => 'ภาพกิจกรรม',
-    'more' => 'เพิ่มเติม'
+    'more' => 'เพิ่มเติม',
+    'Cooperate' => 'ความร่วมมือ/Mou'
 ];
