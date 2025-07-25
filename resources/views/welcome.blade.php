@@ -131,7 +131,7 @@
         <!-- Nav Tabs -->
 
         <div>
-            <section id="about" class="py-5" style="background-color:#DDDAD0; width: 100%;">
+            <section id="about" class="py-5" style="background-color:#CACACA; width: 100%;">
                 <!-- Nav Tabs -->
                 <div class="container">
                     <ul class="nav nav-tabs fs-5 gap-3 mb-3" id="newsTab" role="tablist">
@@ -165,46 +165,88 @@
 
                     <!-- Tab Contents -->
                     <div class="tab-content" id="newsTabContent">
+                        <!-- กิจกรรม -->
                         <div class="tab-pane fade show active" id="activities" role="tabpanel"
                             aria-labelledby="activities-tab" tabindex="0">
-                            <p>กิจกรรม (Activities) Content Here...</p>
-                        </div>
-                        <div class="tab-pane fade" id="seminar" role="tabpanel" aria-labelledby="seminar-tab"
-                            tabindex="0">
-                            <p>สัมมนา (Seminar) Content Here...</p>
-                        </div>
-                        <div class="tab-pane fade" id="job" role="tabpanel" aria-labelledby="job-tab"
-                            tabindex="0">
-                            <p>รับสมัครงาน (Job) Content Here...</p>
-                        </div>
-                        <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab"
-                            tabindex="0">
-                            <p>จัดซื้อจัดจ้าง (Procurement) Content Here...</p>
-                        </div>
-                    </div>
-                    <!-- Popular Courses -->
-                    <div class="section-title mb-4 text-center" data-aos="fade-up">
-                        <p>{{ __('index.news') }}</p>
-                    </div>
-                    <div class="row">
-                        @for ($i = 0; $i < 6; $i++)
-                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
-                                data-aos-delay="100">
-                                <div class="course-item">
-                                    <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="img-fluid"
-                                        alt="">
-                                    <div class="course-content">
-                                        <h3><a href="course-details.html">Website Design</a></h3>
-                                        <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
-                                            dolores dolorem tempore.</p>
-                                        <div class="trainer d-flex justify-content-between align-items-center mt-2">
-                                            <img src="assets/img/trainers/trainer-1-2.jpg" class="img-fluid"
+                            <div class="row">
+                                @for ($i = 0; $i < 6; $i++)
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
+                                        data-aos-delay="100">
+                                        <div class="course-item">
+                                            <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="img-fluid"
                                                 alt="">
+                                            <div class="course-content">
+                                                <h3><a href="#">กิจกรรม {{ $i + 1 }}</a></h3>
+                                                <p>รายละเอียดกิจกรรมที่ {{ $i + 1 }} ที่น่าสนใจ
+                                                    และเกี่ยวข้องกับนักศึกษา.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endfor
                             </div>
-                        @endfor
+                        </div>
+
+                        <!-- สัมมนา -->
+                        <div class="tab-pane fade" id="seminar" role="tabpanel" aria-labelledby="seminar-tab"
+                            tabindex="0">
+                            <div class="row">
+                                @for ($i = 0; $i < 4; $i++)
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
+                                        data-aos-delay="100">
+                                        <div class="course-item">
+                                            <img src="{{ asset('template/assets/img/course-2.jpg') }}" class="img-fluid"
+                                                alt="">
+                                            <div class="course-content">
+                                                <h3><a href="#">สัมมนา {{ $i + 1 }}</a></h3>
+                                                <p>รายละเอียดสัมมนาที่น่าสนใจ เช่น กฎหมายหรือการพัฒนาวิชาชีพ.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endfor
+                            </div>
+                        </div>
+
+                        <!-- รับสมัครงาน -->
+                        <div class="tab-pane fade" id="job" role="tabpanel" aria-labelledby="job-tab"
+                            tabindex="0">
+                            <div class="row">
+                                @for ($i = 0; $i < 3; $i++)
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
+                                        data-aos-delay="100">
+                                        <div class="course-item">
+                                            <img src="{{ asset('template/assets/img/course-3.jpg') }}" class="img-fluid"
+                                                alt="">
+                                            <div class="course-content">
+                                                <h3><a href="#">รับสมัครงาน {{ $i + 1 }}</a></h3>
+                                                <p>ประกาศรับสมัครงานในสายกฎหมาย หรืองานราชการต่างๆ.</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endfor
+                            </div>
+                        </div>
+
+                        <!-- จัดซื้อจัดจ้าง -->
+                        <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab"
+                            tabindex="0">
+                            <div class="row">
+                                @for ($i = 0; $i < 2; $i++)
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
+                                        data-aos-delay="100">
+                                        <div class="course-item">
+                                            <img src="{{ asset('template/assets/img/course-4.jpg') }}" class="img-fluid"
+                                                alt="">
+                                            <div class="course-content">
+                                                <h3><a href="#">จัดซื้อจัดจ้าง {{ $i + 1 }}</a></h3>
+                                                <p>ประกาศจัดซื้อจัดจ้างจากหน่วยงานคณะนิติศาสตร์.</p>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endfor
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -216,7 +258,7 @@
 
                         <!-- ซ้าย: Carousel -->
                         <div class="col-6" data-aos="fade-up" data-aos-delay="300">
-                        <h1 class="mb-4">{{ __('index.activities') }}</h1>
+                            <h1 class="mb-4">{{ __('index.activities') }}</h1>
                             <div id="carouselExample" class="carousel slide w-100" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0"
@@ -251,12 +293,15 @@
                             </div>
 
                             <div class="text-center mt-3">
-                                <button type="button" style="background-color:#FFDE63;">{{ __('index.more') }}</button>
+                                <a href="#" class="btn text-dark fw-bold me-2 mb-2"
+                                    style="background-color: #FFDE63;">
+                                    <i class=""></i> {{ __('index.more') }}
+                                </a>
                             </div>
                         </div>
 
                         <!-- ขวา: MOU -->
-                        <div class="col-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-6 " data-aos="fade-up" data-aos-delay="300">
                             <h1 class="mb-4">{{ __('index.Cooperate') }}</h1>
                             <ul class="list-unstyled mou-list">
                                 <li>
