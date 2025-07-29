@@ -1932,6 +1932,14 @@ section,
         color: rgb(255, 255, 255); /* สีฟอนต์เมื่อลิงก์เป็น active */
         font-weight: bold;
     }
+    .heading {
+    background-image: url('/template/assets/img/bg-about.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* ลบหรือคอมเมนต์ background-color: black; ออก */
+}
+
 
 
 

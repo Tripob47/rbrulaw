@@ -43,42 +43,78 @@
 
     <!-- Footer Section -->
     <div class="container-fluid py-4" style="background-color: #DDDAD0;">
-    <div class="container d-flex justify-content-center">
-        <div class="row w-100" style="max-width: 1200px;">
-            <!-- Carousel -->
-            <div class="col-12 d-none d-md-block">
-                <!-- (Carousel เนื้อหา) -->
-            </div>
+        <div class="container d-flex justify-content-center">
+            <div class="row w-100 justify-content-between" style="max-width: 1200px;">
+                <!-- Carousel -->
+                <div class="col-12 d-none d-md-block">
+                    <!-- (Carousel เนื้อหา) -->
+                </div>
 
-            <!-- Websites -->
-            <div class="col-6 col-md-3">
-                <h5>เว็บไซต์ที่เกี่ยวข้อง</h5>
-                <ul class="list-unstyled">
-                    <li><a class="text-muted" href="https://www.rbru.ac.th/rbru-title/index.php">มหาวิทยาลัยราชภัฏรำไพพรรณี</a></li>
-                    <li><a class="text-muted" href="#">.....</a></li>
-                </ul>
-            </div>
+                <!-- Websites -->
+                <div class="col-6 col-md-3">
 
-            <!-- Related Departments -->
-            <div class="col-6 col-md-3">
-                <h5>หน่วยงานที่เกี่ยวข้อง</h5>
-                <ul class="list-unstyled">
-                    <li><a class="text-muted" href="https://www.facebook.com/565859993519315/">สโมสร คณะนิติศาสตร์</a></li>
-                    <li><a class="text-muted" href="https://www.facebook.com/685807988286256/photos/814741782059542/">วิชาการ คณะนิติศาสตร์</a></li>
-                    <li><a class="text-muted" href="https://www.facebook.com/1518998248202258/photos/a.1566779926757423/1616028728499209/">ศิษย์เก่า คณะนิติศาสตร์</a></li>
-                </ul>
-            </div>
+                    <h5>เว็บไซต์ที่เกี่ยวข้อง</h5>
+                    <ul class="list-unstyled">
+                        <li><a class="text-muted">
+                                <h6>ข้อมูลติดต่อคณะนิติศาสตร์</h6>
+                            </a></li>
+                        <li><a class="text-muted">โทรศัพย์ : 09843xxxx</a></li>
+                        <li><a class="text-muted" href="#"><h6>Follow us : นิติ</h6></a></li>
+                        <div class="d-flex gap-3">
+                            <a href="https://www.facebook.com/yourpage" target="_blank" class="text-primary fs-4">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/yourchannel" target="_blank" class="text-danger fs-4">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="https://www.instagram.com/youraccount" target="_blank" class="text-danger fs-4">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="mailto:info@example.com" class="text-dark fs-4">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                        </div>
+                        <br>
+                        <h5>เว็บไซต์มหาวิทยาลัย</h5>
+                        <li><a class="text-muted"
+                                href="https://www.rbru.ac.th/rbru-title/index.php">มหาวิทยาลัยราชภัฏรำไพพรรณี</a></li>
 
-            <!-- Map -->
-            <div class="col-12 col-md-3">
-                <h5>แผนที่</h5>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3892.759365256576!2d102.10089057478298!3d12.663776587624051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310482f7e183187f%3A0xdcafb204e364bb28!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lij4Liy4LiK4Lig4Lix4LiP4Lij4Liz4LmE4Lie4Lie4Lij4Lij4LiT4Li1IOC4iOC4seC4meC4l-C4muC4uOC4o-C4tQ!5e0!3m2!1sth!2sus!4v1753432234293!5m2!1sth!2sus"
-                    width="260" height="160" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                    </ul>
+
+                </div>
+
+                <!-- Related Departments -->
+                <div class="col-6 col-md-3">
+                    <h5>หน่วยงานที่เกี่ยวข้อง</h5>
+                    <ul class="list-unstyled">
+                        <li><a class="text-muted" href="https://www.facebook.com/565859993519315/">สโมสร
+                                คณะนิติศาสตร์</a></li>
+                        <li><a class="text-muted"
+                                href="https://www.facebook.com/685807988286256/photos/814741782059542/">วิชาการ
+                                คณะนิติศาสตร์</a></li>
+                        <li><a class="text-muted"
+                                href="https://www.facebook.com/1518998248202258/photos/a.1566779926757423/1616028728499209/">ศิษย์เก่า
+                                คณะนิติศาสตร์</a></li>
+                        <!-- Follow Us -->
+
+
+                    </ul>
+                </div>
+
+                <!-- Map -->
+                <div class="col-12 col-md-3 ms-md-auto mt-4 mt-md-0">
+                    <h5>แผนที่</h5>
+                    <div class="text-md-end">
+                        <iframe
+src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1946.381477254082!2d102.1055742161645!3d12.66354147358423!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3104836d7aa27027%3A0xc17fd9cfcf9773e4!2z4LiE4LiT4Liw4LiZ4Li04LiV4Li04Lio4Liy4Liq4LiV4Lij4LmMIOC4reC4suC4hOC4suC4o-C5gOC4o-C4teC4ouC4meC4o-C4p-C4oSAo4LiV4Li24LiBIDEwKQ!5e0!3m2!1sth!2sus!4v1753758980006!5m2!1sth!2sus"                            width="260" height="160" frameborder="0" style="border:0;" allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
 
 
 
