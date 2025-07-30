@@ -4,6 +4,7 @@
 
 @section('content')
 
+<<<<<<< Updated upstream
     <!-- Hero Section -->
     <!-- Slide Carousel Full Width -->
     <div class="position-relative" style="background-color: aqua;">
@@ -42,7 +43,41 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+=======
+<!-- Hero Section -->
+<section id="hero" class="hero section dark-background position-relative">
+    <!-- Carousel -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="d-block w-100" style="height:600px; object-fit:cover;" alt="Slide 1">
+>>>>>>> Stashed changes
     </div>
+    <div class="carousel-item">
+      <img src="{{ asset('template/assets/img/events-item-1.jpg') }}" class="d-block w-100" style="height:600px; object-fit:cover;" alt="Slide 2">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('template/assets/img/events-item-2.jpg') }}" class="d-block w-100" style="height:600px; object-fit:cover;" alt="Slide 3">
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+
 
 
 
