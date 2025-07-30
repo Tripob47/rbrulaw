@@ -5,151 +5,208 @@
 @section('content')
 
     <!-- Page Title -->
-    @include('layouts.img')
-    <div class="page-title position-relative">
-        <nav class="breadcrumbs position-absolute bottom-0 start-0 w-100 py-2" style="background-color: rgba(0, 0, 0, 0.5);">
-            <div class="container text-white">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="index.html" class="text-white">คณะนิติศาสตร์</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">เกี่ยวกับคณะ</li>
-                </ol>
-            </div>
-        </nav>
-    </div>
-    <section id="about" class="py-5" style="background-color:#CACACA; width: 100%;">
-    <div class="container">
-        <!-- Nav Tabs -->
-        <ul class="nav nav-tabs fs-5 gap-3 mb-3 justify-content-center" id="newsTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="history-tab" data-bs-toggle="tab" data-bs-target="#history"
-                    type="button" role="tab" aria-controls="history" aria-selected="true">
-                    {{ __('index.history') }}
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button"
-                    role="tab" aria-controls="vision" aria-selected="false">
-                    {{ __('index.vision') }}
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="strategies-tab" data-bs-toggle="tab" data-bs-target="#strategies"
-                    type="button" role="tab" aria-controls="strategies" aria-selected="false">
-                    {{ __('index.Strategies') }}
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="structure-tab" data-bs-toggle="tab" data-bs-target="#structure"
-                    type="button" role="tab" aria-controls="structure" aria-selected="false">
-                    {{ __('index.Structure') }}
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location"
-                    type="button" role="tab" aria-controls="location" aria-selected="false">
-                    {{ __('index.Location') }}
-                </button>
-            </li>
-        </ul>
+    @include('layouts.img') <!-- ภาพพื้นหลังหรือแบนเนอร์ -->
 
-        <!-- Tab Content -->
-        <div class="tab-content" id="newsTabContent">
-            <!-- ประวัติ -->
-            <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
-                <div class="row my-4">
-                    <div class="col-lg-12 text-center">
-                        <img class="img-fluid rounded" src="{{ asset('template/assets/img/course-1.jpg') }}" alt="logo" width="15%">
-                    </div>
-                </div>
-                <hr>
-                <h3>{{ __('index.history') }}</h3>
-                <i class="fa fa-quote-left fa-2x fa-pull-left"></i>
-                <h6 class="text-justify">
-                    {{ __('index.op') }}
-                </h6>
-                <hr>
-            </div>
-
-            <!-- วิสัยทัศน์ ปรัชญา -->
-            <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
-                <h3>{{ __('index.vision_title') }}</h3>
-                <p>{{ __('index.vision_text') }}</p>
-
-                <h3>{{ __('index.philosophy_title') }}</h3>
-                <p>{{ __('index.philosophy_text') }}</p>
-
-                <h3>{{ __('index.identity_title') }}</h3>
-                <p>{{ __('index.identity_text') }}</p>
-
-                <h3>{{ __('index.uniqueness_title') }}</h3>
-                <p>{{ __('index.uniqueness_text') }}</p>
-
-                <h3>{{ __('index.desired_attributes_title') }}</h3>
-                <p>{{ __('index.desired_attributes_text') }}</p>
-            </div>
-
-            <!-- กลยุทธ์ -->
-            <div class="tab-pane fade" id="strategies" role="tabpanel" aria-labelledby="strategies-tab">
-                <div class="strategy-section">
-                    <h2>{{ __('index.title') }}</h2>
-
-                    <div class="mb-4">
-                        <h4>{{ __('index.strategy1_title') }}</h4>
-                        <p>{{ __('index.strategy1_desc') }}</p>
-                        <ol>
-                            @foreach (__('index.strategy1_actions') as $item)
-                                <li>{{ $item }}</li>
-                            @endforeach
-                        </ol>
-                    </div>
-
-                    <div class="mb-4">
-                        <h4>{{ __('index.strategy2_title') }}</h4>
-                        <p>{{ __('index.strategy2_desc') }}</p>
-                        <ol>
-                            @foreach (__('index.strategy2_actions') as $item)
-                                <li>{{ $item }}</li>
-                            @endforeach
-                        </ol>
-                    </div>
-
-                    <div class="mb-4">
-                        <h4>{{ __('index.strategy3_title') }}</h4>
-                        <p>{{ __('index.strategy3_desc') }}</p>
-                        <ol>
-                            @foreach (__('index.strategy3_actions') as $item)
-                                <li>{{ $item }}</li>
-                            @endforeach
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-            <!-- โครงสร้าง -->
-            <div class="tab-pane fade" id="structure" role="tabpanel" aria-labelledby="structure-tab">
-                <p>{{ __('index.structure_content') }}</p>
-            </div>
-
-            <!-- สถานที่ตั้ง -->
-            <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
-                <div class="my-4">
-                    <h3 class="mb-3">{{ __('index.location_title') }}</h3>
-                    <p>{{ __('index.university_name') }}</p>
-                    <p>{{ __('index.address_th') }}</p>
-                    <p>{{ __('index.address_en') }}</p>
-
-                    <h3 class="mt-5 mb-3">{{ __('index.admin_structure') }}</h3>
-                    <ul class="list-unstyled">
-                        <li><strong>{{ __('index.tel') }}:</strong> 086-4403210</li>
-                        <li><strong>{{ __('index.fax') }}:</strong> 039-471417</li>
-                        <li><strong>{{ __('index.email') }}:</strong> <a href="mailto:law@rbru.ac.th">law@rbru.ac.th</a></li>
-                    </ul>
-                </div>
-            </div>
+    <nav class="breadcrumbs w-100 py-2" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="container text-white">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="index.html" class="text-white">{{ __('index.faculty_name') }}</a>
+                </li>
+                <li class="breadcrumb-item active text-white" aria-current="page">{{ __('index.about') }}</li>
+            </ol>
         </div>
-    </div>
-</section>
+    </nav>
 
+    <section id="about" class="py-5" style="background-color:#f8f9fa;">
+        <div class="container">
 
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs fs-5 gap-3 mb-4 justify-content-center" id="newsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="history-tab" data-bs-toggle="tab" data-bs-target="#history"
+                        type="button" role="tab" aria-controls="history" aria-selected="true">
+                        <i class="bi bi-clock-history me-1"></i> {{ __('index.history') }}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button"
+                        role="tab" aria-controls="vision" aria-selected="false">
+                        <i class="bi bi-eye-fill me-1"></i> {{ __('index.vision') }}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="strategies-tab" data-bs-toggle="tab" data-bs-target="#strategies"
+                        type="button" role="tab" aria-controls="strategies" aria-selected="false">
+                        <i class="bi bi-gear-fill me-1"></i> {{ __('index.Strategies') }}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="structure-tab" data-bs-toggle="tab" data-bs-target="#structure"
+                        type="button" role="tab" aria-controls="structure" aria-selected="false">
+                        <i class="bi bi-diagram-3-fill me-1"></i> {{ __('index.Structure') }}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location"
+                        type="button" role="tab" aria-controls="location" aria-selected="false">
+                        <i class="bi bi-geo-alt-fill me-1"></i> {{ __('index.Location') }}
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="newsTabContent">
+
+                <!-- ประวัติ -->
+                <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
+                    <div class="row mb-4 justify-content-center">
+                        <div class="col-md-6 col-lg-4 text-center">
+                            <img class="img-fluid rounded shadow-sm"
+                                src="{{ asset('template/assets/img/logo_lawnew62.png') }}" alt="logo" style="max-width: 180px;">
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-3"><i class="bi bi-journal-text me-2"></i>{{ __('index.history') }}</h3>
+                            <blockquote class="blockquote fst-italic border-start border-4 ps-3 text-muted">
+                                {{ __('index.op') }}
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- วิสัยทัศน์ ปรัชญา -->
+                <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm h-100 border-0">
+                                <div class="card-header bg-primary text-white">
+                                    <i class="bi bi-eye-fill me-2"></i> {{ __('index.vision_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.vision_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card shadow-sm h-100 border-0">
+                                <div class="card-header bg-secondary text-white">
+                                    <i class="bi bi-lightbulb-fill me-2"></i> {{ __('index.philosophy_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.philosophy_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card shadow-sm h-100 border-0">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-person-badge-fill me-2"></i> {{ __('index.identity_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.identity_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card shadow-sm h-100 border-0">
+                                <div class="card-header bg-warning text-dark">
+                                    <i class="bi bi-star-fill me-2"></i> {{ __('index.uniqueness_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.uniqueness_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-header bg-success text-white">
+                                    <i class="bi bi-check2-circle me-2"></i> {{ __('index.desired_attributes_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.desired_attributes_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- กลยุทธ์ -->
+                <div class="tab-pane fade" id="strategies" role="tabpanel" aria-labelledby="strategies-tab">
+                    <h2 class="mb-4 text-center">{{ __('index.title') }}</h2>
+
+                    @foreach (['strategy1', 'strategy2', 'strategy3'] as $strategy)
+                        <div class="card shadow-sm mb-4 border-0">
+                            <div class="card-header bg-light text-dark fw-bold fs-5">
+                                {{ __('index.' . $strategy . '_title') }}
+                            </div>
+                            <div class="card-body">
+                                <p>{{ __('index.' . $strategy . '_desc') }}</p>
+                                <ol class="ps-3">
+                                    @foreach (__('index.' . $strategy . '_actions') as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ol>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+
+                <!-- โครงสร้าง -->
+                <div class="tab-pane fade" id="structure" role="tabpanel" aria-labelledby="structure-tab">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <p>{!! nl2br(e(__('index.structure_content'))) !!}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- สถานที่ตั้ง -->
+                <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-building me-2"></i> {{ __('index.location_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p>{{ __('index.university_name') }}</p>
+                                    <p>{{ __('index.address_th') }}</p>
+                                    <p>{{ __('index.address_en') }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-telephone-fill me-2"></i> {{ __('index.admin_structure') }}
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><strong>{{ __('index.tel') }}:</strong> 086-4403210</li>
+                                        <li><strong>{{ __('index.fax') }}:</strong> 039-471417</li>
+                                        <li><strong>{{ __('index.email') }}:</strong>
+                                            <a href="mailto:law@rbru.ac.th">law@rbru.ac.th</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- end tab content -->
+        </div> <!-- end container -->
+    </section>
 
 @endsection

@@ -13,6 +13,14 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+
+
+    <!-- อื่น ๆ เช่น Bootstrap, app.css -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
 
     <!-- Other Vendor CSS -->
     <link href="{{ asset('template/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -29,7 +37,11 @@
     <link href="{{ asset('template/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
 
+
     @stack('styles')
+
+</head>
+
 </head>
 
 <body>
@@ -59,7 +71,9 @@
                                 <h6>ข้อมูลติดต่อคณะนิติศาสตร์</h6>
                             </a></li>
                         <li><a class="text-muted">โทรศัพย์ : 09843xxxx</a></li>
-                        <li><a class="text-muted" href="#"><h6>Follow us : นิติ</h6></a></li>
+                        <li><a class="text-muted" href="#">
+                                <h6>Follow us : นิติ</h6>
+                            </a></li>
                         <div class="d-flex gap-3">
                             <a href="https://www.facebook.com/yourpage" target="_blank" class="text-primary fs-4">
                                 <i class="bi bi-facebook"></i>
@@ -106,7 +120,8 @@
                     <h5>แผนที่</h5>
                     <div class="text-md-end">
                         <iframe
-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1946.381477254082!2d102.1055742161645!3d12.66354147358423!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3104836d7aa27027%3A0xc17fd9cfcf9773e4!2z4LiE4LiT4Liw4LiZ4Li04LiV4Li04Lio4Liy4Liq4LiV4Lij4LmMIOC4reC4suC4hOC4suC4o-C5gOC4o-C4teC4ouC4meC4o-C4p-C4oSAo4LiV4Li24LiBIDEwKQ!5e0!3m2!1sth!2sus!4v1753758980006!5m2!1sth!2sus"                            width="260" height="160" frameborder="0" style="border:0;" allowfullscreen=""
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1946.381477254082!2d102.1055742161645!3d12.66354147358423!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3104836d7aa27027%3A0xc17fd9cfcf9773e4!2z4LiE4LiT4Liw4LiZ4Li04LiV4Li04Lio4Liy4Liq4LiV4Lij4LmMIOC4reC4suC4hOC4suC4o-C5gOC4o-C4teC4ouC4meC4o-C4p-C4oSAo4LiV4Li24LiBIDEwKQ!5e0!3m2!1sth!2sus!4v1753758980006!5m2!1sth!2sus"
+                            width="260" height="160" frameborder="0" style="border:0;" allowfullscreen=""
                             loading="lazy">
                         </iframe>
                     </div>

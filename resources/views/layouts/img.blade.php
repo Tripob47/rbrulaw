@@ -1,7 +1,20 @@
 <div class="page-title position-relative">
         <!-- รูปใหญ่เต็มจอ -->
-        <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="img-fluid w-100" alt="..."
-            style="height: 400px; object-fit: cover;">
+        <div class="position-relative">
+    <img src="{{ asset('template/assets/img/course-1.jpg') }}" 
+         class="img-fluid w-100" 
+         alt="..." 
+         style="height: 400px; object-fit: cover;">
+
+    <!-- overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" 
+         style="background-color: rgba(0, 0, 0, 0.4);">
+    </div>
+
+    <!-- ข้อความบน overlay -->
+    
+</div>
+
 
         <!-- ข้อความตรงกลางรูป -->
         <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
