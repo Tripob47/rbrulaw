@@ -12,17 +12,16 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: 'Noto Sans', 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
-  
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #F4F4F4; /* Background color for the entire website, including individual sections */
-  --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
+  --default-color: #797979; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #37423b; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #000000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -30,8 +29,8 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #9f9f9f;  /* The default color of the main navmenu links */
-  --nav-hover-color: #545454; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #272828;  /* The default color of the main navmenu links */
+  --nav-hover-color: #393E46; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #272828; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -224,7 +223,7 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color:#F4F4F4;
-  background-color :#565656 ;
+  background-color :#393E46 ;
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -336,7 +335,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color:#debc00;
+    color: var(--nav-hover-color);
   }
 
   .navmenu .dropdown ul {
@@ -1940,9 +1939,6 @@ section,
     background-repeat: no-repeat;
     /* ลบหรือคอมเมนต์ background-color: black; ออก */
 }
-
-
-
 
 
 

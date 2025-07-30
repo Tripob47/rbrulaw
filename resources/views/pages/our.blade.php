@@ -4,14 +4,16 @@
 
 @section('content')
     @include('layouts.img')
-    <nav class="breadcrumbs w-100 py-2" style="background-color: rgba(0, 0, 0, 0.5);">
-        <div class="container text-white">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="index.html" class="text-white">{{ __(key: 'index.faculty_name') }}</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page">{{ __('index.pp') }}</li>
-            </ol>
-        </div>
-    </nav>
+    <div class="page-title position-relative">
+        <nav class="breadcrumbs position-absolute bottom-0 start-0 w-100 py-2" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="container text-white">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">คณะนิติศาสตร์</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">หลักสูตรประจำคณะที่เปิดสอน</li>
+                </ol>
+            </div>
+        </nav>
+    </div>
     <div class="container my-5 text-center">
         <h1>หลักสูตร นิติศาสตร์บัณฑิต </h1>
 

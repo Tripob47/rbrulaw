@@ -2,14 +2,10 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
         <!-- โลโก้ -->
-        <div style="width: 40%; margin: 0; padding: 0;">
-    <a href="/" class="d-flex align-items-center p-1 rounded text-decoration-none"
-       style="background-color: #565656; margin-left: 0;">
-        <img src="{{ asset('template/assets/img/law.png') }}" alt="Logo"
-             style="height: 70px; width: auto; object-fit: contain;" class="me-2">
-        <h1 class="sitename m-0 text-white fs-5">{{ __('index.faculty_name') ?? 'คณะนิติศาสตร์' }}</h1>
-    </a>
-</div>
+        <a href="/" class="logo d-flex align-items-center me-auto">
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <h1 class="sitename">{{ __('index.faculty_name') ?? 'คณะนิติศาสตร์' }}</h1>
+        </a>
 
         <!-- เมนูหลัก -->
         <nav id="navmenu" class="navmenu">
@@ -39,8 +35,7 @@
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'th']) }}">🇹🇭 ไทย</a></li>
-                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a>
-                </li>
+                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a></li>
             </ul>
         </div>
 
