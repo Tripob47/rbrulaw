@@ -3,273 +3,210 @@
 @section('title', 'Welcome')
 
 @section('content')
-    <main class="main">
 
-        <!-- Page Title -->
-        <div class="page-title" data-aos="fade">
-            <div class="heading">
-                <div class="container">
-                    <div class="row d-flex justify-content-center text-center">
-                        <div class="col-lg-8">
-                            <h1>About Us<br></h1>
-                            <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint
-                                voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores.
-                                Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+    <!-- Page Title -->
+    @include('layouts.img') <!-- ภาพพื้นหลังหรือแบนเนอร์ -->
+
+    <nav class="breadcrumbs w-100 py-2" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="container text-white">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item">
+                    <a href="index.html" class="text-white">{{ __('index.faculty_name') }}</a>
+                </li>
+                <li class="breadcrumb-item active text-white" aria-current="page">{{ __('index.about') }}</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section id="about" class="py-5" style="background-color:#f8f9fa;">
+        <div class="container">
+
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs fs-5 gap-3 mb-4 justify-content-center" id="newsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="history-tab" data-bs-toggle="tab" data-bs-target="#history"
+                        type="button" role="tab" aria-controls="history" aria-selected="true">
+                        <i class="bi bi-clock-history me-1"></i> {{ __('index.history') }}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button"
+                        role="tab" aria-controls="vision" aria-selected="false">
+                        <i class="bi bi-eye-fill me-1"></i> {{ __('index.vision') }}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="strategies-tab" data-bs-toggle="tab" data-bs-target="#strategies"
+                        type="button" role="tab" aria-controls="strategies" aria-selected="false">
+                        <i class="bi bi-gear-fill me-1"></i> {{ __('index.Strategies') }}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="structure-tab" data-bs-toggle="tab" data-bs-target="#structure"
+                        type="button" role="tab" aria-controls="structure" aria-selected="false">
+                        <i class="bi bi-diagram-3-fill me-1"></i> {{ __('index.Structure') }}
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location"
+                        type="button" role="tab" aria-controls="location" aria-selected="false">
+                        <i class="bi bi-geo-alt-fill me-1"></i> {{ __('index.Location') }}
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="newsTabContent">
+
+                <!-- ประวัติ -->
+                <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
+                    <div class="row mb-4 justify-content-center">
+                        <div class="col-md-6 col-lg-4 text-center">
+                            <img class="img-fluid rounded shadow-sm"
+                                src="{{ asset('template/assets/img/logo_lawnew62.png') }}" alt="logo" style="max-width: 180px;">
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title mb-3"><i class="bi bi-journal-text me-2"></i>{{ __('index.history') }}</h3>
+                            <blockquote class="blockquote fst-italic border-start border-4 ps-3 text-muted">
+                                {{ __('index.op') }}
+                            </blockquote>
                         </div>
                     </div>
                 </div>
-            </div>
-            <nav class="breadcrumbs">
-                <div class="container">
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="current">About Us<br></li>
-                    </ol>
-                </div>
-            </nav>
-        </div><!-- End Page Title -->
 
-        <!-- About Us Section -->
-        <section id="about-us" class="section about-us">
+                <!-- วิสัยทัศน์ ปรัชญา -->
+                <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
 
-            <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm h-100 border-0">
+                                <div class="card-header bg-primary text-white">
+                                    <i class="bi bi-eye-fill me-2"></i> {{ __('index.vision_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.vision_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm h-100 border-0">
+                                <div class="card-header bg-secondary text-white">
+                                    <i class="bi bi-lightbulb-fill me-2"></i> {{ __('index.philosophy_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.philosophy_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm h-100 border-0">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-person-badge-fill me-2"></i> {{ __('index.identity_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.identity_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card shadow-sm h-100 border-0">
+                                <div class="card-header bg-warning text-dark">
+                                    <i class="bi bi-star-fill me-2"></i> {{ __('index.uniqueness_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.uniqueness_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-header bg-success text-white">
+                                    <i class="bi bi-check2-circle me-2"></i> {{ __('index.desired_attributes_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ __('index.desired_attributes_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Voluptatem dignissimos provident quasi corporis</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-                        <ul>
-                            <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate
-                                    velit.</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda
-                                    mastiro dolore eu fugiat nulla pariatur.</span></li>
-                        </ul>
+                </div>
+
+                <!-- กลยุทธ์ -->
+                <div class="tab-pane fade" id="strategies" role="tabpanel" aria-labelledby="strategies-tab">
+                    <h2 class="mb-4 text-center">{{ __('index.title') }}</h2>
+
+                    @foreach (['strategy1', 'strategy2', 'strategy3'] as $strategy)
+                        <div class="card shadow-sm mb-4 border-0">
+                            <div class="card-header bg-light text-dark fw-bold fs-5">
+                                {{ __('index.' . $strategy . '_title') }}
+                            </div>
+                            <div class="card-body">
+                                <p>{{ __('index.' . $strategy . '_desc') }}</p>
+                                <ol class="ps-3">
+                                    @foreach (__('index.' . $strategy . '_actions') as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ol>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+
+                <!-- โครงสร้าง -->
+                <div class="tab-pane fade" id="structure" role="tabpanel" aria-labelledby="structure-tab">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <p>{!! nl2br(e(__('index.structure_content'))) !!}</p>
+                        </div>
                     </div>
-
                 </div>
 
-            </div>
-
-        </section><!-- /About Us Section -->
-
-        <!-- Counts Section -->
-        <section id="counts" class="section counts light-background">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Students</p>
+                <!-- สถานที่ตั้ง -->
+                <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-building me-2"></i> {{ __('index.location_title') }}
+                                </div>
+                                <div class="card-body">
+                                    <p>{{ __('index.university_name') }}</p>
+                                    <p>{{ __('index.address_th') }}</p>
+                                    <p>{{ __('index.address_en') }}</p>
+                                </div>
+                            </div>
                         </div>
-                    </div><!-- End Stats Item -->
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Courses</p>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-telephone-fill me-2"></i> {{ __('index.admin_structure') }}
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><strong>{{ __('index.tel') }}:</strong> 086-4403210</li>
+                                        <li><strong>{{ __('index.fax') }}:</strong> 039-471417</li>
+                                        <li><strong>{{ __('index.email') }}:</strong>
+                                            <a href="mailto:law@rbru.ac.th">law@rbru.ac.th</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Events</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                            <p>Trainers</p>
-                        </div>
-                    </div><!-- End Stats Item -->
-
-                </div>
-
-            </div>
-
-        </section><!-- /Counts Section -->
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="testimonials section">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Testimonials</h2>
-                <p>What are they saying</p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="swiper init-swiper">
-                    <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 20
-                }
-              }
-            }
-          </script>
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img"
-                                        alt="">
-                                    <h3>Saul Goodman</h3>
-                                    <h4>Ceo &amp; Founder</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
-                                            suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et.
-                                            Maecen aliquam, risus at semper.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img"
-                                        alt="">
-                                    <h3>Sara Wilsson</h3>
-                                    <h4>Designer</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum
-                                            quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat
-                                            irure amet legam anim culpa.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img"
-                                        alt="">
-                                    <h3>Jena Karlis</h3>
-                                    <h4>Store Owner</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla
-                                            quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore
-                                            quis sint minim.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img"
-                                        alt="">
-                                    <h3>Matt Brandon</h3>
-                                    <h4>Freelancer</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                            fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore
-                                            quem dolore labore illum veniam.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img"
-                                        alt="">
-                                    <h3>John Larson</h3>
-                                    <h4>Entrepreneur</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor
-                                            noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam
-                                            esse veniam culpa fore nisi cillum quid.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!-- End testimonial item -->
-
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
 
-            </div>
+            </div> <!-- end tab content -->
+        </div> <!-- end container -->
+    </section>
 
-        </section><!-- /Testimonials Section -->
-
-    </main>
 @endsection

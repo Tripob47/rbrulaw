@@ -337,18 +337,18 @@
 
                         <!-- ขวา: MOU -->
                         <div class="col-6 " data-aos="fade-up" data-aos-delay="300">
-                            <h1 class="mb-4">{{ __('index.Cooperate') }}</h1>
+                            <h1 class="mb-3">{{ __('index.Cooperate') }}</h1>
                             <ul class="list-unstyled mou-list">
                                 <li>
                                     <a href="https://www.law.rbru.ac.th/sar63/mou02.pdf" target="_blank">
                                         สํานักงานศาลปกครอง ทําบันทึกข้อตกลง (MOU) ร่วมกับมหาวิทยาลัยราชภัฏรําไพพรรณี
                                     </a>
-                                </li>
+                                </li><br>
                                 <li>
                                     <a href="https://www.law.rbru.ac.th/sar63/mou01.pdf" target="_blank">
                                         สํานักงานศาลรัฐธรรมนูญ ทําบันทึกข้อตกลง (MOU) ร่วมกับมหาวิทยาลัยราชภัฏรําไพพรรณี
                                     </a>
-                                </li>
+                                </li><br>
                                 <li>
                                     <a href="https://www.law.rbru.ac.th/sar66/mou1_66.pdf" target="_blank">
                                         สำนักงานคณะกรรมการคุ้มครองผู้บริโภค ทําบันทึกข้อตกลง (MOU)
@@ -361,13 +361,6 @@
                     </div>
                 </div>
             </section>
-
-
-
-
-
-
-            <!-- Sidebar -->
 
         </div>
 

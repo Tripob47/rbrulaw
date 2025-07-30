@@ -15,6 +15,9 @@ Route::get('/about', function () {
 Route::get('/our', function () {
     return view('pages.our');
 });
+Route::get('/qa', function () {
+    return view('pages.qa');
+});
 
 Route::get('lang/{locale}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 

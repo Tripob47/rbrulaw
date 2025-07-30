@@ -2,17 +2,21 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
         <!-- โลโก้ -->
-        <a href="/" class="logo d-flex align-items-center me-auto">
-            <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">{{ __('index.faculty_name') ?? 'คณะนิติศาสตร์' }}</h1>
-        </a>
+        <div style="width: 40%; margin: 0; padding: 0;">
+    <a href="/" class="d-flex align-items-center p-1 rounded text-decoration-none"
+       style="background-color: #565656; margin-left: 0;">
+        <img src="{{ asset('template/assets/img/law.png') }}" alt="Logo"
+             style="height: 70px; width: auto; object-fit: contain;" class="me-2">
+        <h1 class="sitename m-0 text-white fs-5">{{ __('index.faculty_name') ?? 'คณะนิติศาสตร์' }}</h1>
+    </a>
+</div>
 
         <!-- เมนูหลัก -->
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="/about" target="_blank">{{ __('index.about') }}</a></li>
-                <li><a href="/our" target="_blank"> {{ __('index.curriculum') }}</a></li>
-                <li><a href="#">{{ __('index.qa') }}</a></li>
+                <li><a href="/about">{{ __('index.about') }}</a></li>
+                <li><a href="/our"> {{ __('index.curriculum') }}</a></li>
+                <li><a href="/qa">{{ __('index.qa') }}</a></li>
                 <li><a href="#">{{ __('index.research') }}</a></li>
                 <li><a href="#">{{ __('index.academic') }}</a></li>
                 <li><a href="#">{{ __('index.alumni') }}</a></li>
@@ -35,7 +39,8 @@
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'th']) }}">🇹🇭 ไทย</a></li>
-                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a></li>
+                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a>
+                </li>
             </ul>
         </div>
 
