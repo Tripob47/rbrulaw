@@ -29,6 +29,9 @@ Route::get('/alumni2', function () {
     return view('pages.alumni2');
 });
 
+Route::get('/aeasearch', function () {
+    return view('pages.aeasearch');
+});
 Route::get('lang/{locale}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 // Route /news ให้ไปที่ Controller

@@ -17,7 +17,7 @@
                 <li><a href="/about">{{ __('index.about') }}</a></li>
                 <li><a href="/our"> {{ __('index.curriculum') }}</a></li>
                 <li><a href="/qa">{{ __('index.qa') }}</a></li>
-                <li><a href="/">{{ __('index.research') }}</a></li>
+                <li><a href="/aeasearch">{{ __('index.research') }}</a></li>
                 <li><a href="/academic">{{ __('index.academic') }}</a></li>
                 <li class="dropdown">
                     <a href="#"><span>{{ __('index.alumni') }}</span> <i class="bi bi-chevron-down"></i></a>
@@ -42,16 +42,35 @@
         </nav>
 
         <!-- ปุ่มสลับภาษา -->
-        <div class="dropdown text-end p-2">
-            <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                🌐 {{ strtoupper(app()->getLocale()) }}
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'th']) }}">🇹🇭 ไทย</a></li>
-                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a>
-                </li>
-            </ul>
-        </div>
+        <style>
+    .btn-language {
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+    }
+
+    .btn-language:hover {
+        background-color: gold;
+        color: black;
+        border-color: gold;
+    }
+
+    .dropdown-menu a.dropdown-item:hover {
+        background-color: gold;
+        color: black;
+    }
+</style>
+
+<div class="dropdown text-end p-2">
+    <button class="btn btn-sm btn-language dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        🌐 {{ strtoupper(app()->getLocale()) }}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'th']) }}">🇹🇭 ไทย</a></li>
+        <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a></li>
+    </ul>
+</div>
+
 
     </div>
 </header>

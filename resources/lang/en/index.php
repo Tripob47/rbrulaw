@@ -257,6 +257,49 @@ return [
     'gallery_system' => 'Gallery System',
 
     'motto' => 'Knowledge and Morality Bring Justice to Local Community',
+
+    'research_fund' => 'Research Fund - Faculty of Law',
+    'academic_research' => 'Academic Research - Faculty of Law',
+    'research_statistic' => 'Research Statistics',
+
+    'fund' => 'Research Fund',
+    'fund_2021' => 'Research Fund 2021',
+    'fund_2018' => 'Research Fund 2018',
+    'fund_2017' => 'Research Fund 2017',
+
+    'budget' => 'Budget',
+    'budget_2021' => 'Budget 2021',
+    'budget_2020' => 'Budget 2020',
+    'budget_2018' => 'Budget 2018',
+    'budget_2017' => 'Budget 2017',
+
+    'honor' => 'Honoring Researchers',
+    'honor_2021' => 'Honoring Researchers 2021',
+    'honor_2020' => 'Honoring Researchers 2020',
+    'honor_2018' => 'Honoring Researchers 2018',
+    'honor_2017' => 'Honoring Researchers 2017',
+    'honor_2016' => 'Honoring Researchers 2016',
+
+    'documents' => 'Documents for Research Grants',
+    'doc_plan' => 'Research Implementation Plan',
+    'doc_request_money' => 'Request for Approval to Withdraw Money for Research Support',
+    'doc_budget_plan' => 'Research Budget Plan',
+    'doc_agreement' => 'Research Grant Agreement',
+    'doc_certificate' => 'Certificate of Utilization of Research or Creative Work',
+    'doc_attachment' => 'Attachments to the Research Fund Agreement',
+    'doc_evaluation' => 'Evaluation Form after Completion of Each Project',
+    'legal_aid_office' => 'Legal Aid Office',
+    'legal_knowledge' => 'Legal Knowledge',
+    'legal_articles' => 'Legal Articles',
+    'utilization_2561' => 'Utilization in 2018',
+    'cert_utilization_2561_1' => 'Certificate of Utilization of Research or Creative Work',
+    'research_cert_2561_1' => 'Research Result Certificate No. 1',
+    'research_cert_2561_2' => 'Research Result Certificate No. 2',
+    'utilization_2563' => 'Utilization in 2020',
+    'research_cert_2563_1' => 'Research Result Certificate No. 1',
+    'research_cert_2563_2' => 'Research Result Certificate No. 2',
+    'research_cert_2563_3' => 'Research Result Certificate No. 3',
+    'research_cert_2563_4' => 'Research Result Certificate No. 4',
 ];
 
 
