@@ -12,9 +12,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: 'Noto Sans', 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Noto Sans Thai", 'Noto Color Emoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+  --heading-font: "Noto Sans Thai",  sans-serif;
+  --nav-font: "Noto Sans Thai",  sans-serif;
   
 }
 
@@ -62,7 +62,7 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
-  color: var(--default-color);
+  color:#000000;
   background-color: var(--background-color);
   font-family: var(--default-font);
 }

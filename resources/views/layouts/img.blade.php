@@ -18,9 +18,9 @@
 
         <!-- ข้อความตรงกลางรูป -->
         <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
-            <h1 class="display-3 mb-1 text-shadow">คณะนิติศาสตร์</h1>
-            <h2 class="text-shadow">มหาวิทยาลัยราชภัฎรำไพพรรณี</h2>
-            <p class="text-shadow">นิติล้ำเลิศ ก่อเกิดบัณฑิต มีจิตคุณธรรม</p>
+            <h1 class="display-3 mb-1 text-shadow">{{ __('index.faculty_name') }}</h1>
+            <h2 class="text-shadow">{{ __('index.university_name') }}</h2>
+            <p class="text-shadow">{{ __('index.motto') }}</p>
         </div>
 
         <!-- Breadcrumb ทับอยู่ล่างรูป -->

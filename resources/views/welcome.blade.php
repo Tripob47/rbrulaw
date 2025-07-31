@@ -132,8 +132,8 @@
 
         <div>
             <section id="about" class="py-5" style="background-color:#CACACA; width: 100%;">
-                <!-- Nav Tabs -->
                 <div class="container">
+                    <!-- Nav Tabs -->
                     <ul class="nav nav-tabs fs-5 gap-3 mb-3" id="newsTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="activities-tab" data-bs-toggle="tab"
@@ -165,20 +165,19 @@
 
                     <!-- Tab Contents -->
                     <div class="tab-content" id="newsTabContent">
+
                         <!-- กิจกรรม -->
                         <div class="tab-pane fade show active" id="activities" role="tabpanel"
-                            aria-labelledby="activities-tab" tabindex="0">
+                            aria-labelledby="activities-tab">
                             <div class="row">
                                 @for ($i = 0; $i < 6; $i++)
                                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
                                         data-aos-delay="100">
-                                        <div class="course-item">
-                                            <img src="{{ asset('template/assets/img/course-1.jpg') }}" class="img-fluid"
-                                                alt="">
-                                            <div class="course-content">
-                                                <h3><a href="#">กิจกรรม {{ $i + 1 }}</a></h3>
-                                                <p>รายละเอียดกิจกรรมที่ {{ $i + 1 }} ที่น่าสนใจ
-                                                    และเกี่ยวข้องกับนักศึกษา.</p>
+                                        <div class="card shadow-sm border-0 w-100 h-100">
+                                            <img src="{{ asset('template/assets/img/course-1.jpg') }}"
+                                                class="card-img-top img-fluid" alt="">
+                                            <div class="card-body text-start">
+                                                <h5 class="card-title mb-0">กิจกรรม {{ $i + 1 }}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -187,18 +186,16 @@
                         </div>
 
                         <!-- สัมมนา -->
-                        <div class="tab-pane fade" id="seminar" role="tabpanel" aria-labelledby="seminar-tab"
-                            tabindex="0">
+                        <div class="tab-pane fade" id="seminar" role="tabpanel" aria-labelledby="seminar-tab">
                             <div class="row">
                                 @for ($i = 0; $i < 4; $i++)
                                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
                                         data-aos-delay="100">
-                                        <div class="course-item">
-                                            <img src="{{ asset('template/assets/img/course-2.jpg') }}" class="img-fluid"
-                                                alt="">
-                                            <div class="course-content">
-                                                <h3><a href="#">สัมมนา {{ $i + 1 }}</a></h3>
-                                                <p>รายละเอียดสัมมนาที่น่าสนใจ เช่น กฎหมายหรือการพัฒนาวิชาชีพ.</p>
+                                        <div class="card shadow-sm border-0 w-100 h-100">
+                                            <img src="{{ asset('template/assets/img/course-2.jpg') }}"
+                                                class="card-img-top img-fluid" alt="">
+                                            <div class="card-body text-start">
+                                                <h5 class="card-title mb-0">สัมมนา {{ $i + 1 }}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -207,19 +204,16 @@
                         </div>
 
                         <!-- รับสมัครงาน -->
-                        <div class="tab-pane fade" id="job" role="tabpanel" aria-labelledby="job-tab"
-                            tabindex="0">
+                        <div class="tab-pane fade" id="job" role="tabpanel" aria-labelledby="job-tab">
                             <div class="row">
                                 @for ($i = 0; $i < 3; $i++)
                                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
                                         data-aos-delay="100">
-                                        <div class="course-item">
-                                            <img src="{{ asset('template/assets/img/course-3.jpg') }}" class="img-fluid"
-                                                alt="">
-                                            <div class="course-content">
-                                                <h3><a href="#">รับสมัครงาน {{ $i + 1 }}</a></h3>
-                                                <p>ประกาศรับสมัครงานในสายกฎหมาย หรืองานราชการต่างๆ.</p>
-
+                                        <div class="card shadow-sm border-0 w-100 h-100">
+                                            <img src="{{ asset('template/assets/img/course-3.jpg') }}"
+                                                class="card-img-top img-fluid" alt="">
+                                            <div class="card-body text-start">
+                                                <h5 class="card-title mb-0">รับสมัครงาน {{ $i + 1 }}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -228,28 +222,29 @@
                         </div>
 
                         <!-- จัดซื้อจัดจ้าง -->
-                        <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab"
-                            tabindex="0">
+                        <div class="tab-pane fade" id="procurement" role="tabpanel" aria-labelledby="procurement-tab">
                             <div class="row">
                                 @for ($i = 0; $i < 2; $i++)
                                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
                                         data-aos-delay="100">
-                                        <div class="course-item">
-                                            <img src="{{ asset('template/assets/img/course-4.jpg') }}" class="img-fluid"
-                                                alt="">
-                                            <div class="course-content">
-                                                <h3><a href="#">จัดซื้อจัดจ้าง {{ $i + 1 }}</a></h3>
-                                                <p>ประกาศจัดซื้อจัดจ้างจากหน่วยงานคณะนิติศาสตร์.</p>
-                                               
+                                        <div class="card shadow-sm border-0 w-100 h-100">
+                                            <img src="{{ asset('template/assets/img/course-4.jpg') }}"
+                                                class="card-img-top img-fluid" alt="">
+                                            <div class="card-body text-start">
+                                                <h5 class="card-title mb-0">จัดซื้อจัดจ้าง {{ $i + 1 }}</h5>
                                             </div>
                                         </div>
                                     </div>
                                 @endfor
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
+
+
+
 
             <!-- Trainers -->
             <section id="trainers-index" class="section trainers-index mt-4">

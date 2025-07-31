@@ -1,4 +1,4 @@
-@extends('layouts.masterlayout')
+{{-- @extends('layouts.masterlayout')
 
 @section('title', 'news')
 
@@ -34,4 +34,4 @@
         @endforelse
     </div>
 </section>
-@endsection
+@endsection --}}

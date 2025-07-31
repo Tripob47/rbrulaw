@@ -18,6 +18,16 @@ Route::get('/our', function () {
 Route::get('/qa', function () {
     return view('pages.qa');
 });
+Route::get('/academic', function () {
+    return view('pages.academic');
+});
+
+Route::get('/alumni', function () {
+    return view('pages.alumni');
+});
+Route::get('/alumni2', function () {
+    return view('pages.alumni2');
+});
 
 Route::get('lang/{locale}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 

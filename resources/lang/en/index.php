@@ -212,6 +212,51 @@ return [
     'student_activity_plan_2562' => 'Student Activity Development Plan Academic Year 2019',
     'student_activity_plan_2563' => 'Student Activity Development Plan Academic Year 2020',
 
+    'academics' => 'Academic Affairs',
+    'course_opening' => 'Class Opening',
+    'course_opening_process' => 'Class Opening Request Process',
+    'course_opening_form' => 'Class Opening Request Form',
+
+    'credit_transfer' => 'Credit Transfer',
+    'credit_transfer_rules' => '1. Credit Transfer Regulations and Announcements',
+    'regulation_2553' => 'Undergraduate Credit Transfer Regulation 2010',
+    'regulation_2561' => 'Undergraduate Credit Transfer Regulation 2018',
+    'regulation_2562' => 'Undergraduate Credit Transfer Regulation (2nd Edition) 2019',
+    'regulation_2563' => 'Undergraduate Credit Transfer Regulation (3rd Edition) 2020',
+    'regulation_2564' => 'Undergraduate Credit Transfer Regulation (4th Edition) 2021',
+    'announcement_2553' => 'Announcement on Undergraduate Credit Transfer Criteria 2010',
+    'announcement_2561' => 'Announcement on Undergraduate Credit Transfer Criteria 2018',
+
+    'credit_transfer_process' => '2. Credit Transfer Process and Forms',
+    'credit_transfer_step' => 'Steps to Transfer Academic Credits',
+    'credit_transfer_form' => 'Academic Credit Transfer Request Form',
+
+    'grade_i_correction' => 'Grade I Correction',
+    'grade_i_step' => 'Steps to Submit Grade I Correction',
+    'grade_i_guide' => 'Guide to Writing Grade I Correction Request',
+    'grade_i_form' => 'Grade I Correction Request Form',
+
+    'downloads' => 'Faculty of Law Downloadable Documents',
+    'room_request_form' => 'Request Form for Shared Classroom Usage',
+
+    'alumnis' => 'Alumni - Faculty of Law',
+    'alumni_document' => 'Document',
+    'alumni_employment_survey' => 'Graduate Employment Survey Form',
+
+    'p' => 'Regular session',
+    'p2' => 'Special Region',
+     'b' => 'Please select the entrance year of the alumni.',
+     'b2' => 'Select model',
+     'o' => 'Bachelor of Laws Program',
+     '' => '',
+     'thesis' => 'Thesis',
+    'independent_study' => 'Independent Study',
+    'alumni_directory' => 'Alumni Directory',
+    'employment_survey' => 'Graduate Employment Survey',
+    'news_system' => 'News System',
+    'gallery_system' => 'Gallery System',
+
+    'motto' => 'Knowledge and Morality Bring Justice to Local Community',
 ];
 
 
