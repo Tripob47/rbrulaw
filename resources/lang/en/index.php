@@ -300,6 +300,10 @@ return [
     'research_cert_2563_2' => 'Research Result Certificate No. 2',
     'research_cert_2563_3' => 'Research Result Certificate No. 3',
     'research_cert_2563_4' => 'Research Result Certificate No. 4',
+
+    'master' => 'master',
+    'bachelor' => 'bachelor',
 ];
+
 
 
