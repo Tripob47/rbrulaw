@@ -252,7 +252,7 @@
                     <div class="row d-flex flex-row"> <!-- แนวนอนตลอด -->
 
                         <!-- ซ้าย: Carousel -->
-                        <div class="col-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-sm-12 col-lg-6" data-aos="fade-up" data-aos-delay="300">
                             <h1 class="mb-4">{{ __('index.activities') }}</h1>
                             <div id="carouselExample" class="carousel slide w-100" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
@@ -296,7 +296,7 @@
                         </div>
 
                         <!-- ขวา: MOU -->
-                        <div class="col-6 " data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-sm-12 col-lg-6" data-aos="fade-up" data-aos-delay="300">
                             <h1 class="mb-3">{{ __('index.Cooperate') }}</h1>
                             <ul class="list-unstyled mou-list">
                                 <li>
