@@ -1941,6 +1941,22 @@ section,
     /* ลบหรือคอมเมนต์ background-color: black; ออก */
 }
 
+.sticky-nav {
+    position: sticky;
+    top: 8rem;
+    align-self: flex-start;
+    color: gold ;
+}
+.sticky-nav :hover{
+  color: gold;
+  background-color: var(--nav-dropdown-color  );
+}
+
+.card-img-top{
+  object-fit: cover;
+  object-position: center;
+}
+
 
 
 
