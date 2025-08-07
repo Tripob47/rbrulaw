@@ -308,12 +308,14 @@
                                                             style="width: 14rem; height: auto;">
                                                         <div class="card-body d-flex flex-column">
                                                             <h5 class="card-title text-center">
-                                                                {{ __('index.' . $person['key'] . '.name') }}</h5>
+                                                                {{ __('index.' . $person['key'] . '.name') }}
+                                                            </h5>
                                                             <p class="card-text mb-1">
                                                                 <strong>{{ __('index.position') }}:</strong>
                                                                 {{ __('index.' . $person['key'] . '.position') }}
                                                             </p>
-                                                            <p class="card-text mb-1"><strong>E-Mail:</strong>
+                                                            <p class="card-text mb-1">
+                                                                <strong>E-Mail:</strong>
                                                                 @if ($person['email'] !== '-')
                                                                     <a
                                                                         href="mailto:{{ $person['email'] }}">{{ $person['email'] }}</a>
@@ -331,22 +333,19 @@
                                                                 @endforeach
                                                             </ul>
 
-                                                            @if ($person['key'] === 'hr_6')
-                                                                <div class="mt-auto d-flex gap-2">
-                                                                    <a href="#" class="btn btn-primary">Research</a>
-                                                                    <a href="#"
-                                                                        class="btn btn-secondary">Contract</a>
-                                                                </div>
-                                                            @else
-                                                                <p class="card-text mt-auto"><strong>Research
-                                                                        Contract</strong></p>
-                                                            @endif
+                                                            {{-- ปุ่ม Research Contract --}}
+                                                            <p class="card-text text-center mt-auto">
+                                                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                                                    {{ __('index.research_contract') }}
+                                                                </a>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             @endforeach
                                         </div>
                                     </div>
+
 
 
 
