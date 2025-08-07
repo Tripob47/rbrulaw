@@ -303,6 +303,277 @@ return [
 
     'master' => 'master',
     'bachelor' => 'bachelor',
+
+    'management_structure' => 'Management Structure',
+    'lecturers' => 'Lecturers of Faculty of Law',
+    'llb_responsible' => 'Lecturers Responsible for Bachelor of Laws Program',
+    'llm_responsible' => 'Lecturers Responsible for Master of Laws Program',
+    'support_staff' => 'Support Staff',
+
+    'dean_name' => 'Asst. Prof. Trapsasit Kerdinmongkol',
+    'dean_position' => 'Dean of Faculty of Law',
+    'dean_degree_1' => 'Master of Laws (LL.M.), Ramkhamhaeng University',
+    'dean_degree_2' => 'Bachelor of Laws (LL.B.), Sukhothai Thammathirat Open University',
+
+     'position' => 'Position',
+    'education' => 'Education',
+
+    'hr_1' => [
+        'name' => 'Asst. Prof. Kulpranee Kulwithit',
+        'position' => 'Associate Dean for Administration and Student Affairs',
+        'degrees' => [
+            'LL.B., Rambhai Barni Rajabhat University',
+            'LL.M. in Public Law, Sripatum University',
+        ],
+    ],
+
+    'hr_2' => [
+        'name' => 'Lecturer Chayananpha Lamaiwong',
+        'position' => 'Associate Dean for Academic Services',
+        'degrees' => [
+            'LL.B. (Second Class Honors), Thammasat University',
+            'LL.M. in Business Law (English Program), Thammasat University',
+            'Thai Bar Association Certificate, Institute of Legal Education',
+        ],
+    ],
+
+    'hr_3' => [
+        'name' => 'Dr. Wisitsak Nuengnong',
+        'position' => 'Assistant Dean for Policy and Planning',
+        'degrees' => [
+            'LL.B., Rambhai Barni Rajabhat University',
+            'LL.M. in Public Law, Sripatum University',
+            'Ph.D. in Law, Dr. Babasaheb Ambedkar Marathwada University, India',
+        ],
+    ],
+
+    'hr_4' => [
+        'name' => 'Dr. Thatsanee Ngonsuk',
+        'position' => 'Assistant Dean for Academic Affairs and Quality Assurance',
+        'degrees' => [
+            'LL.B., Ramkhamhaeng University',
+            'LL.M. in Public Law, Ramkhamhaeng University',
+            'Ph.D. in Educational Technology, KMITL',
+        ],
+    ],
+
+    'hr_5' => [
+        'name' => 'Lecturer Athidtaya Phoksut',
+        'position' => 'Assistant Dean for Research',
+        'degrees' => [
+            'LL.B., Rangsit University',
+            'LL.M. in Public Law, Rangsit University',
+        ],
+    ],
+
+    'hr_6' => [
+        'name' => 'Dr. Phuwadol Damsanit',
+        'position' => 'Assistant Dean for Arts and Culture',
+        'degrees' => [
+            'LL.B., University of the Thai Chamber of Commerce',
+            'LL.M. in Public Law, Tapee University',
+            'LL.D., Pathumthani University',
+        ],
+    ],
+
+    'position' => 'Position',
+    'education' => 'Education',
+    'research_contract' => 'Research Contract',
+    'hr_instructor_1' => [
+        'name' => 'Assistant Professor Thitirat Itthimeechai',
+        'position' => 'Bachelor of Laws Program Chair',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Thammasat University',
+            'Master of Laws (LL.M.) in Development Law, Ramkhamhaeng University',
+            'Barrister-at-Law, The Institute of Legal Education of the Thai Bar Association',
+        ],
+    ],
+    'hr_instructor_2' => [
+        'name' => 'Dr. Thatsanee Ngernsuk',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Ramkhamhaeng University',
+            'Master of Laws (LL.M.) in Public Law, Ramkhamhaeng University',
+            'Doctor of Industrial Education (Educational Technology), King Mongkut\'s Institute of Technology',
+        ],
+    ],
+    'hr_instructor_3' => [
+        'name' => 'Chayanapha Lamyong',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Second Class Honors, Thammasat University',
+            'Master of Laws (LL.M.) in Business Law (English Program), Thammasat University',
+            'Barrister-at-Law, The Institute of Legal Education of the Thai Bar Association',
+        ],
+    ],
+    'hr_instructor_4' => [
+        'name' => 'Assistant Professor Chinakarn Saengamnat',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Ramkhamhaeng University',
+            'Master of Laws (LL.M.) in International Law, Ramkhamhaeng University',
+        ],
+    ],
+    'hr_instructor_5' => [
+        'name' => 'Assistant Professor Kulpranee Kulwithit',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Rambhai Barni Rajabhat University',
+            'Master of Laws (LL.M.), Sripatum University',
+        ],
+    ],
+    'position' => 'Position',
+    'education' => 'Education',
+    'research_contract' => 'Research Contract',
+    'hr_instructor2_1' => [
+        'name' => 'Dr. Wisitsak Nuengnong',
+        'position' => 'Master of Laws Program Chair',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Rambhai Barni Rajabhat University',
+            'Master of Laws (LL.M.) in Public Law, Sripatum University',
+            'Ph.D Law, Dr. Babasaheb Ambedkar Marathwada University, India',
+        ],
+    ],
+    'hr_instructor2_2' => [
+        'name' => 'Dr. Phuwadon Damsanit',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), University of the Thai Chamber of Commerce',
+            'Master of Laws (LL.M.) in Public Law, Tapi University',
+            'Doctor of Laws (LL.D.), Pathumthani University',
+        ],
+    ],
+    'hr_instructor2_3' => [
+        'name' => 'Arthitaya Phoksut',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Rangsit University',
+            'Master of Laws (LL.M.) in Public Law, Rangsit University',
+        ],
+    ],
+
+     'position' => 'Position',
+    'education' => 'Education',
+    'research_contract' => 'Research Contract',
+    'hr_staff_1' => [
+        'name' => 'Miss Pakphorn Saehan',
+        'position' => 'Acting Head of Dean Office, Faculty of Law',
+        'degrees' => [
+            'Bachelor of Arts (B.A.) in General Management of Human Resources, Rambhai Barni Rajabhat Institute',
+        ],
+    ],
+    'hr_staff_2' => [
+        'name' => 'Mrs. Kanchalak Phonkrat',
+        'position' => 'General Administrative Officer',
+        'degrees' => [
+            'Bachelor of Arts (B.A.) in Business Administration (Accounting), Rambhai Barni Rajabhat Institute',
+        ],
+    ],
+    'hr_staff_3' => [
+        'name' => 'Miss Piyatida Thipjinda',
+        'position' => 'General Administrative Officer',
+        'degrees' => [
+            'Bachelor of Arts (B.A.) in Community Development, Rambhai Barni Rajabhat University',
+        ],
+    ],
+    'hr_staff_4' => [
+        'name' => 'Miss Chaveewan Rattanamit',
+        'position' => 'Librarian',
+        'degrees' => [
+            'Library Science, Rambhai Barni College',
+        ],
+    ],
+
+    'position' => 'Position',
+    'education' => 'Education',
+    'research_contract' => 'Research Contract',
+
+    'hr_instructor_1' => [
+        'name' => 'Assistant Professor Pannarath Sothornprapakorn',
+        'position' => 'Assistant Professor',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramkhamhaeng University',
+            'Master of Public Administration (MPA) Public Management Kasem Bundit University',
+            'Master of Laws (LL.M.) Public Law Ramkhamhaeng University',
+        ],
+    ],
+    'hr_instructor_2' => [
+        'name' => 'Assistant Professor Thitirut Itthimeechai',
+        'position' => 'Bachelor of Laws Program Chair',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Thammasat University',
+            'Master of Laws (LL.M.) Law for Development Ramkhamhaeng University',
+            'Barrister-at-Law (N.B.T.) Institute of Legal Education of the Thai Bar Association',
+        ],
+    ],
+    'hr_instructor_3' => [
+        'name' => 'Assistant Professor Chinakan Saeng-Amnat',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramkhamhaeng University',
+            'Master of Laws (LL.M.) International Law Ramkhamhaeng University',
+        ],
+    ],
+    'hr_instructor_4' => [
+        'name' => 'Assistant Professor Kulpranee Kulwitit',
+        'position' => 'Deputy Dean for Administration and Academic Services',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramphai Phanni Rajabhat University',
+            'Master of Laws (LL.M.) Public Law Sripatum University',
+        ],
+    ],
+    'hr_instructor_5' => [
+        'name' => 'Dr. Wisitsak Nuangnong',
+        'position' => 'Assistant Dean for Planning and Arts & Culture',
+        'degrees' => [
+            'Bachelor of Laws 2010',
+            'Master of Laws 2012',
+            'Doctor of Laws 2017',
+        ],
+    ],
+    'hr_instructor_6' => [
+        'name' => 'Dr. Thatsanee Nguensuk',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramkhamhaeng University',
+            'Master of Laws (LL.M.) Public Law Ramkhamhaeng University',
+            'Doctor of Industrial Education (Educational Technology) King Mongkut’s Institute of Technology Ladkrabang',
+        ],
+    ],
+    'hr_instructor_7' => [
+        'name' => 'Dr. Phuwadol Damsanit',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) University of the Thai Chamber of Commerce',
+            'Master of Laws (LL.M.) Public Law Tapi University',
+            'Doctor of Laws Patumthani University',
+        ],
+    ],
+    'hr_instructor_8' => [
+        'name' => 'Instructor Songporn Praman',
+        'position' => 'Instructor',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramkhamhaeng University',
+            'Master of Laws (LL.M.) International Law Ramkhamhaeng University',
+        ],
+    ],
+    'hr_instructor_9' => [
+        'name' => 'Instructor Athitaya Phoksut',
+        'position' => 'Assistant Dean for Research and Development',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Rangsit University',
+            'Master of Laws (LL.M.) Public Law Rangsit University',
+        ],
+    ],
+    'hr_instructor_10' => [
+        'name' => 'Instructor Chayanapha Lamaiwong',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Second Class Honors Thammasat University',
+            'Master of Laws (LL.M.) Business Law (English Program) Thammasat University',
+            'Barrister-at-Law (N.B.T.) Institute of Legal Education of the Thai Bar Association',
+        ],
+    ],
 ];
 
 
