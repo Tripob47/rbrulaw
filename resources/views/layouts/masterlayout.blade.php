@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
 
 
-
     <!-- อื่น ๆ เช่น Bootstrap, app.css -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -168,6 +167,8 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+
 
 
 

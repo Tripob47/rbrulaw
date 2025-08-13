@@ -1957,6 +1957,22 @@ section,
   object-position: center;
 }
 
+/* ซ่อนเมนูเริ่มต้นในมือถือ */
+.navmenu {
+    display: none;
+}
+
+/* แสดงเมนูเมื่อกดปุ่ม */
+.navmenu.navmenu-active {
+    display: block;
+}
+
+/* ตัวอย่างการทำให้เมนูซ้อนลงมา */
+@media (min-width: 1200px) {
+    .navmenu {
+        display: block !important;
+    }
+}
 
 
 

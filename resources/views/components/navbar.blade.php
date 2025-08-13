@@ -12,35 +12,55 @@
         </div>
 
         <!-- เมนูหลัก -->
-        <nav id="navmenu" class="navmenu">
-            <ul>
-                <li><a href="/about">{{ __('index.about') }}</a></li>
-                <li><a href="/our"> {{ __('index.curriculum') }}</a></li>
-                <li><a href="/qa">{{ __('index.qa') }}</a></li>
-                <li><a href="/aeasearch">{{ __('index.research') }}</a></li>
-                <li><a href="/academic">{{ __('index.academic') }}</a></li>
-                <li class="dropdown">
-                    <a href="#"><span>{{ __('index.alumni') }}</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="/alumni2">{{ __('index.alumni_directory') }}</a></li>
-                        <li><a href="/alumni">{{ __('index.employment_survey') }}</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a
-                        href="https://www.law.rbru.ac.th/hotline/index.php?lang=th&ac=Dean_hotline">{{ __('index.dean') }}</a>
-                </li>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #565656;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-                <li class="dropdown">
-                    <a href="#"><span>{{ __('index.ad') }}</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="https://news.rbru.ac.th/">{{ __('index.news_system') }}</a></li>
-                        <li><a href="https://news.rbru.ac.th/">{{ __('index.gallery_system') }}</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link text-white" href="/about">{{ __('index.about') }}</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/our">{{ __('index.curriculum') }}</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/qa">{{ __('index.qa') }}</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/aeasearch">{{ __('index.research') }}</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/academic">{{ __('index.academic') }}</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="alumniDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ __('index.alumni') }}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/alumni2">{{ __('index.alumni_directory') }}</a></li>
+                    <li><a class="dropdown-item" href="/alumni">{{ __('index.employment_survey') }}</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white"
+                    href="https://www.law.rbru.ac.th/hotline/index.php?lang=th&ac=Dean_hotline">
+                    {{ __('index.dean') }}
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="adDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ __('index.ad') }}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item"
+                            href="https://news.rbru.ac.th/">{{ __('index.news_system') }}</a></li>
+                    <li><a class="dropdown-item"
+                            href="https://news.rbru.ac.th/">{{ __('index.gallery_system') }}</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
     </div>
     <!-- ปุ่มสลับภาษา -->
     <style>
