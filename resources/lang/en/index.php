@@ -574,6 +574,11 @@ return [
             'Barrister-at-Law (N.B.T.) Institute of Legal Education of the Thai Bar Association',
         ],
     ],
+    
+
+    'tp' => 'Article/Research',
+    'pt' => 'Electronic Thesis Database System',
+    'po' => 'Electronic Research Database System',
 ];
 
 

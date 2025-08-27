@@ -979,7 +979,6 @@
                                     <div class="card-body">
                                         <p>{{ __('index.university_name') }}</p>
                                         <p>{{ __('index.address_th') }}</p>
-                                        <p>{{ __('index.address_en') }}</p>
                                     </div>
                                 </div>
                             </div>

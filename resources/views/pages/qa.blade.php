@@ -41,8 +41,8 @@
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="evaluation-tab" data-bs-toggle="tab" data-bs-target="#evaluation" type="button"
-                        role="tab" aria-controls="evaluation" aria-selected="false">
+                    <button class="nav-link" id="evaluation-tab" data-bs-toggle="tab" data-bs-target="#evaluation"
+                        type="button" role="tab" aria-controls="evaluation" aria-selected="false">
                         {{ __('index.evaluation') }}
                     </button>
                 </li>
@@ -66,17 +66,26 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
-                                        <a href="#">{{ __('index.qa_manual_2549') }}</a>
+                                        <a href="{{ asset('template/assets/document_rule/law_menu/menu_2559.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.qa_manual_2549') }}
+                                        </a>
                                     </li>
                                     <li class="list-group-item">
                                         <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
-                                        <a href="#">{{ __('index.qa_manual_2560') }}</a>
+                                        <a href="{{ asset('template/assets/document_rule/law_menu/menu_2560.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.qa_manual_2560') }}
+                                        </a>
                                     </li>
                                     <li class="list-group-item">
                                         <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
-                                        <a href="#">{{ __('index.qa_manual_2561') }}</a>
+                                        <a href="{{ asset('template/assets/sar61/qa/QA2561.pdf') }}" target="_blank">
+                                            {{ __('index.qa_manual_2561') }}
+                                        </a>
                                     </li>
                                 </ul>
+
                             </div>
                         </div>
 
@@ -88,24 +97,61 @@
                                 </div>
                                 <div class="card-body">
                                     <h5><i class="bi bi-file-earmark-text me-1"></i> {{ __('index.sar_reports') }}</h5>
+
+                                    @php
+                                        $links = [
+                                            2557 => 'template/assets/sar62/fac/report01_57.doc',
+                                            2558 => 'template/assets/sar62/fac/sar01_58.doc',
+                                            2559 => 'template/assets/sar62/fac/report01_59.doc',
+                                            2560 => 'template/assets/sar62/fac/report01_60.doc',
+                                            2561 => 'template/assets/sar62/fac/report01_61_1_final.pdf',
+                                            2562 => 'template/assets/sar62/fac/report01_62_edit.pdf',
+                                        ];
+                                    @endphp
+
                                     <ul class="list-unstyled ms-3">
                                         @for ($year = 2557; $year <= 2562; $year++)
-                                            <li>
-                                                <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
-                                                <a href="#">{{ __('index.academic_year_'.$year) }}</a>
+                                            <li class="mb-1">
+                                                <i
+                                                    class="bi 
+                @if (Str::endsWith($links[$year], '.pdf')) bi-file-earmark-pdf-fill text-danger 
+                @else bi-file-earmark-word-fill text-primary @endif me-2"></i>
+                                                <a href="{{ asset($links[$year]) }}" target="_blank">
+                                                    {{ __('index.academic_year_' . $year) }}
+                                                </a>
                                             </li>
                                         @endfor
                                     </ul>
 
-                                    <h5 class="mt-3"><i class="bi bi-bar-chart-fill me-1"></i> {{ __('index.evaluation_reports') }}</h5>
+
+
+
+                                    <h5 class="mt-3"><i class="bi bi-bar-chart-fill me-1"></i>
+                                        {{ __('index.evaluation_reports') }}
+                                    </h5>
+
+                                    @php
+                                        $links = [
+                                            2557 => 'template/assets/sar62/fac/report02_57.pdf',
+                                            2558 => 'template/assets/sar62/fac/report01_58.pdf',
+                                            2559 => 'template/assets/sar62/fac/report02_59.pdf',
+                                            2560 => 'template/assets/sar62/fac/report02_60.pdf',
+                                            2561 => 'template/assets/sar62/program/1.pdf',
+                                            2562 => 'template/assets/sar62/program/62.pdf',
+                                        ];
+                                    @endphp
+
                                     <ul class="list-unstyled ms-3">
                                         @for ($year = 2557; $year <= 2562; $year++)
-                                            <li>
+                                            <li class="mb-1">
                                                 <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
-                                                <a href="#">{{ __('index.academic_year_'.$year) }}</a>
+                                                <a href="{{ asset($links[$year]) }}" target="_blank">
+                                                    {{ __('index.academic_year_' . $year) }}
+                                                </a>
                                             </li>
                                         @endfor
                                     </ul>
+
                                 </div>
                             </div>
                         </div>
@@ -118,24 +164,60 @@
                                 </div>
                                 <div class="card-body">
                                     <h5><i class="bi bi-file-earmark-text me-1"></i> {{ __('index.sar_reports') }}</h5>
+
+                                    @php
+                                        $links = [
+                                            2557 => 'template/assets/sar62/program/report01_57.pdf',
+                                            2558 => 'template/assets/sar62/program/sar01_58.pdf',
+                                            2559 => 'template/assets/sar62/program/report01_59.pdf',
+                                            2560 => 'template/assets/sar62/program/60_sar.pdf',
+                                            2561 => 'template/assets/sar62/program/sar61_final.pdf',
+                                            2562 => 'template/assets/sar62/program/61_sar.pdf',
+                                            2563 => 'template/assets/sar62/program/63_sar.pdf',
+                                        ];
+                                    @endphp
+
                                     <ul class="list-unstyled ms-3">
                                         @for ($year = 2557; $year <= 2563; $year++)
-                                            <li>
+                                            <li class="mb-1">
                                                 <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
-                                                <a href="#">{{ __('index.academic_year_'.$year) }}</a>
+                                                <a href="{{ asset($links[$year]) }}" target="_blank">
+                                                    {{ __('index.academic_year_' . $year) }}
+                                                </a>
                                             </li>
                                         @endfor
                                     </ul>
 
-                                    <h5 class="mt-3"><i class="bi bi-bar-chart-fill me-1"></i> {{ __('index.evaluation_reports') }}</h5>
+
+
+                                    <h5 class="mt-3"><i class="bi bi-bar-chart-fill me-1"></i>
+                                        {{ __('index.evaluation_reports') }}
+                                    </h5>
+
+                                    @php
+                                        $links = [
+                                            2557 => 'template/assets/sar62/fac/report02_57.pdf',
+                                            2558 => 'template/assets/sar62/program/report01_58.pdf',
+                                            2559 => 'template/assets/sar62/program/report01_59.pdf',
+                                            2560 => 'template/assets/sar62/program/report01_60.pdf',
+                                            2561 => 'template/assets/sar62/program/report02_1.pdf',
+                                            2562 => 'template/assets/sar62/program/report03_1.pdf',
+                                            2563 => 'template/assets/sar62/program/report03_2.pdf',
+                                        ];
+                                    @endphp
+
                                     <ul class="list-unstyled ms-3">
                                         @for ($year = 2557; $year <= 2563; $year++)
-                                            <li>
+                                            <li class="mb-1">
                                                 <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
-                                                <a href="#">{{ __('index.academic_year_'.$year) }}</a>
+                                                <a href="{{ asset($links[$year]) }}" target="_blank">
+                                                    {{ __('index.academic_year_' . $year) }}
+                                                </a>
                                             </li>
                                         @endfor
                                     </ul>
+
+
                                 </div>
                             </div>
                         </div>
@@ -155,11 +237,36 @@
                                     <i class="bi bi-list-check me-2"></i> {{ __('index.km_plan_title') }}
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><a href="#">{{ __('index.km_plan_2564') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.km_plan_2563') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.km_plan_2562') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.km_plan_2560') }}</a></li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                        <a href="{{ asset('template/assets/qa62/qa62_8/qa62_8_4.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.km_plan_2564') }}
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                        <a href="{{ asset('template/assets/qa62/qa62_8/qa62_8_3.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.km_plan_2563') }}
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                        <a href="{{ asset('template/assets/qa62/qa62_8/qa62_8_1.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.km_plan_2562') }}
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                        <a href="{{ asset('template/assets/document_rule/law_km/reaction_km/km_60.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.km_plan_2560') }}
+                                        </a>
+                                    </li>
                                 </ul>
+
                             </div>
                         </div>
 
@@ -169,12 +276,37 @@
                                 <div class="card-header bg-warning text-dark">
                                     <i class="bi bi-bar-chart-line me-2"></i> {{ __('index.km_results_title') }}
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><a href="#">{{ __('index.km_results_2564') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.km_results_2563') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.km_results_2562') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.km_results_2561') }}</a></li>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                        <a href="{{ asset('template/assets/document_rule/law_km/reaction_km/re-_km_64.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.km_results_2564') }}
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                        <a href="{{ asset('template/assets/document_rule/law_km/reaction_km/re-_km_63.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.km_results_2563') }}
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                        <a href="{{ asset('template/assets/document_rule/law_km/reaction_km/re-_km_62.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.km_results_2562') }}
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                        <a href="{{ asset('template/assets/document_rule/law_km/reaction_km/re-_km_60.pdf') }}"
+                                            target="_blank">
+                                            {{ __('index.km_results_2561') }}
+                                        </a>
+                                    </li>
                                 </ul>
+
                             </div>
                         </div>
                     </div>
@@ -186,9 +318,24 @@
                                 <div class="card-header bg-secondary text-white">
                                     <i class="bi bi-flower1 me-2"></i> {{ __('index.research_title') }}
                                 </div>
+
+                                @php
+                                    $researchFiles = ['re01.pptx', 're02.pdf', 're03.pdf'];
+                                @endphp
+
                                 <ul class="list-group list-group-flush">
-                                    @foreach (__('index.research_items') as $item)
-                                        <li class="list-group-item"><a href="#">{{ $item }}</a></li>
+                                    @foreach (__('index.research_items') as $index => $item)
+                                        <li class="list-group-item">
+                                            <i
+                                                class="bi 
+                        @if (Str::endsWith($researchFiles[$index], '.pdf')) bi-file-earmark-pdf-fill text-danger
+                        @elseif(Str::endsWith($researchFiles[$index], '.pptx')) bi-file-earmark-powerpoint-fill text-warning
+                        @else bi-file-earmark-fill text-secondary @endif me-2"></i>
+                                            <a href="{{ asset('template/assets/document_rule/law_lean_park/' . $researchFiles[$index]) }}"
+                                                target="_blank">
+                                                {{ $item }}
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -200,13 +347,34 @@
                                 <div class="card-header bg-secondary text-white">
                                     <i class="bi bi-mortarboard-fill me-2"></i> {{ __('index.graduates_title') }}
                                 </div>
+
+                                @php
+                                    $graduateFiles = [
+                                        'pro01.pptx',
+                                        'pro02.pdf',
+                                        'แนวปฏิบัติที่ดีเรื่องการพัฒนาการเรียนการสอนในรูปแบบออนไลน์.pdf',
+                                        'แนวปฏิบัติที่ดีเรื่องผลลัพธ์การเรียนรู้ของหลักสูตร.pdf',
+                                    ];
+                                @endphp
+
                                 <ul class="list-group list-group-flush">
-                                    @foreach (__('index.graduates_items') as $item)
-                                        <li class="list-group-item"><a href="#">{{ $item }}</a></li>
+                                    @foreach (__('index.graduates_items') as $index => $item)
+                                        <li class="list-group-item">
+                                            <i
+                                                class="bi 
+                        @if (Str::endsWith($graduateFiles[$index], '.pdf')) bi-file-earmark-pdf-fill text-danger
+                        @elseif(Str::endsWith($graduateFiles[$index], '.pptx')) bi-file-earmark-powerpoint-fill text-warning
+                        @else bi-file-earmark-fill text-secondary @endif me-2"></i>
+                                            <a href="{{ asset('template/assets/document_rule/law_lean_park/' . $graduateFiles[$index]) }}"
+                                                target="_blank">
+                                                {{ $item }}
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                 </div> {{-- End KM Tab --}}
 
@@ -221,9 +389,28 @@
                                 <div class="card-header bg-info text-white">
                                     <i class="bi bi-clipboard-check me-2"></i> {{ __('index.strategic_plan_title') }}
                                 </div>
+
+                                @php
+                                    $strategicFiles = [
+                                        'strategic_57-61_01.pdf',
+                                        'strategic_57-61_02.pdf',
+                                        'strategic_57-61.pdf',
+                                        'strategic_60-64.pdf',
+                                        'qa62/qa62_2/qa62_2_1.pdf',
+                                        'strategic_60-64_2.pdf',
+                                        'strategic_60-64_3.pdf',
+                                    ];
+                                @endphp
+
                                 <ul class="list-group list-group-flush">
-                                    @for ($i = 1; $i <= 7; $i++)
-                                        <li class="list-group-item"><a href="#">{{ __('index.strategic_plan_'.$i) }}</a></li>
+                                    @for ($i = 0; $i < 7; $i++)
+                                        <li class="list-group-item">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                            <a href="{{ asset('template/assets/document_rule/law_strategic_plan/' . $strategicFiles[$i]) }}"
+                                                target="_blank">
+                                                {{ __('index.strategic_plan_' . ($i + 1)) }}
+                                            </a>
+                                        </li>
                                     @endfor
                                 </ul>
                             </div>
@@ -235,13 +422,34 @@
                                 <div class="card-header bg-info text-white">
                                     <i class="bi bi-kanban-fill me-2"></i> {{ __('index.operation_plan_title') }}
                                 </div>
+
+                                @php
+                                    $operationFiles = [
+                                        'actionplan_57.pdf',
+                                        'actionplan_58.pdf',
+                                        'actionplan_59.pdf',
+                                        'actionplan_60.pdf',
+                                        'actionplan_61.pdf',
+                                        'qa62/qa62_3/qa62_3_1.pdf',
+                                        'actionplan_63_3.pdf',
+                                        'actionplan_64_1.pdf',
+                                    ];
+                                @endphp
+
                                 <ul class="list-group list-group-flush">
-                                    @for ($i = 1; $i <= 8; $i++)
-                                        <li class="list-group-item"><a href="#">{{ __('index.operation_plan_'.$i) }}</a></li>
+                                    @for ($i = 0; $i < 8; $i++)
+                                        <li class="list-group-item">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                            <a href="{{ asset('template/assets/document_rule/law_action_plan/' . $operationFiles[$i]) }}"
+                                                target="_blank">
+                                                {{ __('index.operation_plan_' . ($i + 1)) }}
+                                            </a>
+                                        </li>
                                     @endfor
                                 </ul>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="row g-4 mt-4">
@@ -252,27 +460,63 @@
                                     <i class="bi bi-gear-wide-connected me-2"></i>
                                     {{ __('index.quality_development_plan') }} {{ __('index.faculty_level') }}
                                 </div>
+
+                                @php
+                                    $facultyFiles = [
+                                        2558 => 'quality_58.pdf',
+                                        2559 => 'quality_59.pdf',
+                                        2560 => 'quality_60.pdf',
+                                        2561 => 'quality_61.pdf',
+                                        2562 => 'quality_62.pdf',
+                                        2563 => 'quality_63.pdf',
+                                    ];
+                                @endphp
+
                                 <ul class="list-group list-group-flush">
                                     @for ($year = 2558; $year <= 2563; $year++)
-                                        <li class="list-group-item"><a href="#">{{ __('index.faculty_plan_'.$year) }}</a></li>
+                                        <li class="list-group-item">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                            <a href="{{ asset('template/assets/document_rule/law_quality/faculty/' . $facultyFiles[$year]) }}"
+                                                target="_blank">
+                                                {{ __('index.faculty_plan_' . $year) }}
+                                            </a>
+                                        </li>
                                     @endfor
                                 </ul>
                             </div>
                         </div>
-
+                        
                         <div class="col-md-6">
                             <div class="card shadow-sm h-100">
                                 <div class="card-header bg-success text-white">
                                     <i class="bi bi-gear-wide-connected me-2"></i>
                                     {{ __('index.quality_development_plan') }} {{ __('index.program_level') }}
                                 </div>
+
+                                @php
+                                    $programFiles = [
+                                        2558 => 'course_58.pdf',
+                                        2560 => 'course_60.pdf',
+                                        2561 => 'course_61.pdf',
+                                        2562 => 'course_62.pdf',
+                                        2563 => 'course_63.pdf',
+                                    ];
+                                @endphp
+
                                 <ul class="list-group list-group-flush">
-                                    @foreach (['2558', '2560', '2561', '2562', '2563'] as $year)
-                                        <li class="list-group-item"><a href="#">{{ __('index.program_plan_'.$year) }}</a></li>
+                                    @foreach ([2558, 2560, 2561, 2562, 2563] as $year)
+                                        <li class="list-group-item">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                            <a href="{{ asset('template/assets/document_rule/law_quality/course/' . $programFiles[$year]) }}"
+                                                target="_blank">
+                                                {{ __('index.program_plan_' . $year) }}
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="row g-4 mt-4">
@@ -283,8 +527,9 @@
                                     <i class="bi bi-people-fill me-2"></i> {{ __('index.personnel_development_plan') }}
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    @foreach (['2561','2562','2563','2564'] as $year)
-                                        <li class="list-group-item"><a href="#">{{ __('index.personnel_plan_'.$year) }}</a></li>
+                                    @foreach (['2561', '2562', '2563', '2564'] as $year)
+                                        <li class="list-group-item"><a
+                                                href="#">{{ __('index.personnel_plan_' . $year) }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -297,8 +542,9 @@
                                     <i class="bi bi-shield-fill-check me-2"></i> {{ __('index.risk_management_plan') }}
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    @foreach (['2561','2562','2563','2564'] as $year)
-                                        <li class="list-group-item"><a href="#">{{ __('index.risk_plan_'.$year) }}</a></li>
+                                    @foreach (['2561', '2562', '2563', '2564'] as $year)
+                                        <li class="list-group-item"><a
+                                                href="#">{{ __('index.risk_plan_' . $year) }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -313,10 +559,14 @@
                                     <i class="bi bi-cash-stack me-2"></i> {{ __('index.budget_plan') }}
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><a href="#">{{ __('index.budget_plan_2559') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.financial_strategy_2562') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.financial_strategy_2563') }}</a></li>
-                                    <li class="list-group-item"><a href="#">{{ __('index.financial_strategy_2564') }}</a></li>
+                                    <li class="list-group-item"><a href="#">{{ __('index.budget_plan_2559') }}</a>
+                                    </li>
+                                    <li class="list-group-item"><a
+                                            href="#">{{ __('index.financial_strategy_2562') }}</a></li>
+                                    <li class="list-group-item"><a
+                                            href="#">{{ __('index.financial_strategy_2563') }}</a></li>
+                                    <li class="list-group-item"><a
+                                            href="#">{{ __('index.financial_strategy_2564') }}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -328,8 +578,9 @@
                                     <i class="bi bi-building-check me-2"></i> {{ __('index.academic_service_plan') }}
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    @foreach (['2562','2563','2564'] as $year)
-                                        <li class="list-group-item"><a href="#">{{ __('index.academic_service_plan_'.$year) }}</a></li>
+                                    @foreach (['2562', '2563', '2564'] as $year)
+                                        <li class="list-group-item"><a
+                                                href="#">{{ __('index.academic_service_plan_' . $year) }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -351,7 +602,8 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     @foreach (['2557', '2558', '2559', '2560', '2561'] as $year)
-                                        <li class="list-group-item"><a href="#">{{ __('index.evaluation_'.$year) }}</a></li>
+                                        <li class="list-group-item"><a
+                                                href="#">{{ __('index.evaluation_' . $year) }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -365,7 +617,8 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     @foreach (['2558', '2559', '2560', '2561', '2562'] as $year)
-                                        <li class="list-group-item"><a href="#">{{ __('index.evaluation_'.$year) }}</a></li>
+                                        <li class="list-group-item"><a
+                                                href="#">{{ __('index.evaluation_' . $year) }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -379,7 +632,8 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     @foreach (['2560', '2561', '2562', '2563'] as $year)
-                                        <li class="list-group-item"><a href="#">{{ __('index.evaluation_plan_'.$year) }}</a></li>
+                                        <li class="list-group-item"><a
+                                                href="#">{{ __('index.evaluation_plan_' . $year) }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>

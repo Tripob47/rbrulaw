@@ -140,19 +140,22 @@
             <li class="nav-item"><a class="nav-link" href="/about">{{ __('index.about') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="/our">{{ __('index.curriculum') }}</a></li>
             <li class="nav-item"><a class="nav-link" href="/qa">{{ __('index.qa') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="/aeasearch">{{ __('index.research') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="/academic">{{ __('index.academic') }}</a></li>
-
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="alumniDropdown" role="button"
                  data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                {{ __('index.alumni') }}
+                {{ __('index.research') }}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="alumniDropdown">
-                <li><a class="dropdown-item" href="/alumni2">{{ __('index.alumni_directory') }}</a></li>
-                <li><a class="dropdown-item" href="/alumni">{{ __('index.employment_survey') }}</a></li>
+                <li><a class="dropdown-item" href="/aeasearch">{{ __('index.research') }}</a></li>
+                <li><a class="dropdown-item" href="/alumni2">{{ __('index.pt') }}</a></li>
+                <li><a class="dropdown-item" href="/alumni">{{ __('index.po') }}</a></li>
               </ul>
             </li>
+            
+            {{-- <li class="nav-item"><a class="nav-link" href="/aeasearch">{{ __('index.research') }}</a></li> --}}
+            <li class="nav-item"><a class="nav-link" href="/academic">{{ __('index.academic') }}</a></li>
+
+            
 
             <li class="nav-item">
               <a class="nav-link"
@@ -180,7 +183,7 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
                 <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'th']) }}">🇹🇭 ไทย</a></li>
-                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a></li>
+                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">EN English</a></li>
               </ul>
             </li>
           </ul>

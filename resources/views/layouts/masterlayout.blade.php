@@ -93,7 +93,7 @@
                         <h5>เว็บไซต์มหาวิทยาลัย</h5>
                         <li><a class="text-muted"
                                 href="https://www.rbru.ac.th/rbru-title/index.php">มหาวิทยาลัยราชภัฏรำไพพรรณี</a></li>
-
+                                
                     </ul>
 
                 </div>
@@ -114,6 +114,17 @@
 
 
                     </ul>
+                    <h5>ติดต่อ</h5>
+                    <ul class="list-unstyled mb-0">
+                    <p>{{ __('index.address_th') }}</p>
+                                            <li><strong>{{ __('index.tel') }}:</strong> 086-4403210
+                                            </li>
+                                            <li><strong>{{ __('index.fax') }}:</strong> 039-471417</li>
+                                            <li><strong>{{ __('index.email') }}:</strong>
+                                                <a href="mailto:law@rbru.ac.th">law@rbru.ac.th</a>
+                                            </li>
+                                        </ul>
+                                        
                 </div>
 
                 <!-- Map -->
