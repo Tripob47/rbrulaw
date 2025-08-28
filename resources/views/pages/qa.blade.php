@@ -485,7 +485,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-6">
                             <div class="card shadow-sm h-100">
                                 <div class="card-header bg-success text-white">
@@ -524,12 +524,27 @@
                         <div class="col-md-6">
                             <div class="card shadow-sm h-100">
                                 <div class="card-header bg-warning text-dark">
-                                    <i class="bi bi-people-fill me-2"></i> {{ __('index.personnel_development_plan') }}
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    {{ __('index.personnel_development_plan') }}
                                 </div>
+
+                                @php
+                                    $personnelPlans = [
+                                        2561 => 'template/assets/document_rule/law_quality/staff/staff_61.pdf',
+                                        2562 => 'template/assets/qa62/qa62_9/qa62_9_1.pdf',
+                                        2563 => 'template/assets/document_rule/law_teacher/teacher63.pdf',
+                                        2564 => 'template/assets/document_rule/law_teacher/teacher64.pdf',
+                                    ];
+                                @endphp
+
                                 <ul class="list-group list-group-flush">
-                                    @foreach (['2561', '2562', '2563', '2564'] as $year)
-                                        <li class="list-group-item"><a
-                                                href="#">{{ __('index.personnel_plan_' . $year) }}</a></li>
+                                    @foreach ($personnelPlans as $year => $file)
+                                        <li class="list-group-item">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                            <a href="{{ asset($file) }}" target="_blank">
+                                                {{ __('index.personnel_plan_' . $year) }}
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -539,17 +554,36 @@
                         <div class="col-md-6">
                             <div class="card shadow-sm h-100">
                                 <div class="card-header bg-warning text-dark">
-                                    <i class="bi bi-shield-fill-check me-2"></i> {{ __('index.risk_management_plan') }}
+                                    <i class="bi bi-shield-fill-check me-2"></i>
+                                    {{ __('index.risk_management_plan') }}
                                 </div>
+
+                                @php
+                                    $riskFiles = [
+                                        2561 => 'document_rule/law_risk/risk_61.pdf',
+                                        2562 => 'qa62/qa62_7/qa62_7_1.pdf',
+                                        2563 => 'document_rule/law_action_plan/actionplan_63_2.pdf',
+                                        2564 => 'document_rule/law_action_plan/actionplan_64.pdf',
+                                    ];
+                                @endphp
+
                                 <ul class="list-group list-group-flush">
-                                    @foreach (['2561', '2562', '2563', '2564'] as $year)
-                                        <li class="list-group-item"><a
-                                                href="#">{{ __('index.risk_plan_' . $year) }}</a></li>
+                                    @foreach ($riskFiles as $year => $file)
+                                        <li class="list-group-item">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>
+                                            <a href="{{ asset('template/assets/' . $file) }}" target="_blank">
+                                                {{ __('index.risk_plan_' . $year) }}
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </div>
+
                     </div>
+
+
+
 
                     <div class="row g-4 mt-4">
                         {{-- Budget Plan --}}
@@ -587,7 +621,48 @@
                         </div>
                     </div>
 
+                    <div class="row g-4 mt-4">
+                    {{-- Cultural Preservation Plan --}}
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-warning text-dark">
+                                <i class="bi bi-brush-fill me-2"></i> {{ __('index.cultural_preservation_plan') }}
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                @foreach (['2561', '2562', '2563'] as $year)
+                                    <li class="list-group-item">
+                                        <a href="#">
+                                            {{ __('index.cultural_plan_' . $year) }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+
+                    {{-- Student Activity Development Plan --}}
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-warning text-dark">
+                                <i class="bi bi-person-lines-fill me-2"></i> {{ __('index.student_activity_plan') }}
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                @foreach (['2561', '2562', '2563'] as $year)
+                                    <li class="list-group-item">
+                                        <a href="#">
+                                            {{ __('index.student_plan_' . $year) }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 </div> {{-- End Plan Tab --}}
+
+                
+
 
                 {{-- Evaluation Tab --}}
                 <div class="tab-pane fade" id="evaluation" role="tabpanel" aria-labelledby="evaluation-tab">

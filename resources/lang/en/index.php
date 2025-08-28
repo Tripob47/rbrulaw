@@ -579,6 +579,16 @@ return [
     'tp' => 'Article/Research',
     'pt' => 'Electronic Thesis Database System',
     'po' => 'Electronic Research Database System',
+
+    'cultural_preservation_plan' => 'Cultural Preservation Plan',
+    'cultural_plan_2561' => 'Cultural Preservation Plan Academic Year 2018',
+    'cultural_plan_2562' => 'Cultural Preservation Plan Academic Year 2019',
+    'cultural_plan_2563' => 'Cultural Preservation Plan Academic Year 2020',
+
+    'student_activity_plan' => 'Student Activity Development Plan',
+    'student_plan_2561' => 'Student Activity Plan Academic Year 2018',
+    'student_plan_2562' => 'Student Activity Plan Academic Year 2019',
+    'student_plan_2563' => 'Student Activity Plan Academic Year 2020',
 ];
 
 
