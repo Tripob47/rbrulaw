@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +12,11 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.jsx', 'public/js')
+    .react()
     .postCss('resources/css/app.css', 'public/css', [
         //
-    ]);
+    ])
+    .alias({
+        '@': path.join(__dirname, 'resources/js'),
+    });
