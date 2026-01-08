@@ -3,16 +3,13 @@
 @section('title', __('index.research_fund'))
 
 @section('content')
-@include('layouts.img')
-    <nav class="breadcrumbs w-100 py-2" style="background-color: rgba(0, 0, 0, 0.5);">
-        <div class="container text-white">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="index.html" class="text-white">{{ __(key: 'index.faculty_name') }}</a>
-                </li>
-                <li class="breadcrumb-item active text-white" aria-current="page">{{ __('index.tp') }}</li>
-            </ol>
-        </div>
-    </nav>
+@include('components.page-header', [
+    'title' => __('index.tp'),
+    'breadcrumbs' => [
+        ['label' => 'หน้าแรก', 'url' => url('/')],
+        ['label' => __('index.tp')],
+    ],
+])
 <div class="container py-5">
     <ul class="nav nav-tabs mb-4" id="researchFundTab" role="tablist">
         <li class="nav-item" role="presentation">

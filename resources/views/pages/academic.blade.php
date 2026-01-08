@@ -3,15 +3,13 @@
 @section('title', __('index.academic'))
 
 @section('content')
-@include('layouts.img')
-    <nav class="breadcrumbs w-100 py-2" style="background-color: rgba(0, 0, 0, 0.5);">
-        <div class="container text-white">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="index.html" class="text-white">{{ __(key: 'index.faculty_name') }}</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page">{{ __('index.academic') }}</li>
-            </ol>
-        </div>
-    </nav>
+@include('components.page-header', [
+    'title' => __('index.academic'),
+    'breadcrumbs' => [
+        ['label' => 'หน้าแรก', 'url' => url('/')],
+        ['label' => __('index.academic')],
+    ],
+])
     <section class="section py-4">
         <div class="container" data-aos="fade-up">
             <h2 class="mb-4"><i class="bi bi-mortarboard-fill me-2"></i>{{ __('index.academic') }}</h2>

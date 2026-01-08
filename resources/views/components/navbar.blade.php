@@ -137,9 +137,32 @@
         <div class="offcanvas-body">
           <!-- Main nav -->
           <ul class="navbar-nav flex-grow-1 justify-content-center">
-            <li class="nav-item"><a class="nav-link" href="/about">{{ __('index.about') }}</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+                 data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                {{ __('index.about') }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="/about/history">{{ __('index.history') }}</a></li>
+                <li><a class="dropdown-item" href="/about/vision">{{ __('index.vision') }}</a></li>
+                <li><a class="dropdown-item" href="/about/strategies">{{ __('index.Strategies') }}</a></li>
+                <li><a class="dropdown-item" href="/about/structure">{{ __('index.Structure') }}</a></li>
+                <li><a class="dropdown-item" href="/about/location">{{ __('index.Location') }}</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" href="/our">{{ __('index.curriculum') }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="/qa">{{ __('index.qa') }}</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="qaDropdown" role="button"
+                 data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                {{ __('index.qa') }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="qaDropdown">
+                <li><a class="dropdown-item" href="/qa">{{ __('index.quality_assurance') }}</a></li>
+                <li><a class="dropdown-item" href="/qa/km">{{ __('index.knowledge_management_plan') }}</a></li>
+                <li><a class="dropdown-item" href="/qa/plan">{{ __('index.faculty') }}</a></li>
+                <li><a class="dropdown-item" href="/qa/evaluation">{{ __('index.evaluation') }}</a></li>
+              </ul>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="alumniDropdown" role="button"
                  data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
@@ -223,6 +246,12 @@
     /* กัน scrollbar Y โผล่ตอนเปิด dropdown บนเดสก์ท็อป */
     @media (min-width: 992px) {
       .navbar, .navbar-nav { overflow:visible !important; }
+    }
+
+    /* เปิด dropdown เมื่อ hover บนเดสก์ท็อป */
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu { display:block; }
+      .navbar .dropdown-menu { margin-top: 0; }
     }
   </style>
 </header>
