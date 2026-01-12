@@ -54,17 +54,17 @@
                 <ul class="nav nav-tabs fs-5 home-news-tabs" id="newsTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">
-                    ข่าวสาร
+                    {{ __('index.news_general') }}
                 </button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="training-tab" data-bs-toggle="tab" data-bs-target="#training" type="button" role="tab" aria-controls="training" aria-selected="false">
-                    ข่าวอบรม
+                    {{ __('index.news_training') }}
                 </button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="awards-tab" data-bs-toggle="tab" data-bs-target="#awards" type="button" role="tab" aria-controls="awards" aria-selected="false">
-                    รางวัลเชิดชูเกียรติ
+                    {{ __('index.news_awards') }}
                 </button>
             </li>
                 </ul>
@@ -77,15 +77,15 @@
                     @forelse($newsGeneral as $item)
                         @php
                             $title = ($useEn && !empty($item['headline_en'])) ? $item['headline_en'] : ($item['headline'] ?? '');
-                            $img = $item['url'] ?? '';
+                            $img = $item['image'] ?? ($item['url'] ?? '');
                             if (!$img || $img === $newsLogo) {
                                 $img = $placeholderImg;
                             }
                         @endphp
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="{{ url('/detailsnew/'.$item['org_no']) }}" class="text-decoration-none w-100">
+                            <a href="{{ url(app()->getLocale().'/detailsnew/'.$item['org_no']) }}" class="text-decoration-none w-100">
                                 <div class="card shadow-sm border-0 w-100 h-100 home-news-card">
-                                    <img src="{{ $img }}" class="card-img-top img-fluid home-news-img" style="object-fit:cover;height:220px;" alt="">
+                                    <img src="{{ $img }}" class="card-img-top img-fluid home-news-img" style="object-fit:cover;height:220px;" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ $placeholderImg }}';">
                                     <div class="card-body text-start">
                                         <h5 class="card-title mb-0">{{ \Illuminate\Support\Str::limit($title, 100) }}</h5>
                                     </div>
@@ -93,7 +93,7 @@
                             </a>
                         </div>
                     @empty
-                        <p class="text-muted text-center py-4" style="min-height:25dvh;">ยังไม่มีข่าวใหม่ขณะนี้</p>
+                        <p class="text-muted text-center py-4" style="min-height:25dvh;">{{ __('index.no_news') }}</p>
                     @endforelse
                 </div>
             </div>
@@ -103,15 +103,15 @@
                     @forelse($newsTraining as $item)
                         @php
                             $title = ($useEn && !empty($item['headline_en'])) ? $item['headline_en'] : ($item['headline'] ?? '');
-                            $img = $item['url'] ?? '';
+                            $img = $item['image'] ?? ($item['url'] ?? '');
                             if (!$img || $img === $newsLogo) {
                                 $img = $placeholderImg;
                             }
                         @endphp
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="{{ url('/detailsnew/'.$item['org_no']) }}" class="text-decoration-none w-100">
+                            <a href="{{ url(app()->getLocale().'/detailsnew/'.$item['org_no']) }}" class="text-decoration-none w-100">
                                 <div class="card shadow-sm border-0 w-100 h-100 home-news-card">
-                                    <img src="{{ $img }}" class="card-img-top img-fluid home-news-img" style="object-fit:cover;height:220px;" alt="">
+                                    <img src="{{ $img }}" class="card-img-top img-fluid home-news-img" style="object-fit:cover;height:220px;" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ $placeholderImg }}';">
                                     <div class="card-body text-start">
                                         <h5 class="card-title mb-0">{{ \Illuminate\Support\Str::limit($title, 100) }}</h5>
                                     </div>
@@ -119,7 +119,7 @@
                             </a>
                         </div>
                     @empty
-                        <p class="text-muted text-center py-4" style="min-height:25dvh;">ยังไม่มีข่าวใหม่ขณะนี้</p>
+                        <p class="text-muted text-center py-4" style="min-height:25dvh;">{{ __('index.no_news') }}</p>
                     @endforelse
                 </div>
             </div>
@@ -129,15 +129,15 @@
                     @forelse($newsAwards as $item)
                         @php
                             $title = ($useEn && !empty($item['headline_en'])) ? $item['headline_en'] : ($item['headline'] ?? '');
-                            $img = $item['url'] ?? '';
+                            $img = $item['image'] ?? ($item['url'] ?? '');
                             if (!$img || $img === $newsLogo) {
                                 $img = $placeholderImg;
                             }
                         @endphp
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="{{ url('/detailsnew/'.$item['org_no']) }}" class="text-decoration-none w-100">
+                            <a href="{{ url(app()->getLocale().'/detailsnew/'.$item['org_no']) }}" class="text-decoration-none w-100">
                                 <div class="card shadow-sm border-0 w-100 h-100 home-news-card">
-                                    <img src="{{ $img }}" class="card-img-top img-fluid home-news-img" style="object-fit:cover;height:220px;" alt="">
+                                    <img src="{{ $img }}" class="card-img-top img-fluid home-news-img" style="object-fit:cover;height:220px;" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ $placeholderImg }}';">
                                     <div class="card-body text-start">
                                         <h5 class="card-title mb-0">{{ \Illuminate\Support\Str::limit($title, 100) }}</h5>
                                     </div>
@@ -145,15 +145,15 @@
                             </a>
                         </div>
                     @empty
-                        <p class="text-muted text-center py-4" style="min-height:25dvh;">ยังไม่มีข่าวใหม่ขณะนี้</p>
+                        <p class="text-muted text-center py-4" style="min-height:25dvh;">{{ __('index.no_news') }}</p>
                     @endforelse
                 </div>
             </div>
         </div>
 
         <div class="text-center mt-2">
-            <a href="{{ url('/news') }}" class="btn text-white fw-bold" style="background-color:#4b4b4b;">
-                {{ __('index.more') ?? 'อ่านเพิ่มเติม' }}
+            <a href="{{ url(app()->getLocale().'/news') }}" class="btn text-white fw-bold" style="background-color:#4b4b4b;">
+                {{ __('index.more') }}
             </a>
         </div>
     </div>

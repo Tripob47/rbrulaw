@@ -19,25 +19,29 @@
     }
 </style>
 
+@php
+    $locale = app()->getLocale();
+@endphp
+
 <div class="about-nav">
-    <a href="{{ url('/about/history') }}"
-        class="btn btn-outline-dark {{ request()->is('about/history') || request()->is('about') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/about/history') }}"
+        class="btn btn-outline-dark {{ request()->is($locale.'/about/history') || request()->is($locale.'/about') ? 'active' : '' }}">
         <i class="bi bi-clock-history me-1"></i> {{ __('index.history') }}
     </a>
-    <a href="{{ url('/about/vision') }}"
-        class="btn btn-outline-dark {{ request()->is('about/vision') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/about/vision') }}"
+        class="btn btn-outline-dark {{ request()->is($locale.'/about/vision') ? 'active' : '' }}">
         <i class="bi bi-eye-fill me-1"></i> {{ __('index.vision') }}
     </a>
-    <a href="{{ url('/about/strategies') }}"
-        class="btn btn-outline-dark {{ request()->is('about/strategies') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/about/strategies') }}"
+        class="btn btn-outline-dark {{ request()->is($locale.'/about/strategies') ? 'active' : '' }}">
         <i class="bi bi-gear-fill me-1"></i> {{ __('index.Strategies') }}
     </a>
-    <a href="{{ url('/about/structure') }}"
-        class="btn btn-outline-dark {{ request()->is('about/structure') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/about/structure') }}"
+        class="btn btn-outline-dark {{ request()->is($locale.'/about/structure') ? 'active' : '' }}">
         <i class="bi bi-diagram-3-fill me-1"></i> {{ __('index.Structure') }}
     </a>
-    <a href="{{ url('/about/location') }}"
-        class="btn btn-outline-dark {{ request()->is('about/location') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/about/location') }}"
+        class="btn btn-outline-dark {{ request()->is($locale.'/about/location') ? 'active' : '' }}">
         <i class="bi bi-geo-alt-fill me-1"></i> {{ __('index.Location') }}
     </a>
 </div>

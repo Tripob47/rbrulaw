@@ -1,8 +1,9 @@
 @php
     $pageTitle = $title ?? '';
     $pageSubtitle = $subtitle ?? (__('index.faculty_name') . ' ' . __('index.university_name'));
+    $locale = app()->getLocale();
     $crumbs = $breadcrumbs ?? [
-        ['label' => 'หน้าแรก', 'url' => url('/')],
+        ['label' => __('index.home'), 'url' => url($locale)],
         ['label' => $pageTitle],
     ];
 @endphp

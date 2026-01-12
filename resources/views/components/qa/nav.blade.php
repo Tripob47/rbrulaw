@@ -19,18 +19,22 @@
     }
 </style>
 
+@php
+    $locale = app()->getLocale();
+@endphp
+
 <div class="qa-nav">
-    <a href="{{ url('/qa') }}"
-        class="btn btn-outline-dark {{ request()->is('qa') || request()->is('qa/quality') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/qa') }}"
+        class="btn btn-outline-dark {{ request()->is($locale.'/qa') || request()->is($locale.'/qa/quality') ? 'active' : '' }}">
         {{ __('index.quality_assurance') }}
     </a>
-    <a href="{{ url('/qa/km') }}" class="btn btn-outline-dark {{ request()->is('qa/km') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/qa/km') }}" class="btn btn-outline-dark {{ request()->is($locale.'/qa/km') ? 'active' : '' }}">
         {{ __('index.knowledge_management_plan') }}
     </a>
-    <a href="{{ url('/qa/plan') }}" class="btn btn-outline-dark {{ request()->is('qa/plan') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/qa/plan') }}" class="btn btn-outline-dark {{ request()->is($locale.'/qa/plan') ? 'active' : '' }}">
         {{ __('index.faculty') }}
     </a>
-    <a href="{{ url('/qa/evaluation') }}" class="btn btn-outline-dark {{ request()->is('qa/evaluation') ? 'active' : '' }}">
+    <a href="{{ url($locale.'/qa/evaluation') }}" class="btn btn-outline-dark {{ request()->is($locale.'/qa/evaluation') ? 'active' : '' }}">
         {{ __('index.evaluation') }}
     </a>
 </div>

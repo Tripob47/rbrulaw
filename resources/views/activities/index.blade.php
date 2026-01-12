@@ -7,6 +7,8 @@
     $useEn = app()->getLocale() !== 'th';
     $queryParams = request()->query();
     $placeholderImg = asset('img/NEWS (1).svg');
+    $locale = app()->getLocale();
+    $activitiesUrl = url($locale.'/activities');
 @endphp
 
 <div class="container-fluid px-0" style="background-color:#f2f2f2;">
@@ -18,7 +20,7 @@
     </section>
     <div style="background-color:#2f2f2f;">
         <div class="container py-2 text-white small">
-            <a href="{{ url('/') }}" class="text-white text-decoration-none fw-semibold">หน้าแรก</a>
+            <a href="{{ url($locale) }}" class="text-white text-decoration-none fw-semibold">{{ __('index.home') }}</a>
             <span class="mx-2">/</span>
             <span class="fw-semibold">ภาพกิจกรรม</span>
         </div>
@@ -33,7 +35,7 @@
                             <div class="fw-semibold">ปีที่แสดงผล</div>
                             <small class="text-muted">{{ $year ? 'ปี '.$year : 'ยังไม่มีข้อมูลปี' }}</small>
                         </div>
-                        <form method="get" action="{{ url('/activities') }}" class="d-flex flex-column flex-sm-row gap-2">
+                        <form method="get" action="{{ $activitiesUrl }}" class="d-flex flex-column flex-sm-row gap-2">
                             <input type="hidden" name="year" value="{{ $year }}">
                             <input type="search" name="q" value="{{ $query }}" class="form-control" placeholder="ค้นหาหัวข้อกิจกรรม">
                             <button class="btn text-white" style="background-color:#4b4b4b;" type="submit">ค้นหา</button>
@@ -54,7 +56,7 @@
                                 }
                             @endphp
                             <div class="col-lg-3 col-md-6 mb-4">
-                                <a href="{{ url('/detailsactivity/'.$item['no']) }}" class="text-decoration-none">
+                                <a href="{{ url($locale.'/detailsactivity/'.$item['no']) }}" class="text-decoration-none">
                                     <div class="card h-100 border-0 shadow-sm">
                                         <div class="ratio ratio-3x2">
                                             <img src="{{ $img }}" alt="" class="w-100 h-100" style="object-fit:cover;height:210px;" onerror="this.onerror=null;this.src='{{ $placeholderImg }}';">
@@ -74,14 +76,14 @@
                                 $prev = max(1, $page - 1);
                                 $next = min($totalPages, $page + 1);
                             @endphp
-                            <a class="btn btn-outline-dark btn-sm" href="{{ url('/activities') }}?{{ http_build_query(array_merge($queryParams, ['page' => $prev])) }}">ก่อนหน้า</a>
+                            <a class="btn btn-outline-dark btn-sm" href="{{ $activitiesUrl }}?{{ http_build_query(array_merge($queryParams, ['page' => $prev])) }}">ก่อนหน้า</a>
                             @for($p = 1; $p <= $totalPages; $p++)
                                 @php $isActive = $p === $page; @endphp
-                                <a class="btn btn-sm {{ $isActive ? 'text-white' : 'btn-outline-dark' }}" style="{{ $isActive ? 'background-color:#4b4b4b;border-color:#4b4b4b;' : '' }}" href="{{ url('/activities') }}?{{ http_build_query(array_merge($queryParams, ['page' => $p])) }}">
+                                <a class="btn btn-sm {{ $isActive ? 'text-white' : 'btn-outline-dark' }}" style="{{ $isActive ? 'background-color:#4b4b4b;border-color:#4b4b4b;' : '' }}" href="{{ $activitiesUrl }}?{{ http_build_query(array_merge($queryParams, ['page' => $p])) }}">
                                     {{ $p }}
                                 </a>
                             @endfor
-                            <a class="btn btn-outline-dark btn-sm" href="{{ url('/activities') }}?{{ http_build_query(array_merge($queryParams, ['page' => $next])) }}">ถัดไป</a>
+                            <a class="btn btn-outline-dark btn-sm" href="{{ $activitiesUrl }}?{{ http_build_query(array_merge($queryParams, ['page' => $next])) }}">ถัดไป</a>
                         </div>
                     @endif
                 @endif
@@ -94,7 +96,7 @@
                         <div class="d-lg-none">
                             <select class="form-select" onchange="location = this.value;">
                                 @foreach($years as $value)
-                                    <option value="{{ url('/activities') }}?{{ http_build_query(array_merge($queryParams, ['year' => $value, 'page' => 1])) }}" @if($year == $value) selected @endif>
+                                    <option value="{{ $activitiesUrl }}?{{ http_build_query(array_merge($queryParams, ['year' => $value, 'page' => 1])) }}" @if($year == $value) selected @endif>
                                         ปี {{ $value }}
                                     </option>
                                 @endforeach
@@ -103,7 +105,7 @@
                         <div class="d-none d-lg-grid gap-2">
                             @foreach($years as $value)
                                 @php $isActive = $year == $value; @endphp
-                                <a class="btn text-start {{ $isActive ? 'text-white' : 'btn-outline-dark' }}" style="{{ $isActive ? 'background-color:#4b4b4b;border-color:#4b4b4b;' : '' }}" href="{{ url('/activities') }}?{{ http_build_query(array_merge($queryParams, ['year' => $value, 'page' => 1])) }}">
+                                <a class="btn text-start {{ $isActive ? 'text-white' : 'btn-outline-dark' }}" style="{{ $isActive ? 'background-color:#4b4b4b;border-color:#4b4b4b;' : '' }}" href="{{ $activitiesUrl }}?{{ http_build_query(array_merge($queryParams, ['year' => $value, 'page' => 1])) }}">
                                     ปี {{ $value }}
                                 </a>
                             @endforeach

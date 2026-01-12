@@ -7,6 +7,7 @@
     $useEn = app()->getLocale() !== 'th';
     $title = $detail ? (($useEn && !empty($detail['topic_en'])) ? $detail['topic_en'] : $detail['topic']) : '';
     $placeholderImg = asset('img/NEWS (1).svg');
+    $locale = app()->getLocale();
 @endphp
 
 <div class="container-fluid px-0" style="background-color:#f2f2f2;">
@@ -18,9 +19,9 @@
     </section>
     <div style="background-color:#2f2f2f;">
         <div class="container py-2 text-white small">
-            <a href="{{ url('/') }}" class="text-white text-decoration-none fw-semibold">หน้าแรก</a>
+            <a href="{{ url($locale) }}" class="text-white text-decoration-none fw-semibold">{{ __('index.home') }}</a>
             <span class="mx-2">/</span>
-            <a href="{{ url('/activities') }}" class="text-white text-decoration-none fw-semibold">ภาพกิจกรรม</a>
+            <a href="{{ url($locale.'/activities') }}" class="text-white text-decoration-none fw-semibold">ภาพกิจกรรม</a>
             <span class="mx-2">/</span>
             <span class="fw-semibold">รายละเอียดกิจกรรม</span>
         </div>

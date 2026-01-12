@@ -6,7 +6,7 @@
 @include('components.page-header', [
     'title' => __('index.pp'),
     'breadcrumbs' => [
-        ['label' => 'หน้าแรก', 'url' => url('/')],
+        ['label' => __('index.home'), 'url' => url(app()->getLocale())],
         ['label' => __('index.pp')],
     ],
 ])

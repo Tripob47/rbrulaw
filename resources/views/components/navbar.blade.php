@@ -7,7 +7,7 @@
                 style="background-color: #565656;">
                 <img src="{{ asset('template/assets/img/law.png') }}" alt="Logo"
                     style="height: 70px; width: auto; object-fit: contain;" class="me-2">
-                <h1 class="sitename m-0 text-white fs-5">{{ __('index.faculty_name') ?? 'คณะนิติศาสตร์' }}</h1>
+                <h1 class="sitename m-0 text-white fs-5">{{ __('index.faculty_name') }}</h1>
             </a>
         </div>
 
@@ -106,19 +106,29 @@
 
 
 <!-- Header -->
+@php
+  $locale = app()->getLocale();
+  $segments = request()->segments();
+  if (!empty($segments) && in_array($segments[0], ['th', 'en'])) {
+    array_shift($segments);
+  }
+  $cleanPath = implode('/', $segments);
+  $thUrl = url('th' . ($cleanPath !== '' ? '/' . $cleanPath : ''));
+  $enUrl = url('en' . ($cleanPath !== '' ? '/' . $cleanPath : ''));
+@endphp
 <header id="site-header" class="sticky-top">
   <nav class="navbar navbar-dark navbar-expand-xxl" style="background:#565656;">
     <div class="container-fluid container-xl">
 
       <!-- Brand -->
-      <a href="/" class="navbar-brand d-flex align-items-center gap-2 text-decoration-none">
+      <a href="{{ url($locale) }}" class="navbar-brand d-flex align-items-center gap-2 text-decoration-none">
         <img src="{{ asset('template/assets/img/law.png') }}" alt="Logo"
              class="d-inline-block align-text-top" style="height:56px;width:auto;object-fit:contain;">
-        <span class="fw-semibold">{{ __('index.faculty_name') ?? 'คณะนิติศาสตร์' }}</span>
+             <div class="d-flex flex-column">
+                <span class="fw-semibold" style="font-size: 1.25rem; line-height: 1.2;">{{ __('index.faculty_name') }}</span>
+                <span class="fw-bold text-white" style="font-size: 0.75rem; line-height: 1.2; letter-spacing: 0px;">มหาวิทยาลัยราชภัฏรำไพพรรณี</span>
+            </div>
       </a>
-
-      <!-- Desktop: Language -->
-
 
       <!-- Toggler (Hamburger) -->
       <button class="navbar-toggler ms-2" type="button"
@@ -130,7 +140,7 @@
       <!-- Offcanvas for Mobile / Sidebar menu -->
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="mainNav" aria-labelledby="mainNavLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title text-white" id="mainNavLabel">{{ __('index.faculty_name') ?? 'คณะนิติศาสตร์' }}</h5>
+          <h5 class="offcanvas-title text-white" id="mainNavLabel">{{ __('index.faculty_name') }}</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
@@ -143,24 +153,24 @@
                 {{ __('index.about') }}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="aboutDropdown">
-                <li><a class="dropdown-item" href="/about/history">{{ __('index.history') }}</a></li>
-                <li><a class="dropdown-item" href="/about/vision">{{ __('index.vision') }}</a></li>
-                <li><a class="dropdown-item" href="/about/strategies">{{ __('index.Strategies') }}</a></li>
-                <li><a class="dropdown-item" href="/about/structure">{{ __('index.Structure') }}</a></li>
-                <li><a class="dropdown-item" href="/about/location">{{ __('index.Location') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/about/history') }}">{{ __('index.history') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/about/vision') }}">{{ __('index.vision') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/about/strategies') }}">{{ __('index.Strategies') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/about/structure') }}">{{ __('index.Structure') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/about/location') }}">{{ __('index.Location') }}</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="/our">{{ __('index.curriculum') }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url($locale.'/our') }}">{{ __('index.curriculum') }}</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="qaDropdown" role="button"
                  data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                 {{ __('index.qa') }}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="qaDropdown">
-                <li><a class="dropdown-item" href="/qa">{{ __('index.quality_assurance') }}</a></li>
-                <li><a class="dropdown-item" href="/qa/km">{{ __('index.knowledge_management_plan') }}</a></li>
-                <li><a class="dropdown-item" href="/qa/plan">{{ __('index.faculty') }}</a></li>
-                <li><a class="dropdown-item" href="/qa/evaluation">{{ __('index.evaluation') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/qa') }}">{{ __('index.quality_assurance') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/qa/km') }}">{{ __('index.knowledge_management_plan') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/qa/plan') }}">{{ __('index.faculty') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/qa/evaluation') }}">{{ __('index.evaluation') }}</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -169,16 +179,16 @@
                 {{ __('index.research') }}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="alumniDropdown">
-                <li><a class="dropdown-item" href="/aeasearch">{{ __('index.research') }}</a></li>
-                <li><a class="dropdown-item" href="/alumni2">{{ __('index.pt') }}</a></li>
-                <li><a class="dropdown-item" href="/alumni">{{ __('index.po') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/aeasearch') }}">{{ __('index.research') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/alumni2') }}">{{ __('index.pt') }}</a></li>
+                <li><a class="dropdown-item" href="{{ url($locale.'/alumni') }}">{{ __('index.po') }}</a></li>
               </ul>
             </li>
-            
-            {{-- <li class="nav-item"><a class="nav-link" href="/aeasearch">{{ __('index.research') }}</a></li> --}}
-            <li class="nav-item"><a class="nav-link" href="/academic">{{ __('index.academic') }}</a></li>
 
-            
+            {{-- <li class="nav-item"><a class="nav-link" href="/aeasearch">{{ __('index.research') }}</a></li> --}}
+            <li class="nav-item"><a class="nav-link" href="{{ url($locale.'/academic') }}">{{ __('index.academic') }}</a></li>
+
+
 
             <li class="nav-item">
               <a class="nav-link"
@@ -205,8 +215,8 @@
                 🌐 {{ strtoupper(app()->getLocale()) }}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
-                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'th']) }}">🇹🇭 ไทย</a></li>
-                <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">EN English</a></li>
+                <li><a class="dropdown-item" href="{{ $thUrl }}">🇹🇭 ไทย</a></li>
+                <li><a class="dropdown-item" href="{{ $enUrl }}">EN English</a></li>
               </ul>
             </li>
           </ul>
@@ -217,8 +227,8 @@
           🌐 {{ strtoupper(app()->getLocale()) }}
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'th']) }}">🇹🇭 ไทย</a></li>
-          <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">🇬🇧 English</a></li>
+          <li><a class="dropdown-item" href="{{ $thUrl }}">🇹🇭 ไทย</a></li>
+          <li><a class="dropdown-item" href="{{ $enUrl }}">🇬🇧 English</a></li>
         </ul>
       </div>
         </div>
@@ -255,4 +265,3 @@
     }
   </style>
 </header>
-

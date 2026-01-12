@@ -16,6 +16,8 @@
     ];
     $activeLabel = $categoryLabel[$category] ?? $categoryLabel['general'];
     $queryParams = request()->query();
+    $locale = app()->getLocale();
+    $newsUrl = url($locale.'/news');
 @endphp
 
 <div class="container-fluid px-0" style="background-color:#f2f2f2;">
@@ -27,7 +29,7 @@
     </section>
     <div style="background-color:#2f2f2f;">
         <div class="container py-2 text-white small">
-            <a href="{{ url('/') }}" class="text-white text-decoration-none fw-semibold">หน้าแรก</a>
+            <a href="{{ url($locale) }}" class="text-white text-decoration-none fw-semibold">{{ __('index.home') }}</a>
             <span class="mx-2">/</span>
             <span class="fw-semibold">ข่าวสาร</span>
         </div>
@@ -42,7 +44,7 @@
                             <div class="fw-semibold">{{ $activeLabel }}</div>
                             <small class="text-muted">เลือกปีข่าวและค้นหาหัวข้อได้ทันที</small>
                         </div>
-                        <form method="get" action="{{ url('/news') }}" class="d-flex flex-column flex-sm-row gap-2">
+                        <form method="get" action="{{ $newsUrl }}" class="d-flex flex-column flex-sm-row gap-2">
                             <input type="hidden" name="category" value="{{ $category }}">
                             <input type="search" name="q" value="{{ $query }}" class="form-control" placeholder="ค้นหาหัวข้อข่าว">
                             <select name="year" class="form-select" style="max-width:160px;">
@@ -63,16 +65,16 @@
                         @foreach($items as $item)
                             @php
                                 $title = ($useEn && !empty($item['headline_en'])) ? $item['headline_en'] : $item['headline'];
-                                $img = $item['url'] ?? '';
+                                $img = $item['image'] ?? ($item['url'] ?? '');
                                 if (!$img || $img === $newsLogo) {
                                     $img = $placeholderImg;
                                 }
                             @endphp
-                            <div class="col-lg-3 col-md-6 mb-4">
-                                <a href="{{ url('/detailsnew/'.$item['org_no']) }}" class="text-decoration-none">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <a href="{{ url($locale.'/detailsnew/'.$item['org_no']) }}" class="text-decoration-none">
                                     <div class="card h-100 border-0 shadow-sm">
-                                        <div class="ratio ratio-3x2">
-                                            <img src="{{ $img }}" alt="" class="w-100 h-100" style="object-fit:cover;height:210px;">
+                                        <div style="height:210px; overflow:hidden; background-color:#f3f3f3;">
+                                            <img src="{{ $img }}" alt="" class="card-img-top w-100 h-100" style="object-fit:cover;" onerror="this.onerror=null;this.src='{{ $placeholderImg }}';">
                                         </div>
                                         <div class="card-body">
                                             <div class="fw-semibold text-dark">{{ \Illuminate\Support\Str::limit($title, 100) }}</div>
@@ -89,14 +91,14 @@
                                 $prev = max(1, $page - 1);
                                 $next = min($totalPages, $page + 1);
                             @endphp
-                            <a class="btn btn-outline-dark btn-sm" href="{{ url('/news') }}?{{ http_build_query(array_merge($queryParams, ['page' => $prev])) }}">ก่อนหน้า</a>
+                            <a class="btn btn-outline-dark btn-sm" href="{{ $newsUrl }}?{{ http_build_query(array_merge($queryParams, ['page' => $prev])) }}">ก่อนหน้า</a>
                             @for($p = 1; $p <= $totalPages; $p++)
                                 @php $isActive = $p === $page; @endphp
-                                <a class="btn btn-sm {{ $isActive ? 'text-white' : 'btn-outline-dark' }}" style="{{ $isActive ? 'background-color:#4b4b4b;border-color:#4b4b4b;' : '' }}" href="{{ url('/news') }}?{{ http_build_query(array_merge($queryParams, ['page' => $p])) }}">
+                                <a class="btn btn-sm {{ $isActive ? 'text-white' : 'btn-outline-dark' }}" style="{{ $isActive ? 'background-color:#4b4b4b;border-color:#4b4b4b;' : '' }}" href="{{ $newsUrl }}?{{ http_build_query(array_merge($queryParams, ['page' => $p])) }}">
                                     {{ $p }}
                                 </a>
                             @endfor
-                            <a class="btn btn-outline-dark btn-sm" href="{{ url('/news') }}?{{ http_build_query(array_merge($queryParams, ['page' => $next])) }}">ถัดไป</a>
+                            <a class="btn btn-outline-dark btn-sm" href="{{ $newsUrl }}?{{ http_build_query(array_merge($queryParams, ['page' => $next])) }}">ถัดไป</a>
                         </div>
                     @endif
                 @endif
@@ -109,7 +111,7 @@
                         <div class="d-lg-none">
                             <select class="form-select" onchange="location = this.value;">
                                 @foreach($categoryLabel as $key => $label)
-                                    <option value="{{ url('/news') }}?{{ http_build_query(array_merge($queryParams, ['category' => $key, 'page' => 1])) }}" @if($category === $key) selected @endif>
+                                    <option value="{{ $newsUrl }}?{{ http_build_query(array_merge($queryParams, ['category' => $key, 'page' => 1])) }}" @if($category === $key) selected @endif>
                                         {{ $label }}
                                     </option>
                                 @endforeach
@@ -118,7 +120,7 @@
                         <div class="d-none d-lg-grid gap-2">
                             @foreach($categoryLabel as $key => $label)
                                 @php $isActive = $category === $key; @endphp
-                                <a class="btn text-start {{ $isActive ? 'text-white' : 'btn-outline-dark' }}" style="{{ $isActive ? 'background-color:#4b4b4b;border-color:#4b4b4b;' : '' }}" href="{{ url('/news') }}?{{ http_build_query(array_merge($queryParams, ['category' => $key, 'page' => 1])) }}">
+                                <a class="btn text-start {{ $isActive ? 'text-white' : 'btn-outline-dark' }}" style="{{ $isActive ? 'background-color:#4b4b4b;border-color:#4b4b4b;' : '' }}" href="{{ $newsUrl }}?{{ http_build_query(array_merge($queryParams, ['category' => $key, 'page' => 1])) }}">
                                     {{ $label }}
                                 </a>
                             @endforeach

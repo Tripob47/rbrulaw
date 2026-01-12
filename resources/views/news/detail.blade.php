@@ -9,6 +9,7 @@
     $body = $detail ? (($useEn && !empty($detail['detail_en'])) ? $detail['detail_en'] : $detail['detail']) : '';
     $placeholderImg = asset('img/NEWS (1).svg');
     $newsLogo = 'https://news.rbru.ac.th/img/logonews.jpg';
+    $locale = app()->getLocale();
     $images = [];
     $files = [];
     foreach ($attachments as $file) {
@@ -30,9 +31,9 @@
     </section>
     <div style="background-color:#2f2f2f;">
         <div class="container py-2 text-white small">
-            <a href="{{ url('/') }}" class="text-white text-decoration-none fw-semibold">หน้าแรก</a>
+            <a href="{{ url($locale) }}" class="text-white text-decoration-none fw-semibold">{{ __('index.home') }}</a>
             <span class="mx-2">/</span>
-            <a href="{{ url('/news') }}" class="text-white text-decoration-none fw-semibold">ข่าวสาร</a>
+            <a href="{{ url($locale.'/news') }}" class="text-white text-decoration-none fw-semibold">ข่าวสาร</a>
             <span class="mx-2">/</span>
             <span class="fw-semibold">รายละเอียดข่าว</span>
         </div>

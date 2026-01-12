@@ -1,6 +1,6 @@
 @extends('layouts.masterlayout')
 
-@section('title', 'Home')
+@section('title', __('index.home'))
 
 @section('content')
 @php

@@ -1,17 +1,69 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Law Faculty')</title>
+    @php
+        $defaultTitle = __('index.site_title', [
+            'faculty' => __('index.faculty_name'),
+            'university' => __('index.university_name'),
+        ]);
+        $metaTitle = trim($__env->yieldContent('title', $defaultTitle));
+        $metaDescription = trim($__env->yieldContent('meta_description', __('index.meta_description')));
+        $metaImage = trim($__env->yieldContent('meta_image', asset('template/assets/img/course-1.jpg')));
+        $locale = app()->getLocale();
+        $segments = request()->segments();
+        if (!empty($segments) && in_array($segments[0], ['th', 'en'])) {
+            array_shift($segments);
+        }
+        $cleanPath = implode('/', $segments);
+        $canonicalUrl = url($locale . ($cleanPath !== '' ? '/' . $cleanPath : ''));
+        $ogLocale = $locale === 'th' ? 'th_TH' : 'en_US';
+        $alternateLocale = $locale === 'th' ? 'en_US' : 'th_TH';
+        $alternateTh = url('th' . ($cleanPath !== '' ? '/' . $cleanPath : ''));
+        $alternateEn = url('en' . ($cleanPath !== '' ? '/' . $cleanPath : ''));
+    @endphp
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <title>{{ $metaTitle }}</title>
+    <meta name="description" content="{{ $metaDescription }}">
+    <link rel="canonical" href="{{ $canonicalUrl }}">
+    <link rel="alternate" hreflang="th" href="{{ $alternateTh }}">
+    <link rel="alternate" hreflang="en" href="{{ $alternateEn }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $metaTitle }}">
+    <meta property="og:description" content="{{ $metaDescription }}">
+    <meta property="og:url" content="{{ $canonicalUrl }}">
+    <meta property="og:image" content="{{ $metaImage }}">
+    <meta property="og:site_name" content="{{ __('index.faculty_name') }} {{ __('index.university_name') }}">
+    <meta property="og:locale" content="{{ $ogLocale }}">
+    <meta property="og:locale:alternate" content="{{ $alternateLocale }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $metaTitle }}">
+    <meta name="twitter:description" content="{{ $metaDescription }}">
+    <meta name="twitter:image" content="{{ $metaImage }}">
+    <meta name="theme-color" content="#1f2a3a">
+
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'Organization',
+            'name' => __('index.faculty_name') . ' ' . __('index.university_name'),
+            'url' => url('/'),
+            'logo' => asset('template/assets/img/favicon.png'),
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'WebSite',
+            'name' => __('index.faculty_name'),
+            'url' => url('/'),
+            'inLanguage' => $locale === 'th' ? 'th-TH' : 'en-US',
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,19 +71,9 @@
 
 
     <!-- อื่น ๆ เช่น Bootstrap, app.css -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-
-    <!-- Other Vendor CSS -->
-    <link href="{{ asset('template/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('template/assets/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('template/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('template/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-
-    <!-- Main CSS -->
-    <link href="{{ asset('template/assets/css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Favicon -->
     <link href="{{ asset('template/assets/img/favicon.png') }}" rel="icon">
@@ -43,27 +85,16 @@
 
 </head>
 
-</head>
-
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     @include('components.navbar')
 
     <!-- Main Content -->
-    <main class="">
+    <main class="flex-grow-1">
         @yield('content')
     </main>
 
     @include('components.footer')
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- AOS Init -->
-    <script src="{{ asset('template/assets/vendor/aos/aos.js') }}"></script>
-    <script>
-        AOS.init({ once: true });
-    </script>
 
     @stack('scripts')
     <!-- Bootstrap 5 JS + Popper -->
@@ -73,22 +104,6 @@
 
     <!-- Preloader -->
     {{-- <div id="preloader"></div> --}}
-
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
-    <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-
-    <!-- Main JS File -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-
-
-
-
-
 
 </body>
 

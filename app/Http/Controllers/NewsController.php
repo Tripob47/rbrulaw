@@ -34,6 +34,48 @@ class NewsController extends Controller
         return $output;
     }
 
+    private function looksLikeImage(string $value): bool
+    {
+        return (bool) preg_match('/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/i', $value)
+            || str_contains($value, '/img/')
+            || str_contains($value, '/image/')
+            || str_contains($value, '/images/');
+    }
+
+    private function normalizeImageUrl(?string $value): ?string
+    {
+        $value = trim((string) $value);
+        if ($value === '') {
+            return null;
+        }
+        if (str_starts_with($value, '//')) {
+            return 'https:' . $value;
+        }
+        if (preg_match('#^https?://#i', $value)) {
+            return $value;
+        }
+        return 'https://news.rbru.ac.th/' . ltrim($value, '/');
+    }
+
+    private function resolveImage(array $item): ?string
+    {
+        $candidates = ['image', 'img', 'photo', 'picture', 'pic', 'thumbnail', 'thumb', 'cover', 'url', 'filename'];
+        foreach ($candidates as $key) {
+            $value = $item[$key] ?? '';
+            if (!is_string($value) || trim($value) === '') {
+                continue;
+            }
+            if ($key === 'url' && !$this->looksLikeImage($value)) {
+                continue;
+            }
+            $normalized = $this->normalizeImageUrl($value);
+            if ($normalized) {
+                return $normalized;
+            }
+        }
+        return null;
+    }
+
     private function extractYearBE(?string $orgNo): ?string
     {
         if (!$orgNo) {
@@ -61,9 +103,52 @@ class NewsController extends Controller
             $item['detail'] = $this->decodeDeep($item['detail'] ?? '');
             $item['detail_en'] = $this->decodeDeep($item['detail_en'] ?? '');
             $item['year_be'] = $this->extractYearBE($item['org_no'] ?? null);
+            $item['image'] = $this->resolveImage($item);
             $normalized[] = $item;
         }
         return $normalized;
+    }
+
+    private function fetchDetail(string $orgNo): ?array
+    {
+        $response = Http::timeout(12)->get($this->baseUrl . '/detail_json.php', [
+            'table' => $this->newsTable,
+            'org_no' => $orgNo,
+        ]);
+        $data = $response->json();
+        if (!is_array($data)) {
+            $body = $response->body();
+            $body = preg_replace('/^\xEF\xBB\xBF/', '', $body);
+            $data = json_decode($body, true, 512, JSON_INVALID_UTF8_SUBSTITUTE);
+        }
+        if (!is_array($data) || count($data) === 0) {
+            return null;
+        }
+        return $data[0];
+    }
+
+    private function fetchAttachments(string $orgNo): array
+    {
+        $tables = [$this->newsTable];
+        if (!str_ends_with($this->newsTable, 't')) {
+            $tables[] = $this->newsTable . 't';
+        }
+
+        foreach ($tables as $table) {
+            $response = Http::timeout(12)->get($this->baseUrl . '/news_attach.php', [
+                'table' => $table,
+                'org_no' => $orgNo,
+            ]);
+            if (!$response->successful()) {
+                continue;
+            }
+            $data = $response->json();
+            if (is_array($data) && count($data) > 0) {
+                return $data;
+            }
+        }
+
+        return [];
     }
 
     public function index(Request $request)
@@ -126,24 +211,10 @@ class NewsController extends Controller
         ]);
     }
 
-    public function show(string $orgNo)
+    public function show(Request $request, string $locale, string $orgNo)
     {
-        $year = $this->extractYearBE($orgNo);
-        $params = ['table' => $this->newsTable, 'org_no' => $orgNo];
-        if ($year) {
-            $params['year'] = (int) $year - 543;
-        }
-
-        $detailResponse = Http::timeout(12)->get($this->baseUrl . '/detail_json.php', $params);
-        $detail = $detailResponse->successful() ? $detailResponse->json() : [];
-        $detail = is_array($detail) && count($detail) > 0 ? $detail[0] : null;
-
-        $attachmentsResponse = Http::timeout(12)->get($this->baseUrl . '/news_attach.php', [
-            'table' => $this->newsTable,
-            'org_no' => $orgNo,
-        ]);
-        $attachments = $attachmentsResponse->successful() ? $attachmentsResponse->json() : [];
-        $attachments = is_array($attachments) ? $attachments : [];
+        $detail = $this->fetchDetail($orgNo);
+        $attachments = $this->fetchAttachments($orgNo);
 
         if ($detail) {
             $detail['headline'] = $this->decodeDeep($detail['headline'] ?? '');

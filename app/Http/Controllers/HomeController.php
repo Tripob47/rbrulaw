@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
@@ -18,41 +19,53 @@ class HomeController extends Controller
 
     private function fetchNews(array $params): array
     {
-        $response = Http::timeout(12)->get($this->baseUrl . '/news_json.php', $params);
-        if (!$response->successful()) {
-            return [];
-        }
-        $data = $response->json();
-        return is_array($data) ? $data : [];
+        $cacheKey = 'home.news.' . md5(json_encode($params));
+
+        return Cache::remember($cacheKey, now()->addMinutes(10), function () use ($params) {
+            $response = Http::timeout(12)->get($this->baseUrl . '/news_json.php', $params);
+            if (!$response->successful()) {
+                return [];
+            }
+            $data = $response->json();
+            return is_array($data) ? $data : [];
+        });
     }
 
     private function fetchGalleryList(int $year, int $limit): array
     {
-        $response = Http::timeout(12)->get($this->baseUrl . '/gallery_json.php', [
-            'limitImg' => $limit,
-            'User_login' => $this->galleryUser,
-            'year' => $year,
-        ]);
-        if (!$response->successful()) {
-            return [];
-        }
-        $data = $response->json();
-        return is_array($data) ? $data : [];
+        $cacheKey = 'home.gallery.list.' . $year . '.' . $limit;
+
+        return Cache::remember($cacheKey, now()->addMinutes(10), function () use ($year, $limit) {
+            $response = Http::timeout(12)->get($this->baseUrl . '/gallery_json.php', [
+                'limitImg' => $limit,
+                'User_login' => $this->galleryUser,
+                'year' => $year,
+            ]);
+            if (!$response->successful()) {
+                return [];
+            }
+            $data = $response->json();
+            return is_array($data) ? $data : [];
+        });
     }
 
     private function fetchGalleryImage(string $no): ?string
     {
-        $response = Http::timeout(12)->get($this->baseUrl . '/img_json.php', [
-            'no' => $no,
-        ]);
-        if (!$response->successful()) {
-            return null;
-        }
-        $data = $response->json();
-        if (!is_array($data) || count($data) === 0) {
-            return null;
-        }
-        return $data[0]['name_photo'] ?? null;
+        $cacheKey = 'home.gallery.image.' . $no;
+
+        return Cache::remember($cacheKey, now()->addMinutes(30), function () use ($no) {
+            $response = Http::timeout(12)->get($this->baseUrl . '/img_json.php', [
+                'no' => $no,
+            ]);
+            if (!$response->successful()) {
+                return null;
+            }
+            $data = $response->json();
+            if (!is_array($data) || count($data) === 0) {
+                return null;
+            }
+            return $data[0]['name_photo'] ?? null;
+        });
     }
 
     private function decodeDeep(?string $value, int $passes = 2): string
@@ -66,6 +79,48 @@ class HomeController extends Controller
             $output = $decoded;
         }
         return $output;
+    }
+
+    private function looksLikeImage(string $value): bool
+    {
+        return (bool) preg_match('/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/i', $value)
+            || str_contains($value, '/img/')
+            || str_contains($value, '/image/')
+            || str_contains($value, '/images/');
+    }
+
+    private function normalizeImageUrl(?string $value): ?string
+    {
+        $value = trim((string) $value);
+        if ($value === '') {
+            return null;
+        }
+        if (str_starts_with($value, '//')) {
+            return 'https:' . $value;
+        }
+        if (preg_match('#^https?://#i', $value)) {
+            return $value;
+        }
+        return 'https://news.rbru.ac.th/' . ltrim($value, '/');
+    }
+
+    private function resolveImage(array $item): ?string
+    {
+        $candidates = ['image', 'img', 'photo', 'picture', 'pic', 'thumbnail', 'thumb', 'cover', 'url', 'filename'];
+        foreach ($candidates as $key) {
+            $value = $item[$key] ?? '';
+            if (!is_string($value) || trim($value) === '') {
+                continue;
+            }
+            if ($key === 'url' && !$this->looksLikeImage($value)) {
+                continue;
+            }
+            $normalized = $this->normalizeImageUrl($value);
+            if ($normalized) {
+                return $normalized;
+            }
+        }
+        return null;
     }
 
     public function index()
@@ -107,7 +162,7 @@ class HomeController extends Controller
             return array_slice(array_map(function ($item) {
                 $item['headline'] = $this->decodeDeep($item['headline'] ?? '');
                 $item['headline_en'] = $this->decodeDeep($item['headline_en'] ?? '');
-                $item['url'] = $item['url'] ?? null;
+                $item['image'] = $this->resolveImage($item);
                 return $item;
             }, $items), 0, 4);
         };

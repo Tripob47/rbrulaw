@@ -2,8 +2,8 @@
 @include('components.page-header', [
     'title' => $title ?? __('index.about'),
     'breadcrumbs' => [
-        ['label' => 'หน้าแรก', 'url' => url('/')],
-        ['label' => __('index.about'), 'url' => url('/about')],
+        ['label' => __('index.home'), 'url' => url(app()->getLocale())],
+        ['label' => __('index.about'), 'url' => url(app()->getLocale().'/about')],
         ['label' => $title ?? __('index.about')],
     ],
 ])
