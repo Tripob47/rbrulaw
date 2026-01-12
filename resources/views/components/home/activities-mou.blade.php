@@ -25,12 +25,14 @@
                                     }
                                 @endphp
                                 <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                    <div class="position-relative">
-                                    <img src="{{ $img }}" class="d-block w-100" style="height:320px;object-fit:cover;" alt="{{ $title }}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ $placeholderImg }}';">
-                                        <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);">
-                                            <div class="text-white fw-semibold">{{ \Illuminate\Support\Str::limit($title, 100) }}</div>
+                                    <a href="{{ url(app()->getLocale().'/detailsactivity/'.($item['no'] ?? '')) }}" class="text-decoration-none d-block">
+                                        <div class="position-relative">
+                                            <img src="{{ $img }}" class="d-block w-100" style="height:320px;object-fit:cover;" alt="{{ $title }}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ $placeholderImg }}';">
+                                            <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);">
+                                                <div class="text-white fw-semibold">{{ \Illuminate\Support\Str::limit($title, 100) }}</div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             @endforeach
                         @else
