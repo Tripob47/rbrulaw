@@ -8,6 +8,53 @@ use App\Http\Controllers\HomeController;
 
 Route::redirect('/', '/' . config('app.locale'));
 
+Route::get('/sitemap.xml', function () {
+    $localePaths = [
+        '',
+        'about',
+        'about/history',
+        'about/vision',
+        'about/strategies',
+        'about/structure',
+        'about/location',
+        'our',
+        'qa',
+        'qa/quality',
+        'qa/km',
+        'qa/plan',
+        'qa/evaluation',
+        'academic',
+        'service',
+        'alumni',
+        'alumni2',
+        'aeasearch',
+        'news',
+        'activities',
+    ];
+
+    $urls = [];
+    foreach (['th', 'en'] as $locale) {
+        foreach ($localePaths as $path) {
+            $urls[] = url($locale . ($path !== '' ? '/' . $path : ''));
+        }
+    }
+
+    $lastmod = date('Y-m-d');
+    $xmlItems = array_map(function ($loc) use ($lastmod) {
+        return "  <url>\n" .
+            "    <loc>{$loc}</loc>\n" .
+            "    <lastmod>{$lastmod}</lastmod>\n" .
+            "  </url>";
+    }, $urls);
+
+    $xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" .
+        "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" .
+        implode("\n", $xmlItems) .
+        "\n</urlset>\n";
+
+    return response($xml, 200)->header('Content-Type', 'application/xml');
+});
+
 Route::get('lang/{locale}', [LanguageController::class, 'switchLang'])
     ->where('locale', 'en|th')
     ->name('lang.switch');

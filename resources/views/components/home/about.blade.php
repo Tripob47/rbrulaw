@@ -58,13 +58,13 @@
                         <div class="col-6 col-md-3">
                             <a href="{{ url(app()->getLocale().'/our') }}" class="card-link">
                                 <div class="card-box">
-                                    <img alt="หลักสูตร คณะนิติศาสตร์" class="card-bg" src="{{ asset('img/hotmenu/caouse.jpg') }}" loading="lazy" decoding="async">
+                                    <img alt="{{ __('index.curriculum_faculty') }}" class="card-bg" src="{{ asset('img/hotmenu/caouse.jpg') }}" loading="lazy" decoding="async">
                                     <div class="card-overlay"></div>
                                     <div class="card-inner">
                                         <i class="bi bi-journal-text" aria-hidden="true"></i>
                                         <h3>
-                                            <span class="d-block">หลักสูตร</span>
-                                            <span class="d-block">คณะนิติศาสตร์</span>
+                                            <span class="d-block">{{ __('index.curriculum_label') }}</span>
+                                            <span class="d-block">{{ __('index.faculty_name') }}</span>
                                         </h3>
                                     </div>
                                 </div>
@@ -88,8 +88,8 @@
                                 <div class="card-overlay"></div>
                                 <div class="hover-links-overlay">
                                     <div class="hover-links">
-                                        <a href="https://www.rbru.ac.th/student" target="_blank" rel="noopener noreferrer" class="hover-link-btn">นักศึกษา</a>
-                                        <a href="https://www.rbru.ac.th/staff" target="_blank" rel="noopener noreferrer" class="hover-link-btn">บุคลากร</a>
+                                        <a href="https://www.rbru.ac.th/student" target="_blank" rel="noopener noreferrer" class="hover-link-btn">{{ __('index.student') }}</a>
+                                        <a href="https://www.rbru.ac.th/staff" target="_blank" rel="noopener noreferrer" class="hover-link-btn">{{ __('index.staff') }}</a>
                                     </div>
                                 </div>
                                 <div class="card-inner">

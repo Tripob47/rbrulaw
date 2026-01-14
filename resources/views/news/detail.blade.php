@@ -1,6 +1,7 @@
 @extends('layouts.masterlayout')
 
-@section('title', 'รายละเอียดข่าว')
+@section('title', __('index.news_detail_title'))
+@section('meta_description', __('index.news_detail_meta_description'))
 
 @section('content')
 @php
@@ -25,28 +26,28 @@
 <div class="container-fluid px-0" style="background-color:#f2f2f2;">
     <section style="background-color:#e2e2e2;" class="py-4">
         <div class="container text-center">
-            <h2 class="fw-bold text-dark mb-1">รายละเอียดข่าว</h2>
-            <p class="mb-0 text-dark">คณะนิติศาสตร์ มหาวิทยาลัยราชภัฏรำไพพรรณี</p>
+            <h2 class="fw-bold text-dark mb-1">{{ __('index.news_detail_title') }}</h2>
+            <p class="mb-0 text-dark">{{ __('index.faculty_name') }} {{ __('index.university_name') }}</p>
         </div>
     </section>
     <div style="background-color:#2f2f2f;">
         <div class="container py-2 text-white small">
             <a href="{{ url($locale) }}" class="text-white text-decoration-none fw-semibold">{{ __('index.home') }}</a>
             <span class="mx-2">/</span>
-            <a href="{{ url($locale.'/news') }}" class="text-white text-decoration-none fw-semibold">ข่าวสาร</a>
+            <a href="{{ url($locale.'/news') }}" class="text-white text-decoration-none fw-semibold">{{ __('index.news') }}</a>
             <span class="mx-2">/</span>
-            <span class="fw-semibold">รายละเอียดข่าว</span>
+            <span class="fw-semibold">{{ __('index.news_detail_title') }}</span>
         </div>
     </div>
 
     <div class="container py-5">
         @if(!$detail)
-            <div class="text-muted text-center">ไม่พบข้อมูลข่าวที่ต้องการ</div>
+            <div class="text-muted text-center">{{ __('index.news_detail_not_found') }}</div>
         @else
             <div class="mb-4">
                 <h3 class="fw-bold text-dark">{{ $title }}</h3>
                 @if(!empty($detail['start']))
-                    <small class="text-muted">เผยแพร่: {{ $detail['start'] }}</small>
+                    <small class="text-muted">{{ __('index.news_published', ['date' => $detail['start']]) }}</small>
                 @endif
             </div>
 
@@ -58,7 +59,7 @@
 
             @if(count($images) > 0)
                 <div class="mb-4">
-                    <h5 class="fw-semibold text-dark mb-3">รูปภาพประกอบ</h5>
+                    <h5 class="fw-semibold text-dark mb-3">{{ __('index.news_images') }}</h5>
                     <div class="row">
                         @foreach($images as $image)
                             <div class="col-md-4 mb-3">
@@ -79,7 +80,7 @@
 
             @if(count($files) > 0)
                 <div class="mb-4">
-                    <h5 class="fw-semibold text-dark mb-3">ไฟล์แนบ</h5>
+                    <h5 class="fw-semibold text-dark mb-3">{{ __('index.news_attachments') }}</h5>
                     <div class="d-flex flex-column gap-2">
                         @foreach($files as $index => $file)
                             @php
@@ -89,10 +90,10 @@
                             @endphp
                             <div class="d-flex justify-content-between align-items-center p-2 bg-white border rounded">
                                 <div>
-                                    <small class="text-muted">ไฟล์แนบที่ {{ $index + 1 }}</small>
+                                    <small class="text-muted">{{ __('index.news_attachment_item', ['number' => $index + 1]) }}</small>
                                     <div class="fw-semibold">{{ $label }}</div>
                                 </div>
-                                <a href="{{ $path }}" target="_blank" rel="noreferrer" class="btn btn-sm text-white" style="background-color:#4b4b4b;">ดาวน์โหลด</a>
+                                <a href="{{ $path }}" target="_blank" rel="noreferrer" class="btn btn-sm text-white" style="background-color:#4b4b4b;">{{ __('index.download') }}</a>
                             </div>
                         @endforeach
                     </div>

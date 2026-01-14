@@ -1,6 +1,7 @@
 @extends('layouts.masterlayout')
 
-@section('title', 'Welcome')
+@section('title', __('index.pp'))
+@section('meta_description', __('index.our_meta_description'))
 
 @section('content')
 @include('components.page-header', [

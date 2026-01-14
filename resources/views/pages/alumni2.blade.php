@@ -1,6 +1,7 @@
 @extends('layouts.masterlayout')
 
-@section('title', 'รายชื่อศิษย์เก่า')
+@section('title', __('index.alumni_list_title'))
+@section('meta_description', __('index.alumni_list_meta_description'))
 
 @section('content')
 <div class="container my-4">
@@ -38,8 +39,8 @@
         <div class="tab-pane fade" id="special" role="tabpanel">
             <select class="form-select mb-3" id="special-year" onchange="showSpecialList()">
                 <option value="" selected disabled>{{ __('index.b2') }}</option>
-                <option value="40">รุ่น 40</option>
-                <option value="41">รุ่น 41</option>
+                <option value="40">{{ __('index.class_label', ['number' => 40]) }}</option>
+                <option value="41">{{ __('index.class_label', ['number' => 41]) }}</option>
             </select>
 
             <div class="card">

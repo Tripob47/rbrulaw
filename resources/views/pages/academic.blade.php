@@ -1,6 +1,7 @@
 @extends('layouts.masterlayout')
 
 @section('title', __('index.academic'))
+@section('meta_description', __('index.academic_meta_description'))
 
 @section('content')
 @include('components.page-header', [

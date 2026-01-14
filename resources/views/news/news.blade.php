@@ -14,7 +14,7 @@
     </nav>
 
     <div class="section-title mb-4" data-aos="fade-up">
-        <p>ข่าวล่าสุด</p>
+        <p>{{ __('index.news_latest') }}</p>
     </div>
 
     <div class="row">
@@ -25,12 +25,12 @@
                     <div class="course-content">
                         <h3 class="mt-2">{{ strip_tags(html_entity_decode($item['topic'])) }}</h3>
                         <p>{!! \Illuminate\Support\Str::limit(strip_tags(html_entity_decode($item['detail'])), 150) !!}</p>
-                        <p class="category">ปี {{ $item['year'] ?? '-' }}</p>
+                        <p class="category">{{ __('index.year_label', ['year' => $item['year'] ?? '-']) }}</p>
                     </div>
                 </div>
             </div>
         @empty
-            <p>ไม่มีข่าวแสดง</p>
+            <p>{{ __('index.news_no_items') }}</p>
         @endforelse
     </div>
 </section>

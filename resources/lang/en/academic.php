@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'academics' => 'Academic Affairs',
+    'academic_meta_description' => 'Academic regulations, processes, and forms for the Faculty of Law.',
+    'course_opening' => 'Class Opening',
+    'course_opening_process' => 'Class Opening Request Process',
+    'course_opening_form' => 'Class Opening Request Form',
+    'credit_transfer' => 'Credit Transfer',
+    'credit_transfer_rules' => '1. Regulations and Announcements for Credit Transfer',
+    'regulation_2553' => 'Regulation for Credit Transfer (Bachelor) 2010',
+    'regulation_2561' => 'Regulation for Credit Transfer (Bachelor) 2018',
+    'regulation_2562' => 'Regulation for Credit Transfer (Bachelor) (No. 2) 2019',
+    'regulation_2563' => 'Regulation for Credit Transfer (Bachelor) (No. 3) 2020',
+    'regulation_2564' => 'Regulation for Credit Transfer (Bachelor) (No. 4) 2021',
+    'announcement_2553' => 'Announcement: Criteria and Procedure for Bachelor Credit Transfer 2010',
+    'announcement_2561' => 'Announcement: Criteria and Procedure for Bachelor Credit Transfer 2018',
+    'credit_transfer_process' => '2. Credit Transfer Process and Forms',
+    'credit_transfer_step' => 'Credit Transfer Steps',
+    'credit_transfer_form' => 'Credit Transfer Request Form',
+    'grade_i_correction' => 'Grade I Correction',
+    'grade_i_step' => 'Grade I Correction Request Steps',
+    'grade_i_guide' => 'Guide for Grade I Correction Request',
+    'grade_i_form' => 'Grade I Correction Request Form',
+    'downloads' => 'Downloads for Faculty of Law',
+    'room_request_form' => 'Room Use Request Form (Central Building)',
+];

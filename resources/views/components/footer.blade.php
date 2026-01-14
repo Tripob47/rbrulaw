@@ -42,7 +42,7 @@
                         <br>
                         <h5>{{ __('index.university_website') }}</h5>
                         <li><a class="text-muted"
-                                href="https://www.rbru.ac.th/rbru-title/index.php">มหาวิทยาลัยราชภัฏรำไพพรรณี</a></li>
+                                href="https://www.rbru.ac.th/rbru-title/index.php">{{ __('index.university_name') }}</a></li>
                     </ul>
                 </div>
 
@@ -50,14 +50,11 @@
                 <div class="col-6 col-md-3">
                     <h5>{{ __('index.related_agencies') }}</h5>
                     <ul class="list-unstyled">
-                        <li><a class="text-muted" href="https://www.facebook.com/565859993519315/">สโมสร
-                                คณะนิติศาสตร์</a></li>
+                        <li><a class="text-muted" href="https://www.facebook.com/565859993519315/">{{ __('index.law_club') }}</a></li>
                         <li><a class="text-muted"
-                                href="https://www.facebook.com/685807988286256/photos/814741782059542/">วิชาการ
-                                คณะนิติศาสตร์</a></li>
+                                href="https://www.facebook.com/685807988286256/photos/814741782059542/">{{ __('index.law_academic') }}</a></li>
                         <li><a class="text-muted"
-                                href="https://www.facebook.com/1518998248202258/photos/a.1566779926757423/1616028728499209/">ศิษย์เก่า
-                                คณะนิติศาสตร์</a></li>
+                                href="https://www.facebook.com/1518998248202258/photos/a.1566779926757423/1616028728499209/">{{ __('index.law_alumni') }}</a></li>
                     </ul>
                 </div>
 
@@ -78,5 +75,5 @@
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-        2026 &copy; RBRU LAW X ARIT DEV
+        {{ __('index.footer_copyright', ['year' => date('Y')]) }}
     </footer>

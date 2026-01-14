@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'quality_assurance' => 'Quality Assurance (QA)',
+    'knowledge_management_plan' => 'Knowledge Management Plan (KM)',
+    'faculty' => 'Faculty Plan',
+    'evaluation' => 'Evaluation Results',
+    'qa_title' => 'Quality Assurance (QA)',
+    'qa_meta_description' => 'Quality assurance information and SAR documents for the Faculty of Law.',
+    'qa_manuals' => 'QA Manuals',
+    'qa_manual_2549' => 'Internal Quality Assurance Manual, Academic Year 2006',
+    'qa_manual_2560' => 'Internal Quality Assurance Manual, Academic Year 2017',
+    'qa_manual_2561' => 'Quality Assurance Manual, Academic Year 2018',
+    'faculty_level' => 'Faculty Level',
+    'program_level' => 'Program Level',
+    'sar_reports' => 'Self-Assessment Reports (SAR)',
+    'evaluation_reports' => 'Evaluation Reports',
+    'academic_year_2557' => 'Academic Year 2014',
+    'academic_year_2558' => 'Academic Year 2015',
+    'academic_year_2559' => 'Academic Year 2016',
+    'academic_year_2560' => 'Academic Year 2017',
+    'academic_year_2561' => 'Academic Year 2018',
+    'academic_year_2562' => 'Academic Year 2019',
+    'academic_year_2563' => 'Academic Year 2020',
+    'qa_ti' => 'Quality Assurance (QA) - Faculty of Law',
+];

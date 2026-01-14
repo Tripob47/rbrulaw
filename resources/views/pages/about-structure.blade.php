@@ -1,61 +1,17 @@
 @extends('layouts.masterlayout')
 
 @section('title', __('index.Structure'))
+@section('meta_description', __('index.about_structure_meta_description'))
 
 @section('content')
     @include('components.about.header', ['title' => __('index.Structure')])
 
     @php
-        $dean = [
-            'name' => 'อาจารย์ทรัพยสิทธิ์ เกิดในมงคล',
-            'position' => 'คณบดีคณะนิติศาสตร์',
-            'image' => 'lawimg/Srapsit.jpg',
-            'degrees' => [
-                'นิติศาสตร์มหาบัณฑิต (น.ม) มหาวิทยาลัยรามคำแหง',
-                'นิติศาสตร์บัณฑิต (น.บ) มหาวิทยาลัยสุโขทัยธรรมาธิราช',
-            ],
-        ];
-
-        $academicStaff = [
-            ['name' => 'อาจารย์ทรัพยสิทธิ์ เกิดในมงคล', 'position' => 'คณบดีคณะนิติศาสตร์', 'image' => 'lawimg/Srapsit.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์กุลปราณี กุลวิทิต', 'position' => 'รองคณบดีฝ่ายกิจการนักศึกษา', 'image' => 'lawimg/Kulpranee.jpg'],
-            ['name' => 'อาจารย์ ดร.วิศิษศักดิ์ เนืองนอง', 'position' => 'รองคณบดีฝ่ายบริการวิชาการและประธานหลักสูตรนิติศาสตรมหาบัณฑิต', 'image' => 'lawimg/Visitsak.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์ ดร.อาทิตยา โภคสุทธิ์', 'position' => 'ผู้ช่วยคณบดีด้านวิจัย', 'image' => 'lawimg/Athitaya.jpg'],
-            ['name' => 'อาจารย์ ดร.ทัศนีย์ เงินสุข', 'position' => 'ผู้ช่วยคณบดีด้านวิชาการและประกันคุณภาพการศึกษา', 'image' => 'lawimg/tassanee.jpg'],
-            ['name' => 'อาจารย์ ดร.ภูวดล ดำสนิท', 'position' => 'ผู้ช่วยคณบดีด้านทำนุบำรุงศิลปวัฒนธรรม', 'image' => 'lawimg/Phuwadol.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์ ดร.ฐิติรัตน์ อิทธิมีชัย', 'position' => 'ประธานหลักสูตรนิติศาสตรบัณฑิต', 'image' => 'lawimg/Thitirat.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์พรรณรัตน์ โสธรประภากร', 'position' => 'อาจารย์ประจำคณะนิติศาสตร์', 'image' => 'lawimg/Phanarat.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์ชินะกานต์ แสงอำนาจ', 'position' => 'อาจารย์ประจำคณะนิติศาสตร์', 'image' => 'lawimg/Chinakan.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์ ทรงพร ประมาณ', 'position' => 'อาจารย์ประจำคณะนิติศาสตร์', 'image' => 'lawimg/Songphorn.jpg'],
-            ['name' => 'อาจารย์ชญานาภา ลมัยวงษ์', 'position' => 'อาจารย์ประจำคณะนิติศาสตร์ (ลาศึกษาต่อ)', 'image' => 'lawimg/Chanapha.jpg'],
-        ];
-
-        $bachelorCommittee = [
-            ['name' => 'ผู้ช่วยศาสตราจารย์ ดร.ฐิติรัตน์ อิทธิมีชัย', 'position' => 'ประธานหลักสูตรนิติศาสตรบัณฑิต', 'image' => 'lawimg/Thitirat.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์กุลปราณี กุลวิทิต', 'position' => 'อาจารย์ผู้รับผิดชอบหลักสูตรนิติศาสตรบัณฑิต', 'image' => 'lawimg/Kulpranee.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์ทรงพร ประมาณ', 'position' => 'อาจารย์ผู้รับผิดชอบหลักสูตรนิติศาสตรบัณฑิต', 'image' => 'lawimg/Songphorn.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์พรรณรัตน์ โสธรประภากร', 'position' => 'อาจารย์ผู้รับผิดชอบหลักสูตรนิติศาสตรบัณฑิต', 'image' => 'lawimg/Phanarat.jpg'],
-            ['name' => 'อาจารย์ ดร.ทัศนีย์ เงินสุข', 'position' => 'อาจารย์ผู้รับผิดชอบหลักสูตรนิติศาสตรบัณฑิต', 'image' => 'lawimg/tassanee.jpg'],
-        ];
-
-        $masterCommittee = [
-            ['name' => 'อาจารย์ ดร.วิศิษศักดิ์ เนืองนอง', 'position' => 'ประธานหลักสูตรนิติศาสตรมหาบัณฑิต/อาจารย์ผู้รับผิดชอบหลักสูตรนิติศาสตรมหาบัณฑิต', 'image' => 'lawimg/Visitsak.jpg'],
-            ['name' => 'อาจารย์ ดร.ภูวดล ดำสนิท', 'position' => 'อาจารย์ผู้รับผิดชอบหลักสูตรนิติศาสตรมหาบัณฑิต', 'image' => 'lawimg/Phuwadol.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์ ดร.อาทิตยา โภคสุทธิ์', 'position' => 'อาจารย์ประจำหลักสูตรนิติศาสตรมหาบัณฑิต', 'image' => 'lawimg/Athitaya.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์ทรงพร ประมาณ', 'position' => 'อาจารย์ประจำหลักสูตรนิติศาสตรมหาบัณฑิต', 'image' => 'lawimg/Songphorn.jpg'],
-            ['name' => 'ผู้ช่วยศาสตราจารย์พรรณรัตน์ โสธรประภากร', 'position' => 'อาจารย์ประจำหลักสูตรนิติศาสตรมหาบัณฑิต', 'image' => 'lawimg/Phanarat.jpg'],
-            ['name' => 'อ.ดร.ศุนงค์นุช ศรีวิพันธ์', 'position' => 'อาจารย์ประจำหลักสูตรนิติศาสตรมหาบัณฑิต', 'image' => 'lawimg/Sunongnush.jpg'],
-        ];
-
-        $supportStaff = [
-            ['name' => 'นางสาวภัคภร แซ่ห่าน', 'position' => 'รักษาการหัวหน้าสำนักงานคณบดีคณะนิติศาสตร์', 'image' => 'lawimg/phakphon.jpg'],
-            ['name' => 'นางกาญจลักษณ์ พรรครัตน์', 'position' => 'เจ้าหน้าที่บริหารงานทั่วไป', 'image' => 'lawimg/KarnJanaluck.jpg'],
-            ['name' => 'นางสาวปิยธิดา ทิพจินดา', 'position' => 'เจ้าหน้าที่บริหารงานทั่วไป', 'image' => 'lawimg/piyathida.jpg'],
-            ['name' => 'นางสาวฉวีวรรณ รัตนมิตร', 'position' => 'บรรณารักษ์', 'image' => 'lawimg/Chaweewan.jpg'],
-            ['name' => 'นางสาวปัทมา นิลมาศ', 'position' => 'แม่บ้านคณะนิติศาสตร์', 'image' => 'lawimg/Patthama.jpg'],
-            ['name' => 'นางสาวสมจิตร สุวรรณา', 'position' => 'แม่บ้านคณะนิติศาสตร์', 'image' => 'lawimg/SomJitt.jpg'],
-            ['name' => 'นางสาวขนิษฐา สุทธิกุล', 'position' => 'แม่บ้านคณะนิติศาสตร์', 'image' => 'lawimg/Kanittha.jpg'],
-        ];
+        $dean = (array) __('index.structure_dean');
+        $academicStaff = (array) __('index.structure_academic_staff');
+        $bachelorCommittee = (array) __('index.structure_bachelor_committee');
+        $masterCommittee = (array) __('index.structure_master_committee');
+        $supportStaff = (array) __('index.structure_support_staff');
     @endphp
 
     <section id="about" class="py-5" style="background-color:#f8f9fa;">

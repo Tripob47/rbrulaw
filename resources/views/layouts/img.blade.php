@@ -27,8 +27,8 @@
         {{-- <nav class="breadcrumbs position-absolute bottom-0 start-0 w-100 py-2" style="background-color: rgba(0, 0, 0, 0.5);">
             <div class="container text-white">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="index.html" class="text-white">คณะนิติศาสตร์</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">เกี่ยวกับคณะ</li>
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">{{ __('index.faculty_name') }}</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">{{ __('index.about') }}</li>
                 </ol>
             </div>
         </nav> --}}

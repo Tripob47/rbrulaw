@@ -1,6 +1,7 @@
 @extends('layouts.masterlayout')
 
 @section('title', __('index.Location'))
+@section('meta_description', __('index.about_location_meta_description'))
 
 @section('content')
     @include('components.about.header', ['title' => __('index.Location')])
@@ -76,7 +77,7 @@
                 <div class="col-12">
                     <div class="card location-card">
                         <div class="card-header location-header">
-                            <i class="bi bi-geo-alt-fill me-2 location-icon"></i> แผนที่
+                            <i class="bi bi-geo-alt-fill me-2 location-icon"></i> {{ __('index.map') }}
                         </div>
                         <div class="card-body">
                             <div class="ratio ratio-16x9">

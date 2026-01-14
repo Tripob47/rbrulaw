@@ -9,7 +9,8 @@
             'faculty' => __('index.faculty_name'),
             'university' => __('index.university_name'),
         ]);
-        $metaTitle = trim($__env->yieldContent('title', $defaultTitle));
+        $pageTitle = trim($__env->yieldContent('title'));
+        $metaTitle = $pageTitle !== '' ? ($pageTitle . ' | ' . $defaultTitle) : $defaultTitle;
         $metaDescription = trim($__env->yieldContent('meta_description', __('index.meta_description')));
         $metaImage = trim($__env->yieldContent('meta_image', asset('template/assets/img/course-1.jpg')));
         $locale = app()->getLocale();
@@ -27,9 +28,11 @@
 
     <title>{{ $metaTitle }}</title>
     <meta name="description" content="{{ $metaDescription }}">
+    <meta name="robots" content="index,follow">
     <link rel="canonical" href="{{ $canonicalUrl }}">
     <link rel="alternate" hreflang="th" href="{{ $alternateTh }}">
     <link rel="alternate" hreflang="en" href="{{ $alternateEn }}">
+    <link rel="alternate" hreflang="x-default" href="{{ $alternateTh }}">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $metaTitle }}">
@@ -53,6 +56,9 @@
             'name' => __('index.faculty_name') . ' ' . __('index.university_name'),
             'url' => url('/'),
             'logo' => asset('template/assets/img/favicon.png'),
+            'sameAs' => [
+                'https://www.rbru.ac.th/',
+            ],
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
     </script>
     <script type="application/ld+json">
@@ -62,6 +68,21 @@
             'name' => __('index.faculty_name'),
             'url' => url('/'),
             'inLanguage' => $locale === 'th' ? 'th-TH' : 'en-US',
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            'name' => $metaTitle,
+            'description' => $metaDescription,
+            'url' => $canonicalUrl,
+            'inLanguage' => $locale === 'th' ? 'th-TH' : 'en-US',
+            'isPartOf' => [
+                '@type' => 'WebSite',
+                'name' => __('index.faculty_name'),
+                'url' => url('/'),
+            ],
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
     </script>
 

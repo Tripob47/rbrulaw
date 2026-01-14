@@ -1,0 +1,802 @@
+<?php
+
+return [
+    'about' => 'About Faculty',
+    'curriculum' => 'Curriculum',
+    'qa' => 'QA',
+    'research' => 'Research',
+    'academic' => 'Academic',
+    'alumni' => 'Alumni',
+    'dean' => "Dean's Direct Line",
+    'ad' => 'for Admin',
+    'faculty_name' => 'Faculty of Law',
+    'home' => 'Home',
+    'curriculum_label' => 'Curriculum',
+    'curriculum_faculty' => 'Faculty of Law Curriculum',
+    'student' => 'Students',
+    'staff' => 'Staff',
+    'language_th' => 'Thai',
+    'language_en' => 'English',
+    'news_activities' => 'News & Activity Photos',
+    'news_seminar' => 'Training / Seminar News',
+    'news_job' => 'Job Announcements',
+    'news_procurement' => 'Procurement News',
+    'news' => 'News',
+    'activities' => 'Activity pictures',
+    'more' => 'more',
+    'Cooperate' => 'Cooperate/Mou',
+    'site_title' => ':faculty | :university',
+    'meta_description' => 'Faculty of Law, Rambhai Barni Rajabhat University, providing legal education and producing ethical graduates for society.',
+    'slogan' => 'Excellence in Law, Producing Ethical Graduates',
+    'bachelor_degree' => "Bachelor's Program",
+    'master_degree' => "Master's Program",
+    'view_details' => 'View Details',
+    'video' => 'VDO',
+    'brochure' => 'Brochure',
+    'law_channel' => 'Law Channel',
+    'qa_button' => 'Quality Assurance',
+    'news_general' => 'General News',
+    'news_training' => 'Training News',
+    'news_awards' => 'Awards and Honors',
+    'no_news' => 'No new news at the moment.',
+    'no_activity_image' => 'No activity images available.',
+    'slide_number' => 'Slide :number',
+    'previous' => 'Previous',
+    'next' => 'Next',
+    'law_faculty_video_title' => 'Faculty of Law, Rambhai Barni Rajabhat University',
+    'mou_item_1' => 'The Office of the Administrative Court signed a Memorandum of Understanding (MOU) with Rambhai Barni Rajabhat University.',
+    'mou_item_2' => 'The Office of the Constitutional Court signed a Memorandum of Understanding (MOU) with Rambhai Barni Rajabhat University.',
+    'mou_item_3' => 'The Office of the Consumer Protection Board signed a Memorandum of Understanding (MOU) with Rambhai Barni Rajabhat University.',
+    'apply' => 'Apply',
+    'academic_services' => 'Academic Services',
+    'online_services' => 'Online Services',
+    'history' => 'history',
+    'vision' => 'Philosophy Vision  Mission',
+    'Strategies' => 'Strategies',
+    'Structure' => 'Structure/Personnel',
+    'Location' => 'Location',
+    'op' => 'In accordance with government policy, Rajabhat Institute must provide education base on the people on local community, in order to develop the local community and the nation, and respond with the community’s needs. Faculty of Law had make a survey for prospective students. It found that there was a high demand in Legal education. Consequently, It decided to offered Bachelor of Laws in 2005. The faculty was under administration of faculty of Humanities and Social Science. Since Legal Program had professionalism and they were supervised by Thai Bar Association and the Lawyer Council, The program itself need to be certificated by those organization. However, the university has evaluate the performance by faculty of Humanities and Social Science. It came across that the faculty was not be able to manage the legal program according to the educational standard. To achieve the educational standard, the university promoted the legal program to faculty of law on 3 June 2007, at 5th university council conference. The faculty had been produced quality graduates for both government, private organization and own business for 9 years. Faculty of Law has constantly developed and improved the curricula. It was certificated by OHEC standard for quality assurance in 2008 and 2012. In the present, It will continuously develop in all aspects. It provide the legal education that meet the standard and respond with government policy in producing a quality graduates. So, it additionally improved the curricula in 2016 by including the cooperative education according to university’s identity, “Graduates Manage Wisely”.',
+    'vision_title' => 'Vision',
+    'vision_text' => 'Committed to developing and enhancing academic excellence toward professional standards, based on good governance for sustainable management.',
+    
+    'philosophy_title' => 'Philosophy',
+    'philosophy_text' => 'Excellence in law creates graduates with moral integrity.',
+    
+    'identity_title' => 'Identity',
+    'identity_text' => 'Graduates are smart managers.',
+    
+    'uniqueness_title' => 'Uniqueness',
+    'uniqueness_text' => 'Wisdom of the Eastern region.',
+    
+    'desired_attributes_title' => 'Desired Graduate Attributes',
+    'desired_attributes_text' => 'Morality, knowledge globalization, perseverance, smart management.',
+
+    'title' => 'Strategies and Action Plans',
+
+    'strategy1_title' => 'Strategy 1',
+    'strategy1_desc' => 'Producing law graduates who are smart managers, aligned with local needs and societal changes',
+    'strategy1_actions' => [
+        'Develop graduates according to identity and desired attributes that meet labor market demands and legal professional standards',
+        'Revise curricula to meet TQF and legal education standards (Bar Association and Lawyers Council), and respond to market and societal needs',
+        'Encourage student participation in networking activities with employers or provide career training/guidance',
+        'Establish academic and life counseling systems through advisors and support services',
+        'Promote academic, language, and extracurricular development aligned with university identity and ASEAN integration',
+        'Implement proactive student recruitment and public relations',
+        'Develop instructor systems and teaching processes',
+        'Establish mechanisms to evaluate students',
+        'Operate under the National Qualifications Framework for Higher Education',
+        'Plan student development activities with student participation',
+    ],
+
+    'strategy2_title' => 'Strategy 2',
+    'strategy2_desc' => 'Enhancing educational quality to meet standards',
+    'strategy2_actions' => [
+        'Advance academic development',
+        'Continuously develop faculty members',
+        'Produce quality graduates with desired attributes',
+    ],
+
+    'strategy3_title' => 'Strategy 3',
+    'strategy3_desc' => 'Developing effective management systems',
+    'strategy3_actions' => [
+        'Implement good governance in management',
+        'Develop personnel systematically',
+        'Build networks with local communities and alumni',
+    ],
+    'location_title' => 'Location',
+    'university_name' => 'Rajabhat Rambhai Barni University',
+    'address_th' => '41 Moo 5, Raksakchamul Road, Tha Chang Subdistrict, Mueang District, Chanthaburi Province, 22000',
+    'address_en' => '',
+    'admin_structure' => 'Administrative Structure',
+    'tel' => 'Tel',
+    'fax' => 'Fax',
+    'email' => 'E-mail',
+    'contact_faculty' => 'Contact Faculty of Law',
+    'follow_us' => 'Follow Us',
+    'university_website' => 'University Website',
+    'related_agencies' => 'Related Agencies',
+    'map' => 'Map',
+    'law_club' => 'Faculty of Law Club',
+    'law_academic' => 'Faculty of Law Academic Affairs',
+    'law_alumni' => 'Faculty of Law Alumni',
+    'footer_copyright' => ':year © RBRU LAW X ARIT DEV',
+
+    'qa_title' => 'Quality Assurance (QA)',
+    'qa_manuals' => 'QA Manuals',
+    'qa_manual_2549' => 'Internal Quality Assurance Manual, Academic Year 2006',
+    'qa_manual_2560' => 'Internal Quality Assurance Manual, Academic Year 2017',
+    'qa_manual_2561' => 'Quality Assurance Manual, Academic Year 2018',
+
+    'faculty_level' => 'Faculty Level',
+    'program_level' => 'Program Level',
+
+    'sar_reports' => 'Self-Assessment Reports (SAR)',
+    'evaluation_reports' => 'Evaluation Reports',
+
+    'academic_year_2557' => 'Academic Year 2014',
+    'academic_year_2558' => 'Academic Year 2015',
+    'academic_year_2559' => 'Academic Year 2016',
+    'academic_year_2560' => 'Academic Year 2017',
+    'academic_year_2561' => 'Academic Year 2018',
+    'academic_year_2562' => 'Academic Year 2019',
+    'academic_year_2563' => 'Academic Year 2020',
+
+    'qa_ti' => 'Quality Assurance (QA) - Faculty of Law',
+    'km_plan' => 'Knowledge Management (KM) Plan',
+    'faculty_plan' => 'Faculty of Law Plan',
+    'evaluation_results' => 'Evaluation Results',
+    'qa_performance_title' => 'Faculty of Law Performance Results',
+    'qa_performance_year' => 'Faculty of Law Performance Results, Year :year',
+    'qa_no_performance_files' => 'No performance files found.',
+    'download' => 'Download',
+
+    'km_title' => 'Knowledge Management (KM) Faculty of Law',
+
+    // KM Plans
+    'km_plan_title' => 'Knowledge Management (KM) Plans',
+    'km_plan_2564' => 'Knowledge Management (KM) Plan for the year 2021',
+    'km_plan_2563' => 'Knowledge Management (KM) Plan for the year 2020',
+    'km_plan_2562' => 'Knowledge Management (KM) Plan for the year 2019',
+    'km_plan_2560' => 'Knowledge Management (KM) Plan for the year 2017',
+
+    // Results
+    'km_results_title' => 'Performance Results',
+    'km_results_2564' => 'Performance Results for Fiscal Year 2021',
+    'km_results_2563' => 'Performance Results for Fiscal Year 2020',
+    'km_results_2562' => 'Performance Results for Fiscal Year 2019',
+    'km_results_2561' => 'Performance Results for Fiscal Year 2018',
+
+    'learning_park_title' => 'Learning Park',
+
+    'research_title' => 'Research',
+    'research_items' => [
+        'Best Practices on Teaching Development',
+        'Best Practices on Submitting Research for Academic Position',
+        'Best Practices on Research Funding Sources',
+    ],
+
+    'graduates_title' => 'Graduates',
+    'graduates_items' => [
+        'Best Practices on Presenting Research Abroad',
+        'Best Practices on Teaching Tax Law Course',
+        'Best Practices on Online Teaching Methods',
+        'Best Practices on Course Learning Outcomes',
+    ],
+
+     'quality_assurance' => 'Quality Assurance (QA)',
+    'knowledge_management_plan' => 'Knowledge Management Plan (KM)',
+    'faculty' => 'Faculty Plan',
+    'evaluation' => 'Evaluation Results',
+    'pp' => 'course',
+
+    'strategic_plan_title' => '5-Year Strategic Plan',
+    'strategic_plan_1' => '5-Year Strategic Plan 2014–2018 (Revised 2016)',
+    'strategic_plan_2' => '5-Year Strategic Plan 2014–2018 (Revised 2019)',
+    'strategic_plan_3' => '5-Year Strategic Plan 2014–2018',
+    'strategic_plan_4' => '5-Year Strategic Plan 2017–2021 (Revised 2018)',
+    'strategic_plan_5' => '5-Year Strategic Plan 2017–2021 (Revised 2019)',
+    'strategic_plan_6' => '5-Year Strategic Plan 2017–2021 (2020 Edition)',
+    'strategic_plan_7' => '5-Year Strategic Plan 2017–2021 (2021 Edition)',
+
+    'operation_plan_title' => 'Operational Plan',
+    'operation_plan_1' => 'Operational Plan 2014',
+    'operation_plan_2' => 'Operational Plan 2015',
+    'operation_plan_3' => 'Operational Plan 2016 (2nd Edition)',
+    'operation_plan_4' => 'Operational Plan 2017 (SWOT Revised)',
+    'operation_plan_5' => 'Operational Plan 2018',
+    'operation_plan_6' => 'Operational Plan 2019',
+    'operation_plan_7' => 'Operational Plan 2020',
+    'operation_plan_8' => 'Operational Plan 2021',
+
+    'quality_development_plan' => 'Quality Development Plan',
+    'faculty_levels' => 'Faculty Level',
+    'faculty_plan_2558' => 'Quality Development Plan at Faculty Level, Year 2015',
+    'faculty_plan_2559' => 'Quality Development Plan at Faculty Level, Year 2016',
+    'faculty_plan_2560' => 'Quality Development Plan at Faculty Level, Year 2017',
+    'faculty_plan_2561' => 'Quality Development Plan at Faculty Level, Year 2018',
+    'faculty_plan_2562' => 'Quality Development Plan at Faculty Level, Year 2019',
+    'faculty_plan_2563' => 'Quality Development Plan at Faculty Level, Year 2020',
+
+    'program_levels' => 'Program Level',
+    'program_plan_2558' => 'Quality Development Plan at Program Level, Year 2015',
+    'program_plan_2560' => 'Quality Development Plan at Program Level, Year 2017',
+    'program_plan_2561' => 'Quality Development Plan at Program Level, Year 2018',
+    'program_plan_2562' => 'Quality Development Plan at Program Level, Year 2019',
+    'program_plan_2563' => 'Quality Development Plan at Program Level, Year 2020',
+
+    'personnel_development_plan' => 'Personnel Development Plan',
+    'personnel_plan_2561' => 'Personnel Development Plan Fiscal Year 2018',
+    'personnel_plan_2562' => 'Human Resource Management and Development Plan (Academic and Support Staff) 5 Years (2017-2021) Fiscal Year 2019',
+    'personnel_plan_2563' => 'Human Resource Management and Development Plan Fiscal Year 2020',
+    'personnel_plan_2564' => 'Human Resource Management and Development Plan Fiscal Year 2021',
+
+    'risk_management_plan' => 'Risk Management Plan',
+    'risk_plan_2561' => 'Risk Management Plan Fiscal Year 2018',
+    'risk_plan_2562' => 'Risk Management Plan Fiscal Year 2019',
+    'risk_plan_2563' => 'Risk Management Plan Fiscal Year 2020',
+    'risk_plan_2564' => 'Risk Management Plan Fiscal Year 2021',
+
+    'budget_plan' => 'Budget Plan',
+    'budget_plan_2559' => 'Budget Plan Fiscal Year 2016',
+    'financial_strategy_2562' => 'Financial Strategy Plan Fiscal Year 2019',
+    'financial_strategy_2563' => 'Financial Strategy Plan Fiscal Year 2020',
+    'financial_strategy_2564' => 'Financial Strategy Plan Fiscal Year 2021',
+
+    'academic_service_plan' => 'Academic Service Plan',
+    'academic_service_plan_2562' => 'Academic Service Plan and Utilization Plan for Development of Students, Community or Society, Fiscal Year 2019',
+    'academic_service_plan_2563' => 'Academic Service Plan and Utilization Plan for Development of Students, Community or Society, Fiscal Year 2020',
+    'academic_service_plan_2564' => 'Academic Service Plan and Utilization Plan for Development of Students, Community or Society, Fiscal Year 2021',
+
+    'culture_maintenance_plan' => 'Culture Maintenance Plan',
+    'culture_maintenance_plan_2561' => 'Culture Maintenance Plan Academic Year 2018',
+    'culture_maintenance_plan_2562' => 'Culture Maintenance Plan Academic Year 2019',
+    'culture_maintenance_plan_2563' => 'Culture Maintenance Plan Academic Year 2020',
+
+    'student_activity_plan' => 'Student Activity Development Plan',
+    'student_activity_plan_2561' => 'Student Activity Development Plan Academic Year 2018',
+    'student_activity_plan_2562' => 'Student Activity Development Plan Academic Year 2019',
+    'student_activity_plan_2563' => 'Student Activity Development Plan Academic Year 2020',
+
+    'academics' => 'Academic Affairs',
+    'course_opening' => 'Class Opening',
+    'course_opening_process' => 'Class Opening Request Process',
+    'course_opening_form' => 'Class Opening Request Form',
+
+    'credit_transfer' => 'Credit Transfer',
+    'credit_transfer_rules' => '1. Credit Transfer Regulations and Announcements',
+    'regulation_2553' => 'Undergraduate Credit Transfer Regulation 2010',
+    'regulation_2561' => 'Undergraduate Credit Transfer Regulation 2018',
+    'regulation_2562' => 'Undergraduate Credit Transfer Regulation (2nd Edition) 2019',
+    'regulation_2563' => 'Undergraduate Credit Transfer Regulation (3rd Edition) 2020',
+    'regulation_2564' => 'Undergraduate Credit Transfer Regulation (4th Edition) 2021',
+    'announcement_2553' => 'Announcement on Undergraduate Credit Transfer Criteria 2010',
+    'announcement_2561' => 'Announcement on Undergraduate Credit Transfer Criteria 2018',
+
+    'credit_transfer_process' => '2. Credit Transfer Process and Forms',
+    'credit_transfer_step' => 'Steps to Transfer Academic Credits',
+    'credit_transfer_form' => 'Academic Credit Transfer Request Form',
+
+    'grade_i_correction' => 'Grade I Correction',
+    'grade_i_step' => 'Steps to Submit Grade I Correction',
+    'grade_i_guide' => 'Guide to Writing Grade I Correction Request',
+    'grade_i_form' => 'Grade I Correction Request Form',
+
+    'downloads' => 'Faculty of Law Downloadable Documents',
+    'room_request_form' => 'Request Form for Shared Classroom Usage',
+
+    'alumnis' => 'Alumni - Faculty of Law',
+    'alumni_document' => 'Document',
+    'alumni_employment_survey' => 'Graduate Employment Survey Form',
+
+    'p' => 'Regular session',
+    'p2' => 'Special Region',
+     'b' => 'Please select the entrance year of the alumni.',
+     'b2' => 'Select model',
+     'o' => 'Bachelor of Laws Program',
+     '' => '',
+     'thesis' => 'Thesis',
+    'independent_study' => 'Independent Study',
+    'alumni_directory' => 'Alumni Directory',
+    'employment_survey' => 'Graduate Employment Survey',
+    'news_system' => 'News System',
+    'gallery_system' => 'Gallery System',
+
+    'motto' => 'Knowledge and Morality Bring Justice to Local Community',
+
+    'research_fund' => 'Research Fund - Faculty of Law',
+    'academic_research' => 'Academic Research - Faculty of Law',
+    'research_statistic' => 'Research Statistics',
+
+    'fund' => 'Research Fund',
+    'fund_2021' => 'Research Fund 2021',
+    'fund_2018' => 'Research Fund 2018',
+    'fund_2017' => 'Research Fund 2017',
+
+    'budget' => 'Budget',
+    'budget_2021' => 'Budget 2021',
+    'budget_2020' => 'Budget 2020',
+    'budget_2018' => 'Budget 2018',
+    'budget_2017' => 'Budget 2017',
+
+    'honor' => 'Honoring Researchers',
+    'honor_2021' => 'Honoring Researchers 2021',
+    'honor_2020' => 'Honoring Researchers 2020',
+    'honor_2018' => 'Honoring Researchers 2018',
+    'honor_2017' => 'Honoring Researchers 2017',
+    'honor_2016' => 'Honoring Researchers 2016',
+
+    'documents' => 'Documents for Research Grants',
+    'doc_plan' => 'Research Implementation Plan',
+    'doc_request_money' => 'Request for Approval to Withdraw Money for Research Support',
+    'doc_budget_plan' => 'Research Budget Plan',
+    'doc_agreement' => 'Research Grant Agreement',
+    'doc_certificate' => 'Certificate of Utilization of Research or Creative Work',
+    'doc_attachment' => 'Attachments to the Research Fund Agreement',
+    'doc_evaluation' => 'Evaluation Form after Completion of Each Project',
+    'legal_aid_office' => 'Legal Aid Office',
+    'legal_knowledge' => 'Legal Knowledge',
+    'legal_articles' => 'Legal Articles',
+    'utilization_2561' => 'Utilization in 2018',
+    'cert_utilization_2561_1' => 'Certificate of Utilization of Research or Creative Work',
+    'research_cert_2561_1' => 'Research Result Certificate No. 1',
+    'research_cert_2561_2' => 'Research Result Certificate No. 2',
+    'utilization_2563' => 'Utilization in 2020',
+    'research_cert_2563_1' => 'Research Result Certificate No. 1',
+    'research_cert_2563_2' => 'Research Result Certificate No. 2',
+    'research_cert_2563_3' => 'Research Result Certificate No. 3',
+    'research_cert_2563_4' => 'Research Result Certificate No. 4',
+
+    'master' => 'master',
+    'bachelor' => 'bachelor',
+
+    'management_structure' => 'Management Structure',
+    'lecturers' => 'Lecturers of Faculty of Law',
+    'llb_responsible' => 'Lecturers Responsible for Bachelor of Laws Program',
+    'llm_responsible' => 'Lecturers Responsible for Master of Laws Program',
+    'support_staff' => 'Support Staff',
+    'structure_dean' => [
+        'name' => 'Lecturer Tharapisit Koet Nai Mongkhon',
+        'position' => 'Dean, Faculty of Law',
+        'image' => 'lawimg/Srapsit.jpg',
+        'degrees' => [
+            'Master of Laws (LL.M.), Ramkhamhaeng University',
+            'Bachelor of Laws (LL.B.), Sukhothai Thammathirat Open University',
+        ],
+    ],
+    'structure_academic_staff' => [
+        [
+            'name' => 'Lecturer Tharapisit Koet Nai Mongkhon',
+            'position' => 'Dean, Faculty of Law',
+            'image' => 'lawimg/Srapsit.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Kulpranee Kulwitit',
+            'position' => 'Associate Dean for Student Affairs',
+            'image' => 'lawimg/Kulpranee.jpg',
+        ],
+        [
+            'name' => 'Lecturer Dr. Visitsak Nueangnong',
+            'position' => 'Associate Dean for Academic Services and Chair, LL.M. Program',
+            'image' => 'lawimg/Visitsak.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Dr. Athitaya Phoksut',
+            'position' => 'Assistant Dean for Research',
+            'image' => 'lawimg/Athitaya.jpg',
+        ],
+        [
+            'name' => 'Lecturer Dr. Tassanee Ngoensuk',
+            'position' => 'Assistant Dean for Academic Affairs and Quality Assurance',
+            'image' => 'lawimg/tassanee.jpg',
+        ],
+        [
+            'name' => 'Lecturer Dr. Phuwadol Damsanit',
+            'position' => 'Assistant Dean for Arts and Culture',
+            'image' => 'lawimg/Phuwadol.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Dr. Thitirat Itthimechai',
+            'position' => 'Chair, LL.B. Program',
+            'image' => 'lawimg/Thitirat.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Phanarat Sotharapakor',
+            'position' => 'Lecturer, Faculty of Law',
+            'image' => 'lawimg/Phanarat.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Chinakan Saengamnat',
+            'position' => 'Lecturer, Faculty of Law',
+            'image' => 'lawimg/Chinakan.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Songphorn Praman',
+            'position' => 'Lecturer, Faculty of Law',
+            'image' => 'lawimg/Songphorn.jpg',
+        ],
+        [
+            'name' => 'Lecturer Chanapha Lamaiwong',
+            'position' => 'Lecturer, Faculty of Law (Study Leave)',
+            'image' => 'lawimg/Chanapha.jpg',
+        ],
+    ],
+    'structure_bachelor_committee' => [
+        [
+            'name' => 'Asst. Prof. Dr. Thitirat Itthimechai',
+            'position' => 'Chair, LL.B. Program',
+            'image' => 'lawimg/Thitirat.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Kulpranee Kulwitit',
+            'position' => 'Program Coordinator, LL.B.',
+            'image' => 'lawimg/Kulpranee.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Songphorn Praman',
+            'position' => 'Program Coordinator, LL.B.',
+            'image' => 'lawimg/Songphorn.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Phanarat Sotharapakor',
+            'position' => 'Program Coordinator, LL.B.',
+            'image' => 'lawimg/Phanarat.jpg',
+        ],
+        [
+            'name' => 'Lecturer Dr. Tassanee Ngoensuk',
+            'position' => 'Program Coordinator, LL.B.',
+            'image' => 'lawimg/tassanee.jpg',
+        ],
+    ],
+    'structure_master_committee' => [
+        [
+            'name' => 'Lecturer Dr. Visitsak Nueangnong',
+            'position' => 'Chair and Program Coordinator, LL.M.',
+            'image' => 'lawimg/Visitsak.jpg',
+        ],
+        [
+            'name' => 'Lecturer Dr. Phuwadol Damsanit',
+            'position' => 'Program Coordinator, LL.M.',
+            'image' => 'lawimg/Phuwadol.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Dr. Athitaya Phoksut',
+            'position' => 'Lecturer, LL.M. Program',
+            'image' => 'lawimg/Athitaya.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Songphorn Praman',
+            'position' => 'Lecturer, LL.M. Program',
+            'image' => 'lawimg/Songphorn.jpg',
+        ],
+        [
+            'name' => 'Asst. Prof. Phanarat Sotharapakor',
+            'position' => 'Lecturer, LL.M. Program',
+            'image' => 'lawimg/Phanarat.jpg',
+        ],
+        [
+            'name' => 'Lecturer Dr. Sunongnuch Srivipan',
+            'position' => 'Lecturer, LL.M. Program',
+            'image' => 'lawimg/Sunongnush.jpg',
+        ],
+    ],
+    'structure_support_staff' => [
+        [
+            'name' => 'Ms. Phakphon Saehan',
+            'position' => "Acting Head, Dean's Office",
+            'image' => 'lawimg/phakphon.jpg',
+        ],
+        [
+            'name' => 'Ms. Karnjanaluck Phankrat',
+            'position' => 'General Administration Officer',
+            'image' => 'lawimg/KarnJanaluck.jpg',
+        ],
+        [
+            'name' => 'Ms. Piyathida Thipjinda',
+            'position' => 'General Administration Officer',
+            'image' => 'lawimg/piyathida.jpg',
+        ],
+        [
+            'name' => 'Ms. Chaweewan Rattanamit',
+            'position' => 'Librarian',
+            'image' => 'lawimg/Chaweewan.jpg',
+        ],
+        [
+            'name' => 'Ms. Patthama Nilmas',
+            'position' => 'Housekeeping Staff, Faculty of Law',
+            'image' => 'lawimg/Patthama.jpg',
+        ],
+        [
+            'name' => 'Ms. Somjit Suwanna',
+            'position' => 'Housekeeping Staff, Faculty of Law',
+            'image' => 'lawimg/SomJitt.jpg',
+        ],
+        [
+            'name' => 'Ms. Kanittha Suttikun',
+            'position' => 'Housekeeping Staff, Faculty of Law',
+            'image' => 'lawimg/Kanittha.jpg',
+        ],
+    ],
+
+    'dean_name' => 'Asst. Prof. Trapsasit Kerdinmongkol',
+    'dean_position' => 'Dean of Faculty of Law',
+    'dean_degree_1' => 'Master of Laws (LL.M.), Ramkhamhaeng University',
+    'dean_degree_2' => 'Bachelor of Laws (LL.B.), Sukhothai Thammathirat Open University',
+
+     'position' => 'Position',
+    'education' => 'Education',
+
+    'hr_1' => [
+        'name' => 'Asst. Prof. Kulpranee Kulwithit',
+        'position' => 'Associate Dean for Administration and Student Affairs',
+        'degrees' => [
+            'LL.B., Rambhai Barni Rajabhat University',
+            'LL.M. in Public Law, Sripatum University',
+        ],
+    ],
+
+    'hr_2' => [
+        'name' => 'Lecturer Chayananpha Lamaiwong',
+        'position' => 'Associate Dean for Academic Services',
+        'degrees' => [
+            'LL.B. (Second Class Honors), Thammasat University',
+            'LL.M. in Business Law (English Program), Thammasat University',
+            'Thai Bar Association Certificate, Institute of Legal Education',
+        ],
+    ],
+
+    'hr_3' => [
+        'name' => 'Dr. Wisitsak Nuengnong',
+        'position' => 'Assistant Dean for Policy and Planning',
+        'degrees' => [
+            'LL.B., Rambhai Barni Rajabhat University',
+            'LL.M. in Public Law, Sripatum University',
+            'Ph.D. in Law, Dr. Babasaheb Ambedkar Marathwada University, India',
+        ],
+    ],
+
+    'hr_4' => [
+        'name' => 'Dr. Thatsanee Ngonsuk',
+        'position' => 'Assistant Dean for Academic Affairs and Quality Assurance',
+        'degrees' => [
+            'LL.B., Ramkhamhaeng University',
+            'LL.M. in Public Law, Ramkhamhaeng University',
+            'Ph.D. in Educational Technology, KMITL',
+        ],
+    ],
+
+    'hr_5' => [
+        'name' => 'Lecturer Athidtaya Phoksut',
+        'position' => 'Assistant Dean for Research',
+        'degrees' => [
+            'LL.B., Rangsit University',
+            'LL.M. in Public Law, Rangsit University',
+        ],
+    ],
+
+    'hr_6' => [
+        'name' => 'Dr. Phuwadol Damsanit',
+        'position' => 'Assistant Dean for Arts and Culture',
+        'degrees' => [
+            'LL.B., University of the Thai Chamber of Commerce',
+            'LL.M. in Public Law, Tapee University',
+            'LL.D., Pathumthani University',
+        ],
+    ],
+
+    'position' => 'Position',
+    'education' => 'Education',
+    'research_contract' => 'Research Contract',
+    'hr_instructor_1' => [
+        'name' => 'Assistant Professor Thitirat Itthimeechai',
+        'position' => 'Bachelor of Laws Program Chair',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Thammasat University',
+            'Master of Laws (LL.M.) in Development Law, Ramkhamhaeng University',
+            'Barrister-at-Law, The Institute of Legal Education of the Thai Bar Association',
+        ],
+    ],
+    'hr_instructor_2' => [
+        'name' => 'Dr. Thatsanee Ngernsuk',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Ramkhamhaeng University',
+            'Master of Laws (LL.M.) in Public Law, Ramkhamhaeng University',
+            'Doctor of Industrial Education (Educational Technology), King Mongkut\'s Institute of Technology',
+        ],
+    ],
+    'hr_instructor_3' => [
+        'name' => 'Chayanapha Lamyong',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Second Class Honors, Thammasat University',
+            'Master of Laws (LL.M.) in Business Law (English Program), Thammasat University',
+            'Barrister-at-Law, The Institute of Legal Education of the Thai Bar Association',
+        ],
+    ],
+    'hr_instructor_4' => [
+        'name' => 'Assistant Professor Chinakarn Saengamnat',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Ramkhamhaeng University',
+            'Master of Laws (LL.M.) in International Law, Ramkhamhaeng University',
+        ],
+    ],
+    'hr_instructor_5' => [
+        'name' => 'Assistant Professor Kulpranee Kulwithit',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Rambhai Barni Rajabhat University',
+            'Master of Laws (LL.M.), Sripatum University',
+        ],
+    ],
+    'position' => 'Position',
+    'education' => 'Education',
+    'research_contract' => 'Research Contract',
+    'hr_instructor2_1' => [
+        'name' => 'Dr. Wisitsak Nuengnong',
+        'position' => 'Master of Laws Program Chair',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Rambhai Barni Rajabhat University',
+            'Master of Laws (LL.M.) in Public Law, Sripatum University',
+            'Ph.D Law, Dr. Babasaheb Ambedkar Marathwada University, India',
+        ],
+    ],
+    'hr_instructor2_2' => [
+        'name' => 'Dr. Phuwadon Damsanit',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), University of the Thai Chamber of Commerce',
+            'Master of Laws (LL.M.) in Public Law, Tapi University',
+            'Doctor of Laws (LL.D.), Pathumthani University',
+        ],
+    ],
+    'hr_instructor2_3' => [
+        'name' => 'Arthitaya Phoksut',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.), Rangsit University',
+            'Master of Laws (LL.M.) in Public Law, Rangsit University',
+        ],
+    ],
+
+     'position' => 'Position',
+    'education' => 'Education',
+    'research_contract' => 'Research Contract',
+    'hr_staff_1' => [
+        'name' => 'Miss Pakphorn Saehan',
+        'position' => 'Acting Head of Dean Office, Faculty of Law',
+        'degrees' => [
+            'Bachelor of Arts (B.A.) in General Management of Human Resources, Rambhai Barni Rajabhat Institute',
+        ],
+    ],
+    'hr_staff_2' => [
+        'name' => 'Mrs. Kanchalak Phonkrat',
+        'position' => 'General Administrative Officer',
+        'degrees' => [
+            'Bachelor of Arts (B.A.) in Business Administration (Accounting), Rambhai Barni Rajabhat Institute',
+        ],
+    ],
+    'hr_staff_3' => [
+        'name' => 'Miss Piyatida Thipjinda',
+        'position' => 'General Administrative Officer',
+        'degrees' => [
+            'Bachelor of Arts (B.A.) in Community Development, Rambhai Barni Rajabhat University',
+        ],
+    ],
+    'hr_staff_4' => [
+        'name' => 'Miss Chaveewan Rattanamit',
+        'position' => 'Librarian',
+        'degrees' => [
+            'Library Science, Rambhai Barni College',
+        ],
+    ],
+
+    'position' => 'Position',
+    'education' => 'Education',
+    'research_contract' => 'Research Contract',
+
+    'hr_instructor_1' => [
+        'name' => 'Assistant Professor Pannarath Sothornprapakorn',
+        'position' => 'Assistant Professor',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramkhamhaeng University',
+            'Master of Public Administration (MPA) Public Management Kasem Bundit University',
+            'Master of Laws (LL.M.) Public Law Ramkhamhaeng University',
+        ],
+    ],
+    'hr_instructor_2' => [
+        'name' => 'Assistant Professor Thitirut Itthimeechai',
+        'position' => 'Bachelor of Laws Program Chair',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Thammasat University',
+            'Master of Laws (LL.M.) Law for Development Ramkhamhaeng University',
+            'Barrister-at-Law (N.B.T.) Institute of Legal Education of the Thai Bar Association',
+        ],
+    ],
+    'hr_instructor_3' => [
+        'name' => 'Assistant Professor Chinakan Saeng-Amnat',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramkhamhaeng University',
+            'Master of Laws (LL.M.) International Law Ramkhamhaeng University',
+        ],
+    ],
+    'hr_instructor_4' => [
+        'name' => 'Assistant Professor Kulpranee Kulwitit',
+        'position' => 'Deputy Dean for Administration and Academic Services',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramphai Phanni Rajabhat University',
+            'Master of Laws (LL.M.) Public Law Sripatum University',
+        ],
+    ],
+    'hr_instructor_5' => [
+        'name' => 'Dr. Wisitsak Nuangnong',
+        'position' => 'Assistant Dean for Planning and Arts & Culture',
+        'degrees' => [
+            'Bachelor of Laws 2010',
+            'Master of Laws 2012',
+            'Doctor of Laws 2017',
+        ],
+    ],
+    'hr_instructor_6' => [
+        'name' => 'Dr. Thatsanee Nguensuk',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramkhamhaeng University',
+            'Master of Laws (LL.M.) Public Law Ramkhamhaeng University',
+            'Doctor of Industrial Education (Educational Technology) King Mongkut’s Institute of Technology Ladkrabang',
+        ],
+    ],
+    'hr_instructor_7' => [
+        'name' => 'Dr. Phuwadol Damsanit',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) University of the Thai Chamber of Commerce',
+            'Master of Laws (LL.M.) Public Law Tapi University',
+            'Doctor of Laws Patumthani University',
+        ],
+    ],
+    'hr_instructor_8' => [
+        'name' => 'Instructor Songporn Praman',
+        'position' => 'Instructor',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Ramkhamhaeng University',
+            'Master of Laws (LL.M.) International Law Ramkhamhaeng University',
+        ],
+    ],
+    'hr_instructor_9' => [
+        'name' => 'Instructor Athitaya Phoksut',
+        'position' => 'Assistant Dean for Research and Development',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Rangsit University',
+            'Master of Laws (LL.M.) Public Law Rangsit University',
+        ],
+    ],
+    'hr_instructor_10' => [
+        'name' => 'Instructor Chayanapha Lamaiwong',
+        'position' => 'Program Responsible Lecturer',
+        'degrees' => [
+            'Bachelor of Laws (LL.B.) Second Class Honors Thammasat University',
+            'Master of Laws (LL.M.) Business Law (English Program) Thammasat University',
+            'Barrister-at-Law (N.B.T.) Institute of Legal Education of the Thai Bar Association',
+        ],
+    ],
+    
+
+    'tp' => 'Article/Research',
+    'pt' => 'Electronic Thesis Database System',
+    'po' => 'Electronic Research Database System',
+
+    'cultural_preservation_plan' => 'Cultural Preservation Plan',
+    'cultural_plan_2561' => 'Cultural Preservation Plan Academic Year 2018',
+    'cultural_plan_2562' => 'Cultural Preservation Plan Academic Year 2019',
+    'cultural_plan_2563' => 'Cultural Preservation Plan Academic Year 2020',
+
+    'student_activity_plan' => 'Student Activity Development Plan',
+    'student_plan_2561' => 'Student Activity Plan Academic Year 2018',
+    'student_plan_2562' => 'Student Activity Plan Academic Year 2019',
+    'student_plan_2563' => 'Student Activity Plan Academic Year 2020',
+];
+
+
+

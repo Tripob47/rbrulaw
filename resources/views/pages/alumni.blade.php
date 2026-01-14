@@ -1,13 +1,14 @@
 @extends('layouts.masterlayout')
 
-@section('title', __('index.academic'))
+@section('title', __('index.alumni'))
+@section('meta_description', __('index.alumni_meta_description'))
 
 @section('content')
 @include('components.page-header', [
-    'title' => __('index.pp'),
+    'title' => __('index.alumni'),
     'breadcrumbs' => [
         ['label' => __('index.home'), 'url' => url(app()->getLocale())],
-        ['label' => __('index.pp')],
+        ['label' => __('index.alumni')],
     ],
 ])
     <div class="container py-5">

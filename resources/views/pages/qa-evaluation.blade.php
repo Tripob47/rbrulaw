@@ -1,9 +1,10 @@
 @extends('layouts.masterlayout')
 
-@section('title', 'ผลการประเมิน')
+@section('title', __('index.evaluation_results'))
+@section('meta_description', __('index.qa_evaluation_meta_description'))
 
 @section('content')
-    @include('components.qa.header', ['title' => 'ผลการประเมิน'])
+    @include('components.qa.header', ['title' => __('index.evaluation_results')])
 
     <section id="about" class="py-5" style="background-color:#f8f9fa;">
         <div class="container">
@@ -11,7 +12,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title mb-4">ผลการดำเนินงานของคณะนิติศาสตร์</h5>
+                    <h5 class="card-title mb-4">{{ __('index.qa_performance_title') }}</h5>
                     @php
                         $qaRateDir = public_path('QARATE');
                         $qaRateFiles = [];
@@ -43,12 +44,12 @@
                                     @foreach ($qaRateFiles as $file)
                                         <tr>
                                             <td class="align-middle w-75">
-                                                ผลการดำเนินงานของคณะนิติศาสตร์ ปี {{ $file['year'] }}
+                                                {{ __('index.qa_performance_year', ['year' => $file['year']]) }}
                                             </td>
                                             <td class="align-middle text-center w-25">
                                                 <a href="{{ asset($file['url']) }}" class="btn btn-warning btn-sm"
                                                     target="_blank" rel="noopener">
-                                                    <i class="fa fa-download"></i> ดาวน์โหลด
+                                                    <i class="fa fa-download"></i> {{ __('index.download') }}
                                                 </a>
                                             </td>
                                         </tr>
@@ -57,7 +58,7 @@
                             </table>
                         </div>
                     @else
-                        <p class="text-muted mb-0">ไม่พบไฟล์ผลการดำเนินงาน</p>
+                        <p class="text-muted mb-0">{{ __('index.qa_no_performance_files') }}</p>
                     @endif
                 </div>
             </div>

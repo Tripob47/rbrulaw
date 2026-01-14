@@ -1,6 +1,7 @@
 @extends('layouts.masterlayout')
 
 @section('title', __('index.Strategies'))
+@section('meta_description', __('index.about_strategies_meta_description'))
 
 @section('content')
     @include('components.about.header', ['title' => __('index.Strategies')])

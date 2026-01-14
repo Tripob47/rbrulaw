@@ -126,7 +126,7 @@
              class="d-inline-block align-text-top" style="height:56px;width:auto;object-fit:contain;">
              <div class="d-flex flex-column">
                 <span class="fw-semibold" style="font-size: 1.25rem; line-height: 1.2;">{{ __('index.faculty_name') }}</span>
-                <span class="fw-bold text-white" style="font-size: 0.75rem; line-height: 1.2; letter-spacing: 0px;">มหาวิทยาลัยราชภัฏรำไพพรรณี</span>
+                <span class="fw-bold text-white" style="font-size: 0.75rem; line-height: 1.2; letter-spacing: 0px;">{{ __('index.university_name') }}</span>
             </div>
       </a>
 
@@ -215,8 +215,8 @@
                 🌐 {{ strtoupper(app()->getLocale()) }}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="langDropdown">
-                <li><a class="dropdown-item" href="{{ $thUrl }}">🇹🇭 ไทย</a></li>
-                <li><a class="dropdown-item" href="{{ $enUrl }}">EN English</a></li>
+                <li><a class="dropdown-item" href="{{ $thUrl }}">🇹🇭 {{ __('index.language_th') }}</a></li>
+                <li><a class="dropdown-item" href="{{ $enUrl }}">EN {{ __('index.language_en') }}</a></li>
               </ul>
             </li>
           </ul>
@@ -227,8 +227,8 @@
           🌐 {{ strtoupper(app()->getLocale()) }}
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="{{ $thUrl }}">🇹🇭 ไทย</a></li>
-          <li><a class="dropdown-item" href="{{ $enUrl }}">🇬🇧 English</a></li>
+          <li><a class="dropdown-item" href="{{ $thUrl }}">🇹🇭 {{ __('index.language_th') }}</a></li>
+          <li><a class="dropdown-item" href="{{ $enUrl }}">🇬🇧 {{ __('index.language_en') }}</a></li>
         </ul>
       </div>
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -17,17 +18,99 @@ class HomeController extends Controller
         return (int) date('Y') + 543;
     }
 
+    private function httpClient()
+    {
+        $client = Http::timeout(12)->withHeaders([
+            'User-Agent' => 'Mozilla/5.0',
+        ]);
+        if (app()->environment('local')) {
+            $client = $client->withoutVerifying();
+        }
+        return $client;
+    }
+
+    private function fetchJson(string $endpoint, array $params): array
+    {
+        $response = $this->httpClient()->get($this->baseUrl . '/' . $endpoint, $params);
+        if ($response->successful()) {
+            $data = $response->json();
+            if (is_array($data)) {
+                return $data;
+            }
+            $raw = (string) $response->body();
+            if ($raw !== '') {
+                $data = json_decode($raw, true);
+                if (!is_array($data)) {
+                    $data = json_decode($this->repairJson($raw), true);
+                }
+                if (is_array($data)) {
+                    return $data;
+                }
+            }
+        }
+
+        if (!app()->environment('local')) {
+            return [];
+        }
+
+        $url = $this->baseUrl . '/' . $endpoint . '?' . http_build_query($params);
+        $context = stream_context_create([
+            'http' => [
+                'timeout' => 12,
+                'header' => "User-Agent: Mozilla/5.0\r\n",
+            ],
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+            ],
+        ]);
+        $raw = @file_get_contents($url, false, $context);
+        if ($raw === false) {
+            $cmd = 'curl -sS ' . escapeshellarg($url);
+            $raw = trim((string) @shell_exec($cmd));
+        }
+        if ($raw === '') {
+            Log::warning('Gallery fetch failed', ['url' => $url]);
+            return [];
+        }
+        $data = json_decode($raw, true);
+        if (!is_array($data)) {
+            $fixed = $this->repairJson($raw);
+            $data = json_decode($fixed, true);
+        }
+        return is_array($data) ? $data : [];
+    }
+
+    private function repairJson(string $raw): string
+    {
+        $raw = $this->repairJsonField($raw, 'headline', ['detail', 'headline_en', 'detail_en', 'start', 'end', 'fromnews', 'url', 'year']);
+        $raw = $this->repairJsonField($raw, 'detail', ['headline_en', 'detail_en', 'start', 'end', 'fromnews', 'url', 'year']);
+        $raw = $this->repairJsonField($raw, 'headline_en', ['detail_en', 'start', 'end', 'fromnews', 'url', 'year']);
+        $raw = $this->repairJsonField($raw, 'detail_en', ['start', 'end', 'fromnews', 'url', 'year']);
+        $raw = $this->repairJsonField($raw, 'topic', ['detail', 'topic_en', 'detail_en', 'year', 'from', 'img_title', 'image']);
+        $raw = $this->repairJsonField($raw, 'detail', ['topic_en', 'detail_en', 'year', 'from', 'img_title', 'image']);
+        $raw = $this->repairJsonField($raw, 'topic_en', ['detail_en', 'year', 'from', 'img_title', 'image']);
+        $raw = $this->repairJsonField($raw, 'detail_en', ['year', 'from', 'img_title', 'image']);
+        return $raw;
+    }
+
+    private function repairJsonField(string $raw, string $key, array $nextKeys): string
+    {
+        $next = implode('|', array_map(function ($item) {
+            return preg_quote($item, '/');
+        }, $nextKeys));
+        $pattern = '/("' . preg_quote($key, '/') . '"\\s*:\\s*)"(.*)"(?=,\\s*"(?:' . $next . ')"\\s*:)/s';
+        return preg_replace_callback($pattern, function ($matches) {
+            return $matches[1] . json_encode($matches[2], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        }, $raw);
+    }
+
     private function fetchNews(array $params): array
     {
         $cacheKey = 'home.news.' . md5(json_encode($params));
 
         return Cache::remember($cacheKey, now()->addMinutes(10), function () use ($params) {
-            $response = Http::timeout(12)->get($this->baseUrl . '/news_json.php', $params);
-            if (!$response->successful()) {
-                return [];
-            }
-            $data = $response->json();
-            return is_array($data) ? $data : [];
+            return $this->fetchJson('news_json.php', $params);
         });
     }
 
@@ -36,16 +119,11 @@ class HomeController extends Controller
         $cacheKey = 'home.gallery.list.' . $year . '.' . $limit;
 
         return Cache::remember($cacheKey, now()->addMinutes(10), function () use ($year, $limit) {
-            $response = Http::timeout(12)->get($this->baseUrl . '/gallery_json.php', [
+            return $this->fetchJson('gallery_json.php', [
                 'limitImg' => $limit,
                 'User_login' => $this->galleryUser,
                 'year' => $year,
             ]);
-            if (!$response->successful()) {
-                return [];
-            }
-            $data = $response->json();
-            return is_array($data) ? $data : [];
         });
     }
 
@@ -54,13 +132,9 @@ class HomeController extends Controller
         $cacheKey = 'home.gallery.image.' . $no;
 
         return Cache::remember($cacheKey, now()->addMinutes(30), function () use ($no) {
-            $response = Http::timeout(12)->get($this->baseUrl . '/img_json.php', [
+            $data = $this->fetchJson('img_json.php', [
                 'no' => $no,
             ]);
-            if (!$response->successful()) {
-                return null;
-            }
-            $data = $response->json();
             if (!is_array($data) || count($data) === 0) {
                 return null;
             }
